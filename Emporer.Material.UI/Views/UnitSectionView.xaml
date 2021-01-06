@@ -1,0 +1,103 @@
+﻿<UserControl
+  x:Class="Emporer.Material.UI.Views.UnitSectionView"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+  xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+  xmlns:wpf="http://www.gewissen-it.de/milan/wpf"
+  mc:Ignorable="d"
+  d:DesignHeight="300"
+  d:DesignWidth="300">
+  <Grid>
+
+    <Grid.RowDefinitions>
+      <RowDefinition />
+      <RowDefinition />
+      <RowDefinition />
+    </Grid.RowDefinitions>
+
+    <controls:ToggleSwitch
+      Grid.Row="0"
+      IsChecked="{Binding IsInEditMode}"
+      OnLabel="Use self defined unit"
+      OffLabel="Use standard unit" />
+
+    <ComboBox
+      Grid.Row="1"
+      ItemsSource="{Binding Units}"
+      wpf:VisibilityAnimation.AnimationType="Fade"
+      Visibility="{Binding IsInEditMode, Converter={StaticResource BoolToVisibilityReversable}, ConverterParameter=false}"
+      SelectedItem="{Binding Path=DisplayUnit,Mode=TwoWay}" />
+
+    <Grid
+      Grid.Row="2"
+      wpf:VisibilityAnimation.AnimationType="Fade"
+      Visibility="{Binding IsInEditMode, Converter={StaticResource BoolToVisibility}}">
+
+      <Grid.RowDefinitions>
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+      </Grid.RowDefinitions>
+
+      <Label
+        Grid.Row="0"
+        Content="Name"
+        Style="{StaticResource PropertyHeader}" />
+
+      <TextBox
+        Grid.Row="1"
+        Text="{Binding Path=OwnUnitName,Mode=TwoWay}" />
+
+      <Label
+        Grid.Row="2"
+        Content="Symbol"
+        Style="{StaticResource PropertyHeader}" />
+
+      <TextBox
+        Grid.Row="3"
+        Text="{Binding Path=OwnUnitSymbol,Mode=TwoWay}" />
+
+      <Label
+        Grid.Row="4"
+        Content="Coefficient"
+        Style="{StaticResource PropertyHeader}" />
+
+      <TextBox
+        Grid.Row="5"
+        Text="{Binding Path=OwnUnitCoefficient,Mode=TwoWay}" />
+
+      <Label
+        Grid.Row="6"
+        Content="Reference unit"
+        Style="{StaticResource PropertyHeader}" />
+
+      <ComboBox
+        Grid.Row="7"
+        ItemsSource="{Binding ReferencedUnits}"
+        SelectedItem="{Binding Path=OwnUnitReferencedUnit,Mode=TwoWay}" />
+
+      <Label
+        Grid.Row="8"
+        Content="{Binding Conversion}"
+        Style="{StaticResource PropertyHeader}" />
+
+    </Grid>
+  </Grid>
+</UserControl>

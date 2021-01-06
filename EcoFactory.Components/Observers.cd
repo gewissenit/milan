@@ -1,0 +1,386 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Milan.Simulation.Observers.AssemblyStationObserver" Collapsed="true">
+    <Position X="5.5" Y="16.25" Width="3.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Milan.Simulation.Observers.StationaryElementProcessesObserver&lt;TEntity&gt;" Collapsed="true">
+    <Position X="19.25" Y="13.25" Width="3" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Milan.Simulation.Observers.EntityTypeObserver&lt;TEntity&gt;" Collapsed="true">
+    <Position X="12.5" Y="8" Width="2" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Milan.Simulation.Observers.ProductThroughputObserver" Collapsed="true">
+    <Position X="4.75" Y="13.25" Width="2.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Milan.Simulation.Observers.InhomogeneousParallelWorkstationObserver" Collapsed="true">
+    <Position X="0.5" Y="16.25" Width="4.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Milan.Simulation.Observers.InhomogeneousWorkstationObserver" Collapsed="true">
+    <Position X="9.5" Y="16.25" Width="4" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Milan.Simulation.Observers.ParallelWorkstationObserver" Collapsed="true">
+    <Position X="14.25" Y="16.25" Width="3.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Milan.Simulation.Observers.WorkstationObserver" Collapsed="true">
+    <Position X="18.5" Y="16.25" Width="3" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Milan.Simulation.Observers.SchedulerObserver" Collapsed="true">
+    <Position X="12.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Milan.Simulation.Observers.ExperimentObserver" Collapsed="true">
+    <Position X="15.5" Y="8" Width="1.75" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Milan.Simulation.Observers.ProductTerminationCriteria" Collapsed="true">
+    <Position X="9.75" Y="8" Width="2.25" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Milan.Simulation.Observers.SchedulerLogWriter" Collapsed="true">
+    <Position X="18.25" Y="8" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Milan.Simulation.Observers.EventLogWriter" Collapsed="true">
+    <Position X="17.25" Y="10.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Milan.Simulation.Observers.ProductLifeCycleLogWriter" Collapsed="true">
+    <Position X="19.5" Y="10.25" Width="2.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Milan.Simulation.Observers.TimeTerminationCriteria" Collapsed="true">
+    <Position X="7.25" Y="8" Width="2" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Milan.Simulation.Observers.EntityEventObserver&lt;TEntity, TEvent&gt;" Collapsed="true">
+    <Position X="24" Y="16.25" Width="2.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Milan.Simulation.Observers.EntityObserver&lt;TEntity&gt;" Collapsed="true">
+    <Position X="24.25" Y="13.25" Width="2" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Milan.Simulation.Observers.ProcessObserver&lt;TEntity, TStartEvent, TEndEvent&gt;" Collapsed="true">
+    <Position X="18" Y="21" Width="3.25" />
+    <InheritanceLine Type="Milan.Simulation.Observers.EntityEventObserver&lt;TEntity, TEvent&gt;" ManuallyRouted="true">
+      <Path>
+        <Point X="25.25" Y="16.941" />
+        <Point X="25.25" Y="18.515" />
+        <Point X="19.625" Y="18.515" />
+        <Point X="19.625" Y="21" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier />
+    <Lollipop Position="0.1" />
+  </Class>
+  <Class Name="Milan.Simulation.MaterialAccounting.Observers.OnProductExitedAggregateMaterialBalances" Collapsed="true">
+    <Position X="12" Y="13.25" Width="3.25" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Milan.Simulation.CostAccounting.Observers.OnProductExitedAggregateCostBalances" Collapsed="true">
+    <Position X="8.25" Y="13.25" Width="3" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Milan.Simulation.CostAccounting.EventCostObserver&lt;TEntity, TObservedEvent&gt;" Collapsed="true">
+    <Position X="23.75" Y="21" Width="3.25" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Milan.Simulation.CostAccounting.ProcessCostObserver&lt;TEntity, TStartEvent, TEndEvent&gt;" Collapsed="true">
+    <Position X="23.5" Y="25" Width="3.75" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Milan.Simulation.CostAccounting.ProductTypeSpecificEventCostObserver&lt;TEntity, TEndEvent&gt;" Collapsed="true">
+    <Position X="27.75" Y="25" Width="4.25" />
+    <TypeIdentifier />
+    <Lollipop Position="0.221" />
+  </Class>
+  <Class Name="Milan.Simulation.CostAccounting.ProductTypeSpecificProcessCostObserver&lt;TEntity, TStartEvent, TEndEvent&gt;" Collapsed="true">
+    <Position X="23" Y="29" Width="5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Milan.Simulation.MaterialAccounting.EventMaterialObserver&lt;TEntity, TObservedEvent&gt;" Collapsed="true">
+    <Position X="12.5" Y="21" Width="3.5" />
+    <InheritanceLine Type="Milan.Simulation.Observers.EntityEventObserver&lt;TEntity, TEvent&gt;" ManuallyRouted="true">
+      <Path>
+        <Point X="25.25" Y="16.941" />
+        <Point X="25.25" Y="18.515" />
+        <Point X="14.25" Y="18.515" />
+        <Point X="14.25" Y="21" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Milan.Simulation.MaterialAccounting.ProcessMaterialObserver&lt;TEntity, TStartEvent, TEndEvent&gt;" Collapsed="true">
+    <Position X="17.5" Y="25" Width="4" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Milan.Simulation.MaterialAccounting.ProductTypeSpecificEventMaterialObserver&lt;TEntity, TObservedEvent&gt;" Collapsed="true">
+    <Position X="11.75" Y="25" Width="4.75" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Milan.Simulation.MaterialAccounting.ProductTypeSpecificProcessMaterialObserver&lt;TEntity, TStartEvent, TEndEvent&gt;" Collapsed="true">
+    <Position X="16.75" Y="29" Width="5.25" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="Milan.Simulation.Observers.ISimulationObserver" Collapsed="true">
+    <Position X="37.25" Y="2.75" Width="1.75" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Milan.Simulation.Observers.IProductTerminationCriteria" Collapsed="true" HideInheritanceLine="true">
+    <Position X="34.25" Y="7" Width="2.25" />
+    <InheritanceLine Type="Milan.Simulation.Observers.ISimulationObserver" IsHidden="true" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Milan.Simulation.Observers.IEntityTypeObserver&lt;TEntity&gt;" Collapsed="true">
+    <Position X="36.25" Y="5" Width="2.25" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Milan.Simulation.Observers.ITerminationCriteria" Collapsed="true">
+    <Position X="33" Y="5" Width="1.75" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Milan.Simulation.Observers.ITimeTerminationCriteria" Collapsed="true" HideInheritanceLine="true">
+    <Position X="32" Y="7" Width="2" />
+    <InheritanceLine Type="Milan.Simulation.Observers.ISimulationObserver" IsHidden="true" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Milan.Simulation.Observers.IEntityObserver" Collapsed="true">
+    <Position X="39.25" Y="5" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Milan.Simulation.Observers.IEntityObserver&lt;TEntity&gt;" Collapsed="true" HideInheritanceLine="true">
+    <Position X="38" Y="7" Width="2" />
+    <InheritanceLine Type="Milan.Simulation.Observers.ISimulationObserver" IsHidden="true" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Milan.Simulation.Observers.IEntityEventObserver&lt;TEntity, TEvent&gt;" Collapsed="true" HideInheritanceLine="true">
+    <Position X="36.5" Y="9.75" Width="3.25" />
+    <InheritanceLine Type="Milan.Simulation.Observers.IEntityObserver&lt;TEntity&gt;" FixedToPoint="true">
+      <Path>
+        <Point X="39" Y="8.338" />
+        <Point X="39" Y="9.375" />
+        <Point X="38" Y="9.375" />
+        <Point X="38" Y="9.75" />
+      </Path>
+    </InheritanceLine>
+    <InheritanceLine Type="Milan.Simulation.Observers.IEntityTypeObserver&lt;TEntity&gt;" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.Observers.ISimulationObserver" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.Observers.IEntityObserver" IsHidden="true" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Milan.Simulation.Observers.IProcessObserver&lt;TEntity, TStartEvent, TEndEvent&gt;" Collapsed="true" HideInheritanceLine="true">
+    <Position X="41" Y="9.75" Width="3.75" />
+    <InheritanceLine Type="Milan.Simulation.Observers.ISimulationObserver" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.Observers.IEntityTypeObserver&lt;TEntity&gt;" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.Observers.IEntityObserver" IsHidden="true" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Milan.Simulation.Observers.IProcessObserver" Collapsed="true">
+    <Position X="42" Y="5" Width="1.75" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Milan.Simulation.CostAccounting.ICostObserver&lt;TEntity&gt;" Collapsed="true" HideInheritanceLine="true">
+    <Position X="53.25" Y="7.75" Width="2" />
+    <InheritanceLine Type="Milan.Simulation.Observers.IEntityObserver" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.Observers.ISimulationObserver" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.Observers.IEntityObserver&lt;TEntity&gt;" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.Observers.IEntityTypeObserver&lt;TEntity&gt;" IsHidden="true" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Milan.Simulation.CostAccounting.ICostObserver" Collapsed="true" HideInheritanceLine="true">
+    <Position X="57.5" Y="4.75" Width="1.75" />
+    <InheritanceLine Type="Milan.Simulation.Observers.IEntityObserver" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.Observers.ISimulationObserver" IsHidden="true" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Milan.Simulation.CostAccounting.IEventCostObserver" Collapsed="true" HideInheritanceLine="true">
+    <Position X="57" Y="7.75" Width="1.75" />
+    <InheritanceLine Type="Milan.Simulation.Observers.IEntityObserver" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.Observers.ISimulationObserver" IsHidden="true" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Milan.Simulation.CostAccounting.IEventCostObserver&lt;TEntity, TEvent&gt;" Collapsed="true" HideInheritanceLine="true">
+    <Position X="56.5" Y="10.25" Width="2.75" />
+    <InheritanceLine Type="Milan.Simulation.CostAccounting.ICostObserver" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.Observers.IEntityObserver" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.Observers.ISimulationObserver" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.Observers.IEntityEventObserver&lt;TEntity, TEvent&gt;" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.Observers.IEntityObserver&lt;TEntity&gt;" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.Observers.IEntityTypeObserver&lt;TEntity&gt;" IsHidden="true" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Milan.Simulation.CostAccounting.IProcessCostObserver" Collapsed="true" HideInheritanceLine="true">
+    <Position X="61.25" Y="7.75" Width="1.75" />
+    <InheritanceLine Type="Milan.Simulation.Observers.IEntityObserver" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.Observers.ISimulationObserver" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.Observers.IProcessObserver" IsHidden="true" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Milan.Simulation.CostAccounting.IProcessCostObserver&lt;TEntity, TStartEvent, TEndevent&gt;" Collapsed="true" HideInheritanceLine="true">
+    <Position X="60.25" Y="10.25" Width="4" />
+    <InheritanceLine Type="Milan.Simulation.CostAccounting.ICostObserver" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.Observers.IEntityObserver" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.Observers.ISimulationObserver" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.Observers.IProcessObserver" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.Observers.IProcessObserver&lt;TEntity, TStartEvent, TEndevent&gt;" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.Observers.IEntityObserver&lt;TEntity&gt;" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.Observers.IEntityTypeObserver&lt;TEntity&gt;" IsHidden="true" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Milan.Simulation.CostAccounting.IProductTypeSpecificCostObserver&lt;TEntity&gt;" Collapsed="true" HideInheritanceLine="true">
+    <Position X="52.5" Y="10.25" Width="3.25" />
+    <InheritanceLine Type="Milan.Simulation.CostAccounting.ICostObserver" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.Observers.IEntityObserver&lt;TEntity&gt;" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.Observers.IEntityTypeObserver&lt;TEntity&gt;" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.Observers.IEntityObserver" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.Observers.ISimulationObserver" IsHidden="true" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Milan.Simulation.CostAccounting.IProductTypeSpecificProcessCostObserver&lt;TEntity&gt;" Collapsed="true" HideInheritanceLine="true">
+    <Position X="52.25" Y="13.5" Width="3.75" />
+    <InheritanceLine Type="Milan.Simulation.Observers.IProcessObserver" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.CostAccounting.ICostObserver&lt;TEntity&gt;" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.CostAccounting.ICostObserver" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.Observers.IEntityObserver&lt;TEntity&gt;" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.Observers.IEntityTypeObserver&lt;TEntity&gt;" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.Observers.IEntityObserver" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.Observers.ISimulationObserver" IsHidden="true" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Milan.Simulation.MaterialAccounting.IEventMaterialObserver&lt;TEntity&gt;" Collapsed="true" HideInheritanceLine="true">
+    <Position X="68.25" Y="7.5" Width="2.5" />
+    <InheritanceLine Type="Milan.Simulation.MaterialAccounting.IMaterialObserver&lt;TEntity&gt;" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="74.062" Y="6.347" />
+        <Point X="74.062" Y="7.125" />
+        <Point X="69.438" Y="7.125" />
+        <Point X="69.438" Y="7.5" />
+      </Path>
+    </InheritanceLine>
+    <InheritanceLine Type="Milan.Simulation.MaterialAccounting.IMaterialObserver" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.Observers.IEntityObserver" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.Observers.ISimulationObserver" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.Observers.IEntityObserver&lt;TEntity&gt;" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.Observers.IEntityTypeObserver&lt;TEntity&gt;" IsHidden="true" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Milan.Simulation.MaterialAccounting.IEventMaterialObserver&lt;TEntity, TEvent&gt;" Collapsed="true" HideInheritanceLine="true">
+    <Position X="68" Y="10.75" Width="3" />
+    <InheritanceLine Type="Milan.Simulation.MaterialAccounting.IMaterialObserver&lt;TEntity&gt;" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.MaterialAccounting.IMaterialObserver" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.Observers.IEntityObserver" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.Observers.ISimulationObserver" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.Observers.IEntityObserver&lt;TEntity&gt;" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.Observers.IEntityTypeObserver&lt;TEntity&gt;" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.Observers.IEntityEventObserver&lt;TEntity, TEvent&gt;" IsHidden="true" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Milan.Simulation.MaterialAccounting.IMaterialObserver" Collapsed="true" HideInheritanceLine="true">
+    <Position X="73.25" Y="2.5" Width="1.75" />
+    <InheritanceLine Type="Milan.Simulation.Observers.IEntityObserver" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.Observers.ISimulationObserver" IsHidden="true" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Milan.Simulation.MaterialAccounting.IMaterialObserver&lt;TEntity&gt;" Collapsed="true" HideInheritanceLine="true">
+    <Position X="73" Y="4.75" Width="2.25" />
+    <InheritanceLine Type="Milan.Simulation.Observers.IEntityObserver" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.Observers.ISimulationObserver" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.Observers.IEntityObserver&lt;TEntity&gt;" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.Observers.IEntityTypeObserver&lt;TEntity&gt;" IsHidden="true" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Milan.Simulation.MaterialAccounting.IProcessMaterialObserver&lt;TEntity, TStartEvent, TEndevent&gt;" Collapsed="true" HideInheritanceLine="true">
+    <Position X="76.25" Y="10.75" Width="4.25" />
+    <InheritanceLine Type="Milan.Simulation.MaterialAccounting.IProcessMaterialObserver&lt;TEntity&gt;" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="78.375" Y="9.485" />
+        <Point X="78.375" Y="10.375" />
+        <Point X="78.312" Y="10.375" />
+        <Point X="78.312" Y="10.75" />
+      </Path>
+    </InheritanceLine>
+    <InheritanceLine Type="Milan.Simulation.MaterialAccounting.IMaterialObserver&lt;TEntity&gt;" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.MaterialAccounting.IMaterialObserver" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.Observers.IEntityObserver" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.Observers.ISimulationObserver" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.Observers.IEntityObserver&lt;TEntity&gt;" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.Observers.IEntityTypeObserver&lt;TEntity&gt;" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.Observers.IProcessObserver" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.Observers.IProcessObserver&lt;TEntity, TStartEvent, TEndevent&gt;" IsHidden="true" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Milan.Simulation.MaterialAccounting.IProcessMaterialObserver&lt;TEntity&gt;" Collapsed="true" HideInheritanceLine="true">
+    <Position X="77" Y="7.5" Width="2.75" />
+    <InheritanceLine Type="Milan.Simulation.MaterialAccounting.IMaterialObserver&lt;TEntity&gt;" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="74.062" Y="6.347" />
+        <Point X="74.062" Y="7.125" />
+        <Point X="78.5" Y="7.125" />
+        <Point X="78.5" Y="7.5" />
+      </Path>
+    </InheritanceLine>
+    <InheritanceLine Type="Milan.Simulation.MaterialAccounting.IMaterialObserver" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.Observers.IEntityObserver" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.Observers.ISimulationObserver" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.Observers.IEntityObserver&lt;TEntity&gt;" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.Observers.IEntityTypeObserver&lt;TEntity&gt;" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.Observers.IProcessObserver" IsHidden="true" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Milan.Simulation.MaterialAccounting.IProductTypeSpecificMaterialObserver&lt;TEntity&gt;" Collapsed="true" HideInheritanceLine="true">
+    <Position X="72.25" Y="7.5" Width="3.5" />
+    <InheritanceLine Type="Milan.Simulation.MaterialAccounting.IMaterialObserver&lt;TEntity&gt;" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="74.062" Y="6.347" />
+        <Point X="74.062" Y="7.5" />
+      </Path>
+    </InheritanceLine>
+    <InheritanceLine Type="Milan.Simulation.MaterialAccounting.IMaterialObserver" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.Observers.IEntityObserver&lt;TEntity&gt;" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.Observers.IEntityTypeObserver&lt;TEntity&gt;" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.Observers.IEntityObserver" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.Observers.ISimulationObserver" IsHidden="true" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Milan.Simulation.MaterialAccounting.IProductTypeSpecificProcessMaterialObserver&lt;TEntity&gt;" Collapsed="true" HideInheritanceLine="true">
+    <Position X="72" Y="10.75" Width="4" />
+    <InheritanceLine Type="Milan.Simulation.MaterialAccounting.IProductTypeSpecificMaterialObserver&lt;TEntity&gt;" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="74.375" Y="9.356" />
+        <Point X="74.375" Y="10.375" />
+        <Point X="74.438" Y="10.375" />
+        <Point X="74.438" Y="10.75" />
+      </Path>
+    </InheritanceLine>
+    <InheritanceLine Type="Milan.Simulation.Observers.IProcessObserver" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.MaterialAccounting.IMaterialObserver&lt;TEntity&gt;" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.MaterialAccounting.IMaterialObserver" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.Observers.IEntityObserver&lt;TEntity&gt;" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.Observers.IEntityTypeObserver&lt;TEntity&gt;" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.Observers.IEntityObserver" IsHidden="true" />
+    <InheritanceLine Type="Milan.Simulation.Observers.ISimulationObserver" IsHidden="true" />
+    <TypeIdentifier />
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,12 @@
+.\packages\NUnit.ConsoleRunner.3.2.1\tools\nunit3-console.exe^
+ ..\build\emporer\bin\Ork.Framework.Tests.dll^
+ ..\build\emporer\bin\EcoFactory.Components.Tests.dll^
+ ..\build\emporer\bin\Milan.Simulation.ShiftSystems.Tests.dll^
+ ..\build\emporer\bin\Milan.Simulation.Resources.Tests.dll^
+ ..\build\emporer\bin\Milan.Simulation.Tests.dll^
+ ..\build\emporer\bin\Milan.UI.Tests.dll^
+ ..\build\emporer\bin\Milan.Simulation.MaterialAccounting.Tests.dll^
+ ..\build\emporer\bin\Milan.VisualModeling.Tests.dll^
+ ..\build\emporer\bin\Emporer.WPF.Tests.dll^
+ ..\build\emporer\bin\Emporer.Unit.Tests.dll^
+ ..\build\emporer\bin\GeWISSEN.Utils.Tests.dll

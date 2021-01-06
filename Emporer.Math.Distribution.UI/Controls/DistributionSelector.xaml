@@ -1,0 +1,58 @@
+﻿<UserControl
+  x:Class="Emporer.Math.Distribution.UI.Controls.DistributionSelector"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:controls="clr-namespace:Emporer.Math.Distribution.UI.Controls"
+  xmlns:viewModels="clr-namespace:Emporer.Math.Distribution.UI.ViewModels"
+  xmlns:controls1="http://metro.mahapps.com/winfx/xaml/controls">
+
+  <UserControl.Resources>
+
+    <ResourceDictionary>
+
+      <ResourceDictionary.MergedDictionaries>
+
+        <ResourceDictionary
+          Source="pack://application:,,,/Emporer.Math.Distribution.UI;component/Controls/Resources.xaml" />
+
+      </ResourceDictionary.MergedDictionaries>
+
+      <DataTemplate
+        DataType="{x:Type viewModels:DistributionSelectorViewModel}">
+
+        <StackPanel>
+
+          <Label
+            Style="{StaticResource PropertyHeader}"
+            Content="Distribution" />
+
+          <ComboBox
+            Margin="0"
+            controls1:TextBoxHelper.Watermark="Distribution"
+            HorizontalContentAlignment="Left"
+            ItemsSource="{Binding Path=Distributions}"
+            DisplayMemberPath="Name"
+            SelectedItem="{Binding SelectedDistribution}" />
+
+          <controls:DistributionEditor
+            Focusable="False"
+            Content="{Binding SelectedDistribution}"
+            ValueTemplate="{Binding Path=ValueTemplate, RelativeSource={RelativeSource AncestorType=UserControl, Mode=FindAncestor}}" />
+
+        </StackPanel>
+
+      </DataTemplate>
+
+    </ResourceDictionary>
+
+  </UserControl.Resources>
+
+  <Grid>
+
+    <ContentControl
+      Focusable="False"
+      Content="{Binding}" />
+
+  </Grid>
+
+</UserControl>

@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <ProjectGuid>{0CCCCB20-18CB-4B37-8826-21E0ABEA36FC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Milan.Simulation.MaterialAccounting.Tests</RootNamespace>
+    <AssemblyName>Milan.Simulation.MaterialAccounting.Tests</AssemblyName>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <OutputPath>..\..\build\emporer\bin</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+    <NoWarn>
+    </NoWarn>
+    <WarningsNotAsErrors>
+    </WarningsNotAsErrors>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>..\..\build\emporer\bin</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+    <NoWarn>
+    </NoWarn>
+    <WarningsNotAsErrors>
+    </WarningsNotAsErrors>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>True</Optimize>
+    <DefineConstants>TRACE</DefineConstants>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\build\x64\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>..\..\build\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Compile Include="EndEventStub.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="ProductExitedMaterialStatisticsFixture.cs" />
+    <Compile Include="ProductTypeProcessMaterialObserverFixture.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StartEventStub.cs" />
+    <Compile Include="SUT.cs" />
+    <Compile Include="UtilsFixture.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EcoFactory.Components\EcoFactory.Components.csproj">
+      <Project>{FB92BA92-D08B-448B-B46F-1C15DD135AC3}</Project>
+      <Name>EcoFactory.Components</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Emporer.Material\Emporer.Material.csproj">
+      <Project>{740A86F7-1388-4A39-9A29-D7BE563DE837}</Project>
+      <Name>Emporer.Material</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Emporer.Unit\Emporer.Unit.csproj">
+      <Project>{DA6BD1CD-EF23-4B34-8141-D4BE06D3F583}</Project>
+      <Name>Emporer.Unit</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Milan.JsonStore\Milan.JsonStore.csproj">
+      <Project>{E2C0ABAF-773E-4265-BD7E-0D45A5876A8A}</Project>
+      <Name>Milan.JsonStore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Milan.Simulation.Resources\Milan.Simulation.Resources.csproj">
+      <Project>{A59EBCD0-522B-40C2-BE92-E33E1F70C3BB}</Project>
+      <Name>Milan.Simulation.Resources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Milan.Simulation.ShiftSystems\Milan.Simulation.ShiftSystems.csproj">
+      <Project>{01ADD24F-CA69-4734-B7E6-02406BE9BA7F}</Project>
+      <Name>Milan.Simulation.ShiftSystems</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Milan.Simulation\Milan.Simulation.csproj">
+      <Project>{C6378981-67FE-4F73-9BAC-51EDD9AB8287}</Project>
+      <Name>Milan.Simulation</Name>
+      <Private>false</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\Milan.Simulation.MaterialAccounting\Milan.Simulation.MaterialAccounting.csproj">
+      <Project>{6C56E0D5-D61D-4CD4-BF80-63F7E0F0CDE3}</Project>
+      <Name>Milan.Simulation.MaterialAccounting</Name>
+      <Private>false</Private>
+    </ProjectReference>
+    <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.3.3.3\lib\net45\Castle.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Moq, Version=4.5.30.0, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+      <HintPath>..\packages\Moq.4.5.30\lib\net45\Moq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="nunit.framework, Version=3.6.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.6.0\lib\net45\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System">
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
+  <ItemGroup />
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+</Project>

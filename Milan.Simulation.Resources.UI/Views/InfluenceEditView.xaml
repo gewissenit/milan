@@ -1,0 +1,35 @@
+﻿ <UserControl
+  x:Class="Milan.Simulation.Resources.UI.Views.InfluenceEditView"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+  xmlns:wpf="http://www.gewissen-it.de/milan/wpf">
+
+  <UserControl.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="../Controls/Resources.xaml"/>
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </UserControl.Resources>
+
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition
+        Height="Auto" />
+    </Grid.RowDefinitions>
+
+    <TextBox
+      Grid.Row="0"
+      Text="{Binding Path=Description}"
+      Style="{StaticResource DescriptionTextBox}">
+
+      <i:Interaction.Behaviors>
+        <wpf:CommitOnEnter />
+      </i:Interaction.Behaviors>
+
+    </TextBox>
+
+  </Grid>
+
+</UserControl>

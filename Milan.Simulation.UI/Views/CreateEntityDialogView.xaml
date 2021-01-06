@@ -1,0 +1,80 @@
+﻿<UserControl
+  x:Class="Milan.Simulation.UI.Views.CreateEntityDialogView"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:cal="http://www.caliburnproject.org"
+  xmlns:viewModels="clr-namespace:Milan.Simulation.UI.ViewModels"
+  xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+  Background="{DynamicResource HighlightBrush}">
+  <UserControl.Resources>
+
+    <ResourceDictionary>
+
+      <DataTemplate
+        DataType="{x:Type viewModels:EntityFactoryViewModel}">
+
+        <Grid
+          Margin="0 12 0 0">
+
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition
+              Width="*" />
+            <ColumnDefinition
+              Width="Auto" />
+          </Grid.ColumnDefinitions>
+
+          <Button
+            Style="{StaticResource MetroFlatButton}"
+            Grid.Column="0"
+            Grid.Row="0"
+            Margin="0 0 6 0"
+            Content="{Binding Name}"
+            cal:Message.Attach="Create" />
+
+          <controls:NumericUpDown
+            Grid.Column="1"
+            Value="{Binding Path=Number, Mode=TwoWay}"
+            Minimum="0" />
+
+        </Grid>
+
+      </DataTemplate>
+
+    </ResourceDictionary>
+
+  </UserControl.Resources>
+
+  <Grid
+    Margin="12 0">
+
+    <Grid.RowDefinitions>
+      <RowDefinition
+        Height="1*" />
+      <RowDefinition
+        Height="50" />
+    </Grid.RowDefinitions>
+
+    <ScrollViewer
+      Grid.Row="0"
+      HorizontalScrollBarVisibility="Disabled">
+
+      <ItemsControl
+        ItemsSource="{Binding EntityFactories}"
+        TabIndex="0" />
+
+    </ScrollViewer>
+
+    <Button
+      Grid.Row="1"
+      x:Name="AddSelectedEntities"
+      Margin="0 12 0 12"
+      Style="{StaticResource MetroFlatButton}"
+      TabIndex="1"
+      Visibility="{Binding MultipleEntititesSelected, Converter={StaticResource BoolToVisibility}}">
+      <TextBlock
+        Text="{Binding NewEntityCount, StringFormat='Create {0} new entities'}" />
+    </Button>
+
+
+  </Grid>
+</UserControl>

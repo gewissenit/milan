@@ -1,0 +1,342 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7215405F-EC8A-49B5-8825-A3E084289EF9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EcoFactory.Components.UI</RootNamespace>
+    <AssemblyName>EcoFactory.Components.UI</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\build\emporer\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <NoWarn>
+    </NoWarn>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>..\..\build\emporer\bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <NoWarn>
+    </NoWarn>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+  </PropertyGroup>
+  <PropertyGroup>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\build\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>..\..\build\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Caliburn.Micro, Version=3.0.3.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Caliburn.Micro.Core.3.0.3\lib\net45\Caliburn.Micro.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Caliburn.Micro.Platform, Version=3.0.3.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Caliburn.Micro.3.0.3\lib\net45\Caliburn.Micro.Platform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Caliburn.Micro.Platform.Core, Version=3.0.3.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Caliburn.Micro.3.0.3\lib\net45\Caliburn.Micro.Platform.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MahApps.Metro, Version=1.4.3.0, Culture=neutral, PublicKeyToken=f4fb5a3c4d1e5b4f, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.1.4.3\lib\net45\MahApps.Metro.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PGK.Extensions">
+      <HintPath>..\packages\PGK.Extensions.2011.6\lib\PGK.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="ReactiveUI">
+      <HintPath>..\packages\reactiveui-core.6.4.0.1\lib\Net45\ReactiveUI.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Reactive.Interfaces, Version=2.2.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Rx-Interfaces.2.2.5\lib\net45\System.Reactive.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.1.4.3\lib\net45\System.Windows.Interactivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Factories\AssemblyStationEditViewModelFactory.cs" />
+    <Compile Include="Factories\EntryPointEditViewModelFactory.cs" />
+    <Compile Include="Factories\ExitPointEditViewModelFactory.cs" />
+    <Compile Include="Factories\InhomogeneousParallelWorkstationEditViewModelFactory.cs" />
+    <Compile Include="Factories\InhomogeneousWorkstationEditViewModelFactory.cs" />
+    <Compile Include="Factories\MultipleEntititesSelectionEditViewModelFactory.cs" />
+    <Compile Include="Factories\ParallelWorkstationEditViewModelFactory.cs" />
+    <Compile Include="Factories\ProbabilityAssemblyStationEditViewModelFactory.cs" />
+    <Compile Include="Factories\StorageEditViewModelFactory.cs" />
+    <Compile Include="Factories\WorkstationEditViewModelFactory.cs" />
+    <Compile Include="Utils.cs" />
+    <Compile Include="ViewModels\ArrivalsSectionViewModel.cs" />
+    <Compile Include="ViewModels\AssemblyStationEditViewModel.cs" />
+    <Compile Include="ViewModels\CapacitySectionViewModel.cs" />
+    <Compile Include="ViewModels\ConnectionSectionViewModel.cs" />
+    <Compile Include="ViewModels\EntryPointEditViewModel.cs" />
+    <Compile Include="ViewModels\ExitPointEditViewModel.cs" />
+    <Compile Include="ViewModels\FailureSectionViewModel.cs" />
+    <Compile Include="ViewModels\GeneralSectionViewModel.cs" />
+    <Compile Include="ViewModels\InfluencesSectionViewModel.cs" />
+    <Compile Include="ViewModels\InhomogeneousParallelWorkstationEditViewModel.cs" />
+    <Compile Include="ViewModels\InhomogeneousWorkstationEditViewModel.cs" />
+    <Compile Include="ViewModels\MaintenanceSectionViewModel.cs" />
+    <Compile Include="ViewModels\MultipleEntitiesSelectionViewModel.cs" />
+    <Compile Include="ViewModels\ParallelWorkstationEditViewModel.cs" />
+    <Compile Include="ViewModels\ProcessingSectionViewModel.cs" />
+    <Compile Include="ViewModels\PropabilityAssemblyStationEditViewModel.cs" />
+    <Compile Include="ViewModels\SetupSectionViewModel.cs" />
+    <Compile Include="ViewModels\ShiftsSectionViewModel.cs" />
+    <Compile Include="ViewModels\StorageEditViewModel.cs" />
+    <Compile Include="ViewModels\TransformationRuleOutputViewModel.cs" />
+    <Compile Include="ViewModels\TransformationRuleEditorViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\TransformationsSectionViewModel.cs" />
+    <Compile Include="ViewModels\WorkstationEditViewModel.cs" />
+    <Compile Include="Views\ArrivalsSectionView.xaml.cs">
+      <DependentUpon>ArrivalsSectionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CapacitySectionView.xaml.cs">
+      <DependentUpon>CapacitySectionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ConnectionSectionView.xaml.cs">
+      <DependentUpon>ConnectionSectionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FailureSectionView.xaml.cs">
+      <DependentUpon>FailureSectionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GeneralSectionView.xaml.cs">
+      <DependentUpon>GeneralSectionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InfluencesSectionView.xaml.cs">
+      <DependentUpon>InfluencesSectionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MaintenanceSectionView.xaml.cs">
+      <DependentUpon>MaintenanceSectionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MultipleEntitiesSelectionView.xaml.cs">
+      <DependentUpon>MultipleEntitiesSelectionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProcessingSectionView.xaml.cs">
+      <DependentUpon>ProcessingSectionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SetupSectionView.xaml.cs">
+      <DependentUpon>SetupSectionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ShiftsSectionView.xaml.cs">
+      <DependentUpon>ShiftsSectionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TransformationsSectionView.xaml.cs">
+      <DependentUpon>TransformationsSectionView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EcoFactory.Components\EcoFactory.Components.csproj">
+      <Project>{FB92BA92-D08B-448B-B46F-1C15DD135AC3}</Project>
+      <Name>EcoFactory.Components</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Emporer.Math.Distribution.UI\Emporer.Math.Distribution.UI.csproj">
+      <Project>{7144CEE7-C185-4DB7-BFC7-F8D74A662699}</Project>
+      <Name>Emporer.Math.Distribution.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Emporer.Math.Distribution.UI\Emporer.Math.Distribution.UI.csproj">
+      <Project>{33301DEA-036B-432D-9027-F092D020540D}</Project>
+      <Name>Emporer.Math.Distribution.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Emporer.Math.Distribution\Emporer.Math.Distribution.csproj">
+      <Project>{1E55808E-3DD6-49A6-84D7-2DE9F882D780}</Project>
+      <Name>Emporer.Math.Distribution</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Emporer.WPF\Emporer.WPF.csproj">
+      <Project>{29F5F4BE-167D-4A9A-ADAD-8E23E31828E5}</Project>
+      <Name>Emporer.WPF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GeWISSEN.Utils\GeWISSEN.Utils.csproj">
+      <Project>{4D287C91-7A4F-48EA-A70A-019F6296D744}</Project>
+      <Name>GeWISSEN.Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Milan.JsonStore\Milan.JsonStore.csproj">
+      <Project>{E2C0ABAF-773E-4265-BD7E-0D45A5876A8A}</Project>
+      <Name>Milan.JsonStore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Milan.Simulation.Resources.UI\Milan.Simulation.Resources.UI.csproj">
+      <Project>{E19690A7-628D-44F6-BB07-1504111E1797}</Project>
+      <Name>Milan.Simulation.Resources.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Milan.Simulation.Resources\Milan.Simulation.Resources.csproj">
+      <Project>{A59EBCD0-522B-40C2-BE92-E33E1F70C3BB}</Project>
+      <Name>Milan.Simulation.Resources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Milan.Simulation.ShiftSystems\Milan.Simulation.ShiftSystems.csproj">
+      <Project>{01ADD24F-CA69-4734-B7E6-02406BE9BA7F}</Project>
+      <Name>Milan.Simulation.ShiftSystems</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Milan.Simulation\Milan.Simulation.csproj">
+      <Project>{C6378981-67FE-4F73-9BAC-51EDD9AB8287}</Project>
+      <Name>Milan.Simulation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Milan.Simulation.UI\Milan.Simulation.UI.csproj">
+      <Project>{2A638FE2-E5EC-4721-8DC8-83FBA7D7E88C}</Project>
+      <Name>Milan.Simulation.UI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Controls\Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ArrivalsSectionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AssemblyStationEditView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CapacitySectionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ConnectionSectionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EntryPointEditView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ExitPointEditView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\FailureSectionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GeneralSectionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\InfluencesSectionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\InhomogeneousParallelWorkstationEditView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\InhomogeneousWorkstationEditView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\MaintenanceSectionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MultipleEntitiesSelectionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ParallelWorkstationEditView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ProbabilityAssemblyStationEditView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ProcessingSectionView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SetupSectionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ShiftsSectionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\StorageEditView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\TransformationsSectionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WorkstationEditView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

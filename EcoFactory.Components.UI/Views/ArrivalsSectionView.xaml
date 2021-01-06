@@ -1,0 +1,83 @@
+﻿<UserControl
+  x:Class="EcoFactory.Components.UI.Views.ArrivalsSectionView"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:controls="clr-namespace:Emporer.Math.Distribution.UI.Controls;assembly=Emporer.Math.Distribution.UI"
+  xmlns:wpf="http://www.gewissen-it.de/milan/wpf"
+  xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity">
+  <Grid>
+
+    <Grid.RowDefinitions>
+      <RowDefinition />
+      <RowDefinition />
+      <RowDefinition />
+      <RowDefinition />
+      <RowDefinition />
+      <RowDefinition />
+      <RowDefinition />
+      <RowDefinition />
+      <RowDefinition />
+      <RowDefinition />
+      <RowDefinition />
+      <RowDefinition />
+      <RowDefinition />
+      <RowDefinition />
+    </Grid.RowDefinitions>
+
+    <Label
+      Grid.Row="0"
+      Content="Arrivals for specific product types"
+      Style="{StaticResource PropertyHeader}" />
+
+    <ItemsControl
+      Grid.Row="1"
+      ItemsSource="{Binding ProductTypeSpecificArrivals}"
+      ItemTemplate="{StaticResource ProductTypeDurationDistributionItem}">
+
+      <i:Interaction.Behaviors>
+        <wpf:IgnoreMouseWheelBehavior />
+      </i:Interaction.Behaviors>
+
+    </ItemsControl>
+
+    <Menu
+      Grid.Row="2"
+      ItemsSource="{Binding AddProductTypeSpecificArrivalCommand, Converter={StaticResource SingleObjectToArray}}"
+      ItemContainerStyle="{StaticResource ChainedParameterCommandMenu}"
+      Style="{StaticResource ChainedParameterMenuButton}" />
+
+    <Expander
+      Grid.Row="3"
+      Header="Batch size">
+
+      <controls:DistributionSelector
+        DataContext="{Binding Path=BatchSize}"
+        ValueTemplate="{StaticResource BatchSizeChooser}" />
+
+    </Expander>
+
+    <Label
+      Grid.Row="4"
+      Content="Batch sizes for specific product types"
+      Style="{StaticResource PropertyHeader}" />
+
+    <ItemsControl
+      Grid.Row="5"
+      ItemsSource="{Binding ProductTypeSpecificBatchSizes}"
+      ItemTemplate="{StaticResource ProductTypeNumberDistributionItem}">
+
+      <i:Interaction.Behaviors>
+        <wpf:IgnoreMouseWheelBehavior />
+      </i:Interaction.Behaviors>
+
+    </ItemsControl>
+
+    <Menu
+      Grid.Row="6"
+      ItemsSource="{Binding AddProductTypeSpecificBatchSizeCommand, Converter={StaticResource SingleObjectToArray}}"
+      ItemContainerStyle="{StaticResource ChainedParameterCommandMenu}"
+      Style="{StaticResource ChainedParameterMenuButton}" />
+
+
+  </Grid>
+</UserControl>

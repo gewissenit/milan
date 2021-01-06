@@ -1,0 +1,54 @@
+﻿<UserControl
+  x:Class="Milan.UI.Views.ModelEditorView"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:visualModeling="clr-namespace:Milan.VisualModeling;assembly=Milan.VisualModeling">
+  <x:Code>
+    <![CDATA[ public ModelEditorView() { InitializeComponent(); }]]>
+  </x:Code>
+  <Grid>
+
+    <Grid
+      Visibility="{Binding SelectedModel, Converter={StaticResource NullToCollapsed}}">
+
+      <visualModeling:VisualEditor
+        Name="VisualEditor"
+        Nodes="{Binding Nodes}"
+        Edges="{Binding Edges}"
+        SelectedItems="{Binding SelectedItems, Mode=TwoWay}"
+        Focusable="False"/>
+
+      <Border
+        Visibility="{Binding ModelIsEmpty, Converter={StaticResource BoolToVisibility}}"
+        Background="{DynamicResource ControlBackgroundBrush}">
+        <StackPanel
+          Orientation="Horizontal"
+          HorizontalAlignment="Left"
+          VerticalAlignment="Center">
+          <Rectangle
+            Width="50"
+            Height="50"
+            Margin="30"
+            HorizontalAlignment="Center"
+            Fill="{Binding Path=Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}">
+            <Rectangle.OpacityMask>
+              <VisualBrush
+                Stretch="Uniform"
+                Visual="{DynamicResource appbar_arrow_left}" />
+            </Rectangle.OpacityMask>
+          </Rectangle>
+
+          <TextBlock
+            Margin="12 0 0 0"
+            Style="{StaticResource Heading}"
+            Text="No entity exists. Add one here..." />
+
+        </StackPanel>
+
+      </Border>
+
+    </Grid>
+
+  </Grid>
+
+</UserControl>

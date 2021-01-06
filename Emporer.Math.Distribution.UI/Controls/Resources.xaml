@@ -1,0 +1,753 @@
+﻿<ResourceDictionary
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:viewModels="clr-namespace:Emporer.Math.Distribution.UI.ViewModels"
+  xmlns:controls="clr-namespace:Emporer.Math.Distribution.UI.Controls"
+  xmlns:wpf="http://www.gewissen-it.de/milan/wpf"
+  xmlns:ui="clr-namespace:Emporer.Math.Distribution.UI"
+  xmlns:controls1="http://metro.mahapps.com/winfx/xaml/controls">
+
+  <DataTemplate
+    DataType="{x:Type ui:DistributionDescriptor}">
+
+    <Label
+      HorizontalContentAlignment="Left"
+      VerticalContentAlignment="Center">
+
+      <TextBlock
+        Text="{Binding Name}" />
+
+    </Label>
+
+  </DataTemplate>
+
+  <DataTemplate
+    DataType="{x:Type wpf:DoublePropertyWrapper}">
+
+    <Label
+      Content="{Binding Value}" />
+
+  </DataTemplate>
+
+  <DataTemplate
+    DataType="{x:Type viewModels:ConstantDistributionViewModel}">
+
+    <Grid>
+
+      <Grid.RowDefinitions>
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+      </Grid.RowDefinitions>
+
+      <Label
+        Grid.Row="0"
+        Style="{StaticResource PropertyHeader}"
+        Content="Constant Value" />
+
+      <ContentControl
+        Grid.Row="1"
+        Focusable="False"
+        Content="{Binding Path=ConstantValue}"
+        ContentTemplate="{Binding Path=ValueTemplate, RelativeSource={RelativeSource Mode=FindAncestor,  AncestorType=controls:DistributionEditor}}" />
+
+    </Grid>
+
+  </DataTemplate>
+
+  <DataTemplate
+    DataType="{x:Type viewModels:GeometricDistributionViewModel}">
+
+    <Grid>
+
+      <Grid.RowDefinitions>
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+      </Grid.RowDefinitions>
+
+      <Label
+        Grid.Row="0"
+        Style="{StaticResource PropertyHeader}"
+        Content="Probability" />
+
+      <ContentControl
+        Grid.Row="1"
+        Focusable="False"
+        Content="{Binding Path=Probability}"
+        ContentTemplate="{Binding Path=ValueTemplate, RelativeSource={RelativeSource Mode=FindAncestor,  AncestorType=controls:DistributionEditor}}" />
+
+    </Grid>
+
+  </DataTemplate>
+
+  <DataTemplate
+    DataType="{x:Type viewModels:BernoulliDistributionViewModel}">
+
+    <Grid>
+
+      <Grid.RowDefinitions>
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+      </Grid.RowDefinitions>
+
+      <Label
+        Grid.Row="0"
+        Style="{StaticResource PropertyHeader}"
+        Content="Probability" />
+
+      <ContentControl
+        Grid.Row="1"
+        Focusable="False"
+        Content="{Binding Path=Probability}"
+        ContentTemplate="{Binding Path=ValueTemplate, RelativeSource={RelativeSource Mode=FindAncestor,  AncestorType=controls:DistributionEditor}}" />
+
+    </Grid>
+
+  </DataTemplate>
+
+  <DataTemplate
+    DataType="{x:Type viewModels:UniformDistributionViewModel}">
+
+    <Grid>
+
+      <Grid.RowDefinitions>
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+      </Grid.RowDefinitions>
+
+      <Label
+        Grid.Row="0"
+        Style="{StaticResource PropertyHeader}"
+        Content="Lower Border" />
+
+      <ContentControl
+        Grid.Row="1"
+        Focusable="False"
+        Content="{Binding Path=LowerBorder}"
+        ContentTemplate="{Binding Path=ValueTemplate, RelativeSource={RelativeSource Mode=FindAncestor,  AncestorType=controls:DistributionEditor}}" />
+
+      <Label
+        Grid.Row="2"
+        Style="{StaticResource PropertyHeader}"
+        Content="Upper Border" />
+
+      <ContentControl
+        Grid.Row="3"
+        Focusable="False"
+        Content="{Binding Path=UpperBorder}"
+        ContentTemplate="{Binding Path=ValueTemplate, RelativeSource={RelativeSource Mode=FindAncestor,  AncestorType=controls:DistributionEditor}}" />
+
+    </Grid>
+
+  </DataTemplate>
+
+  <DataTemplate
+    DataType="{x:Type viewModels:ExponentialDistributionViewModel}">
+
+    <Grid>
+
+      <Grid.RowDefinitions>
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+      </Grid.RowDefinitions>
+
+      <Label
+        Grid.Row="0"
+        Style="{StaticResource PropertyHeader}"
+        Content="Mean" />
+
+      <ContentControl
+        Grid.Row="1"
+        Focusable="False"
+        Content="{Binding Path=Mean}"
+        ContentTemplate="{Binding Path=ValueTemplate, RelativeSource={RelativeSource Mode=FindAncestor,  AncestorType=controls:DistributionEditor}}" />
+
+      <Label
+        Grid.Row="2"
+        Style="{StaticResource PropertyHeader}"
+        Content="Minimum" />
+
+      <ContentControl
+        Grid.Row="3"
+        Focusable="False"
+        Content="{Binding Path=Minimum}"
+        ContentTemplate="{Binding Path=ValueTemplate, RelativeSource={RelativeSource Mode=FindAncestor,  AncestorType=controls:DistributionEditor}}" />
+    </Grid>
+  </DataTemplate>
+
+  <DataTemplate
+    DataType="{x:Type viewModels:GammaDistributionViewModel}">
+
+    <Grid>
+
+      <Grid.RowDefinitions>
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+      </Grid.RowDefinitions>
+
+      <Label
+        Grid.Row="0"
+        Style="{StaticResource PropertyHeader}"
+        Content="Scale" />
+
+      <ContentControl
+        Grid.Row="1"
+        Focusable="False"
+        Content="{Binding Path=Scale}"
+        ContentTemplate="{Binding Path=ValueTemplate, RelativeSource={RelativeSource Mode=FindAncestor,  AncestorType=controls:DistributionEditor}}" />
+
+      <Label
+        Grid.Row="2"
+        Style="{StaticResource PropertyHeader}"
+        Content="Shape" />
+
+      <ContentControl
+        Grid.Row="3"
+        Focusable="False"
+        Content="{Binding Path=Shape}"
+        ContentTemplate="{Binding Path=ValueTemplate, RelativeSource={RelativeSource Mode=FindAncestor,  AncestorType=controls:DistributionEditor}}" />
+
+      <Label
+        Grid.Row="4"
+        Style="{StaticResource PropertyHeader}"
+        Content="Minimum" />
+
+      <ContentControl
+        Grid.Row="5"
+        Focusable="False"
+        Content="{Binding Path=Minimum}"
+        ContentTemplate="{Binding Path=ValueTemplate, RelativeSource={RelativeSource Mode=FindAncestor,  AncestorType=controls:DistributionEditor}}" />
+    </Grid>
+  </DataTemplate>
+
+  <DataTemplate
+    DataType="{x:Type viewModels:NormalDistributionViewModel}">
+
+    <Grid>
+
+      <Grid.RowDefinitions>
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+      </Grid.RowDefinitions>
+
+      <Label
+        Grid.Row="0"
+        Style="{StaticResource PropertyHeader}"
+        Content="Mean" />
+
+      <ContentControl
+        Grid.Row="1"
+        Focusable="False"
+        Content="{Binding Path=Mean}"
+        ContentTemplate="{Binding Path=ValueTemplate, RelativeSource={RelativeSource Mode=FindAncestor,  AncestorType=controls:DistributionEditor}}" />
+
+      <Label
+        Grid.Row="2"
+        Style="{StaticResource PropertyHeader}"
+        Content="Standard Deviation" />
+
+      <ContentControl
+        Grid.Row="3"
+        Focusable="False"
+        Content="{Binding Path=StandardDeviation}"
+        ContentTemplate="{Binding Path=ValueTemplate, RelativeSource={RelativeSource Mode=FindAncestor,  AncestorType=controls:DistributionEditor}}" />
+    </Grid>
+  </DataTemplate>
+
+  <DataTemplate
+    DataType="{x:Type viewModels:PoissonDistributionViewModel}">
+
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+      </Grid.RowDefinitions>
+
+      <Label
+        Grid.Row="0"
+        Style="{StaticResource PropertyHeader}"
+        Content="Mean" />
+
+      <ContentControl
+        Grid.Row="1"
+        Focusable="False"
+        Content="{Binding Path=Mean}"
+        ContentTemplate="{Binding Path=ValueTemplate, RelativeSource={RelativeSource Mode=FindAncestor,  AncestorType=controls:DistributionEditor}}" />
+
+      <Label
+        Grid.Row="2"
+        Style="{StaticResource PropertyHeader}"
+        Content="Expected Mean" />
+
+      <ContentControl
+        Grid.Row="3"
+        Focusable="False"
+        Content="{Binding Path=ExpMean}"
+        ContentTemplate="{Binding Path=ValueTemplate, RelativeSource={RelativeSource Mode=FindAncestor,  AncestorType=controls:DistributionEditor}}" />
+    </Grid>
+
+  </DataTemplate>
+
+  <DataTemplate
+    DataType="{x:Type viewModels:TriangularDistributionViewModel}">
+
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+      </Grid.RowDefinitions>
+
+      <Label
+        Grid.Row="0"
+        Style="{StaticResource PropertyHeader}"
+        Content="Mean" />
+
+      <ContentControl
+        Grid.Row="1"
+        Focusable="False"
+        Content="{Binding Path=Mean}"
+        ContentTemplate="{Binding Path=ValueTemplate, RelativeSource={RelativeSource Mode=FindAncestor,  AncestorType=controls:DistributionEditor}}" />
+
+      <Label
+        Grid.Row="2"
+        Style="{StaticResource PropertyHeader}"
+        Content="Lower Border" />
+
+      <ContentControl
+        Grid.Row="3"
+        Focusable="False"
+        Content="{Binding Path=LowerBorder}"
+        ContentTemplate="{Binding Path=ValueTemplate, RelativeSource={RelativeSource Mode=FindAncestor,  AncestorType=controls:DistributionEditor}}" />
+
+      <Label
+        Grid.Row="4"
+        Style="{StaticResource PropertyHeader}"
+        Content="Upper Border" />
+
+      <ContentControl
+        Grid.Row="5"
+        Focusable="False"
+        Content="{Binding Path=UpperBorder}"
+        ContentTemplate="{Binding Path=ValueTemplate, RelativeSource={RelativeSource Mode=FindAncestor,  AncestorType=controls:DistributionEditor}}" />
+    </Grid>
+
+  </DataTemplate>
+
+  <DataTemplate
+    DataType="{x:Type viewModels:BetaDistributionViewModel}">
+
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+      </Grid.RowDefinitions>
+
+      <Label
+        Grid.Row="0"
+        Style="{StaticResource PropertyHeader}"
+        Content="Minimum" />
+
+      <ContentControl
+        Grid.Row="1"
+        Focusable="False"
+        Content="{Binding Path=Minimum}"
+        ContentTemplate="{Binding Path=ValueTemplate, RelativeSource={RelativeSource Mode=FindAncestor,  AncestorType=controls:DistributionEditor}}" />
+
+      <Label
+        Grid.Row="2"
+        Style="{StaticResource PropertyHeader}"
+        Content="Maximum" />
+
+      <ContentControl
+        Grid.Row="3"
+        Focusable="False"
+        Content="{Binding Path=Maximum}"
+        ContentTemplate="{Binding Path=ValueTemplate, RelativeSource={RelativeSource Mode=FindAncestor,  AncestorType=controls:DistributionEditor}}" />
+
+      <Label
+        Grid.Row="4"
+        Style="{StaticResource PropertyHeader}"
+        Content="First Shape" />
+
+      <ContentControl
+        Grid.Row="5"
+        Focusable="False"
+        Content="{Binding Path=FirstShape}"
+        ContentTemplate="{Binding Path=ValueTemplate, RelativeSource={RelativeSource Mode=FindAncestor,  AncestorType=controls:DistributionEditor}}" />
+
+      <Label
+        Grid.Row="6"
+        Style="{StaticResource PropertyHeader}"
+        Content="Second Shape" />
+
+      <ContentControl
+        Grid.Row="7"
+        Focusable="False"
+        Content="{Binding Path=SecondShape}"
+        ContentTemplate="{Binding Path=ValueTemplate, RelativeSource={RelativeSource Mode=FindAncestor,  AncestorType=controls:DistributionEditor}}" />
+    </Grid>
+
+  </DataTemplate>
+
+  <DataTemplate
+    DataType="{x:Type viewModels:WeibullDistributionViewModel}">
+
+    <Grid>
+
+      <Grid.RowDefinitions>
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+      </Grid.RowDefinitions>
+
+      <Label
+        Grid.Row="0"
+        Style="{StaticResource PropertyHeader}"
+        Content="Scale" />
+
+      <ContentControl
+        Grid.Row="1"
+        Focusable="False"
+        Content="{Binding Path=Scale}"
+        ContentTemplate="{Binding Path=ValueTemplate, RelativeSource={RelativeSource Mode=FindAncestor,  AncestorType=controls:DistributionEditor}}" />
+
+      <Label
+        Grid.Row="2"
+        Style="{StaticResource PropertyHeader}"
+        Content="Shape" />
+
+      <ContentControl
+        Grid.Row="3"
+        Focusable="False"
+        Content="{Binding Path=Shape}"
+        ContentTemplate="{Binding Path=ValueTemplate, RelativeSource={RelativeSource Mode=FindAncestor,  AncestorType=controls:DistributionEditor}}" />
+
+    </Grid>
+
+  </DataTemplate>
+
+  <DataTemplate
+    DataType="{x:Type viewModels:LogNormalDistributionViewModel}">
+
+    <Grid>
+
+      <Grid.RowDefinitions>
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+      </Grid.RowDefinitions>
+
+      <Label
+        Grid.Row="0"
+        Style="{StaticResource PropertyHeader}"
+        Content="Mean" />
+
+      <ContentControl
+        Grid.Row="1"
+        Focusable="False"
+        Content="{Binding Path=Mean}"
+        ContentTemplate="{Binding Path=ValueTemplate, RelativeSource={RelativeSource Mode=FindAncestor,  AncestorType=controls:DistributionEditor}}" />
+
+      <Label
+        Grid.Row="2"
+        Style="{StaticResource PropertyHeader}"
+        Content="Standard Deviation" />
+
+      <ContentControl
+        Grid.Row="3"
+        Focusable="False"
+        Content="{Binding Path=StandardDeviation}"
+        ContentTemplate="{Binding Path=ValueTemplate, RelativeSource={RelativeSource Mode=FindAncestor,  AncestorType=controls:DistributionEditor}}" />
+
+      <Label
+        Grid.Row="4"
+        Style="{StaticResource PropertyHeader}"
+        Content="Minimum" />
+
+      <ContentControl
+        Grid.Row="5"
+        Focusable="False"
+        Content="{Binding Path=Minimum}"
+        ContentTemplate="{Binding Path=ValueTemplate, RelativeSource={RelativeSource Mode=FindAncestor,  AncestorType=controls:DistributionEditor}}" />
+
+      <controls1:ToggleSwitch
+        Grid.Row="6"
+        OnLabel="Parameters are normal distributed"
+        OffLabel="Parameters are calculated"
+        IsChecked="{Binding ParamsNormal}" />
+
+    </Grid>
+
+  </DataTemplate>
+
+  <DataTemplate
+    DataType="{x:Type viewModels:ErlangDistributionViewModel}">
+
+    <Grid>
+
+      <Grid.RowDefinitions>
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+      </Grid.RowDefinitions>
+
+      <Label
+        Grid.Row="0"
+        Style="{StaticResource PropertyHeader}"
+        Content="Mean" />
+
+      <ContentControl
+        Grid.Row="1"
+        Focusable="False"
+        Content="{Binding Path=Mean}"
+        ContentTemplate="{Binding Path=ValueTemplate, RelativeSource={RelativeSource Mode=FindAncestor,  AncestorType=controls:DistributionEditor}}" />
+
+      <Label
+        Grid.Row="2"
+        Style="{StaticResource PropertyHeader}"
+        Content="Minimum" />
+
+      <ContentControl
+        Grid.Row="3"
+        Focusable="False"
+        Content="{Binding Path=Minimum}"
+        ContentTemplate="{Binding Path=ValueTemplate, RelativeSource={RelativeSource Mode=FindAncestor,  AncestorType=controls:DistributionEditor}}" />
+
+      <Label
+        Grid.Row="4"
+        Style="{StaticResource PropertyHeader}"
+        Content="Order" />
+
+      <controls1:NumericUpDown
+        Minimum="0"
+        Grid.Row="5"
+        Value="{Binding Path=Order}" />
+
+    </Grid>
+
+  </DataTemplate>
+
+  <!-- List Of Values -->
+
+  <DataTemplate
+    DataType="{x:Type viewModels:ListOfValuesDistributionViewModel}">
+
+    <Grid>
+
+      <Grid.RowDefinitions>
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="*" />
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+      </Grid.RowDefinitions>
+
+      <Label
+        Grid.Row="0"
+        Style="{StaticResource PropertyHeader}"
+        Content="Values" />
+
+      <ListBox
+        Grid.Row="1"
+        SelectedIndex="{Binding SelectedIndex}"
+        ItemsSource="{Binding Path=Values}"
+        AlternationCount="{Binding Path=Values.Count}">
+
+        <ListBox.ItemTemplate>
+          <DataTemplate>
+            <StackPanel
+              Orientation="Horizontal">
+
+              <Label
+                Margin="0 3 6 3"
+                VerticalAlignment="Center"
+                Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=TemplatedParent.(ItemsControl.AlternationIndex)}" />
+
+              <Label
+                VerticalAlignment="Center"
+                Content="{Binding}" />
+
+            </StackPanel>
+          </DataTemplate>
+        </ListBox.ItemTemplate>
+
+      </ListBox>
+
+      <Grid
+        Grid.Row="2">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition />
+          <ColumnDefinition
+            Width="Auto" />
+          <ColumnDefinition
+            Width="Auto" />
+          <ColumnDefinition
+            Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <ContentControl
+          Grid.Column="0"
+          HorizontalAlignment="Stretch"
+          Focusable="False"
+          Content="{Binding Path=CurrentValue}"
+          ContentTemplate="{Binding Path=ValueTemplate, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=controls:DistributionEditor}}" />
+
+        <Button
+          Grid.Column="1"
+          Style="{StaticResource ChromelessButtonStyle}"
+          Command="{Binding AddCurrentValueToList}">
+          <Rectangle
+            Width="20"
+            Height="20"
+            Margin="2"
+            HorizontalAlignment="Center"
+            Fill="{Binding Path=Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}">
+            <Rectangle.OpacityMask>
+              <VisualBrush
+                Stretch="Uniform"
+                Visual="{DynamicResource appbar_add}" />
+            </Rectangle.OpacityMask>
+          </Rectangle>
+        </Button>
+
+        <Button
+          Grid.Column="2"
+          Style="{StaticResource ChromelessButtonStyle}"
+          Command="{Binding RemoveSelectedValueFromList}">
+          <Rectangle
+            Width="20"
+            Height="20"
+            Margin="2"
+            HorizontalAlignment="Center"
+            Fill="{Binding Path=Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}">
+            <Rectangle.OpacityMask>
+              <VisualBrush
+                Stretch="Uniform"
+                Visual="{DynamicResource appbar_minus}" />
+            </Rectangle.OpacityMask>
+          </Rectangle>
+        </Button>
+
+        <Button
+          Grid.Column="3"
+          Style="{StaticResource ChromelessButtonStyle}"
+          Command="{Binding ImportValuesFromCsv}">
+          <Rectangle
+            Width="20"
+            Height="20"
+            Margin="2"
+            HorizontalAlignment="Center"
+            Fill="{Binding Path=Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}">
+            <Rectangle.OpacityMask>
+              <VisualBrush
+                Stretch="Uniform"
+                Visual="{DynamicResource appbar_folder_open}" />
+            </Rectangle.OpacityMask>
+          </Rectangle>
+        </Button>
+      </Grid>
+
+      <controls1:ToggleSwitch
+        Grid.Row="3"
+        OnLabel="Use values periodically"
+        OffLabel="Only use values one time"
+        IsChecked="{Binding IsPeriodic}" />
+
+    </Grid>
+
+  </DataTemplate>
+
+</ResourceDictionary>

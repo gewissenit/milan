@@ -1,0 +1,101 @@
+﻿<UserControl
+  x:Class="Emporer.Material.UI.Views.CategoriesSectionView"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+  xmlns:viewModels="clr-namespace:Emporer.Material.UI.ViewModels"
+  mc:Ignorable="d"
+  d:DesignHeight="300"
+  d:DesignWidth="300">
+
+  <UserControl.Resources>
+
+    <ResourceDictionary>
+
+      <SolidColorBrush
+        x:Key="DirectCategoryHighlightBrush"
+        Color="{DynamicResource HighlightColor}" />
+
+      <SolidColorBrush
+        x:Key="IndirectCategoryHighlightBrush"
+        Color="{DynamicResource AccentColor4}" />
+
+      <HierarchicalDataTemplate
+        DataType="{x:Type viewModels:SelectedCategoryViewModel}"
+        ItemsSource="{Binding ChildCategories}">
+
+        <StackPanel
+          Name="_CategoryPanel"
+          Orientation="Horizontal">
+
+          <CheckBox
+            Name="_IsSelectedCheckBox"
+            Margin="0,0,10,0"
+            VerticalAlignment="Center"
+            VerticalContentAlignment="Center"
+            IsChecked="{Binding IsSelected}" />
+
+          <TextBlock
+            Name="_CategoryNameTextBlock"
+            Margin="0,0,20,0"
+            VerticalAlignment="Center"
+            Text="{Binding Category.Name}" />
+
+        </StackPanel>
+
+        <DataTemplate.Triggers>
+
+          <DataTrigger
+            Value="true"
+            Binding="{Binding IsIndirectlySelected}">
+
+            <Setter
+              TargetName="_CategoryNameTextBlock"
+              Property="Foreground"
+              Value="{StaticResource IndirectCategoryHighlightBrush}" />
+          </DataTrigger>
+
+          <DataTrigger
+            Value="true"
+            Binding="{Binding IsSelected}">
+
+            <Setter
+              TargetName="_CategoryPanel"
+              Property="Background"
+              Value="{StaticResource DirectCategoryHighlightBrush}" />
+          </DataTrigger>
+
+        </DataTemplate.Triggers>
+
+      </HierarchicalDataTemplate>
+
+    </ResourceDictionary>
+
+  </UserControl.Resources>
+
+  <Grid>
+
+    <TreeView
+      HorizontalContentAlignment="Stretch"
+      ItemsSource="{Binding Path=RootCategories}"
+      VirtualizingStackPanel.IsVirtualizing="True"
+      VirtualizingStackPanel.VirtualizationMode="Recycling"
+      ScrollViewer.HorizontalScrollBarVisibility="Auto"
+      ScrollViewer.VerticalScrollBarVisibility="Auto"
+      BorderThickness="0">
+
+      <TreeView.ItemContainerStyle>
+        <Style
+          TargetType="TreeViewItem"
+          BasedOn="{StaticResource MetroTreeViewItem}">
+          <Setter
+            Property="IsExpanded"
+            Value="{Binding IsIndirectlySelected, Mode=OneTime}" />
+        </Style>
+      </TreeView.ItemContainerStyle>
+
+    </TreeView>
+
+  </Grid>
+</UserControl>

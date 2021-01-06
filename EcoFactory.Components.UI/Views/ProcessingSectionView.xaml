@@ -1,0 +1,146 @@
+﻿<UserControl
+  x:Class="EcoFactory.Components.UI.Views.ProcessingSectionView"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:controls="clr-namespace:Emporer.Math.Distribution.UI.Controls;assembly=Emporer.Math.Distribution.UI"
+  xmlns:wpf="http://www.gewissen-it.de/milan/wpf"
+  xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity">
+
+  <Grid>
+
+    <Grid.RowDefinitions>
+      <RowDefinition />
+      <RowDefinition />
+      <RowDefinition />
+      <RowDefinition />
+      <RowDefinition />
+      <RowDefinition />
+      <RowDefinition />
+      <RowDefinition />
+      <RowDefinition />
+      <RowDefinition />
+      <RowDefinition />
+      <RowDefinition />
+      <RowDefinition />
+      <RowDefinition />
+    </Grid.RowDefinitions>
+
+    <Expander
+      Grid.Row="0"
+      Header="Duration">
+
+      <controls:DistributionSelector
+        DataContext="{Binding Path=ProcessingDuration}"
+        ValueTemplate="{StaticResource TimeSpanChooser}" />
+
+    </Expander>
+
+    <Expander
+      Grid.Row="1"
+      Header="Batch size">
+
+      <controls:DistributionSelector
+        DataContext="{Binding Path=BatchSize}"
+        ValueTemplate="{StaticResource BatchSizeChooser}" />
+
+    </Expander>
+
+    <Label
+      Grid.Row="2"
+      Style="{StaticResource PropertyHeader}"
+      Content="Durations for specific product types" />
+
+    <ItemsControl
+      Grid.Row="3"
+      Focusable="False"
+      ItemsSource="{Binding ProductTypeSpecificProcessingDurations}"
+      ItemTemplate="{StaticResource ProductTypeDurationDistributionItem}">
+
+      <i:Interaction.Behaviors>
+        <wpf:IgnoreMouseWheelBehavior />
+      </i:Interaction.Behaviors>
+
+    </ItemsControl>
+
+    <Menu
+      Grid.Row="4"
+      ItemsSource="{Binding AddProductTypeSpecificProcessingDurationCommand, Converter={StaticResource SingleObjectToArray}}"
+      ItemContainerStyle="{StaticResource ChainedParameterCommandMenu}"
+      Style="{StaticResource ChainedParameterMenuButton}" />
+
+    <!--  Batch Sizes  -->
+
+    <Label
+      Grid.Row="5"
+      Style="{StaticResource PropertyHeader}"
+      Content="Batch sizes for specific product types" />
+
+    <ItemsControl
+      Grid.Row="6"
+      Focusable="False"
+      ItemsSource="{Binding ProductTypeSpecificBatchSizes}"
+      ItemTemplate="{StaticResource ProductTypeNumberDistributionItem}">
+
+      <i:Interaction.Behaviors>
+        <wpf:IgnoreMouseWheelBehavior />
+      </i:Interaction.Behaviors>
+
+    </ItemsControl>
+
+    <Menu
+      Grid.Row="7"
+      ItemsSource="{Binding AddProductTypeSpecificBatchSizeCommand, Converter={StaticResource SingleObjectToArray}}"
+      ItemContainerStyle="{StaticResource ChainedParameterCommandMenu}"
+      Style="{StaticResource ChainedParameterMenuButton}" />
+
+    <!--  Resources  -->
+
+    <Label
+      Grid.Row="8"
+      Content="Resources"
+      Style="{StaticResource PropertyHeader}" />
+
+    <ItemsControl
+      Grid.Row="9"
+      Focusable="False"
+      ItemsSource="{Binding ProcessingResources}"
+      ItemTemplate="{StaticResource ResourceTypeAmountItem}">
+
+      <i:Interaction.Behaviors>
+        <wpf:IgnoreMouseWheelBehavior />
+      </i:Interaction.Behaviors>
+
+    </ItemsControl>
+
+    <Menu
+      Grid.Row="10"
+      ItemsSource="{Binding AddProcessingResourceCommand, Converter={StaticResource SingleObjectToArray}}"
+      ItemContainerStyle="{StaticResource ChainedParameterCommand}"
+      Style="{StaticResource ChainedParameterMenuButton}" />
+
+    <Label
+      Grid.Row="11"
+      Content="Resources for specific product types"
+      Style="{StaticResource PropertyHeader}" />
+
+    <ItemsControl
+      Grid.Row="12"
+      Focusable="False"
+      ItemsSource="{Binding ProductTypeSpecificProcessingResources}"
+      ItemTemplate="{StaticResource ResourceTypeAmountItem}">
+
+      <i:Interaction.Behaviors>
+        <wpf:IgnoreMouseWheelBehavior />
+      </i:Interaction.Behaviors>
+
+    </ItemsControl>
+
+    <Menu
+      Grid.Row="13"
+      ItemsSource="{Binding AddProductTypeSpecificProcessingResourceCommand, Converter={StaticResource SingleObjectToArray}}"
+      ItemContainerStyle="{StaticResource ChainedParameterCommand}"
+      Style="{StaticResource ChainedParameterMenuButton}" />
+
+  </Grid>
+
+</UserControl>

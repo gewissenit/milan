@@ -1,0 +1,46 @@
+﻿<UserControl
+  x:Class="Milan.UI.Views.FlowsNavigatorView"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+  xmlns:cal="http://www.caliburnproject.org"
+  xmlns:wpf="http://www.gewissen-it.de/milan/wpf"
+  xmlns:viewModels1="clr-namespace:Milan.Simulation.UI.ViewModels;assembly=Milan.Simulation.UI"
+  MinWidth="250"
+  MinHeight="300">
+
+  <TreeView
+    x:Name="Models">
+
+    <i:Interaction.Behaviors>
+
+      <wpf:BindableSelectedTreeViewItemBehavior
+        SelectedItem="{Binding SelectedViewModelItem, Mode=OneWayToSource}" />
+
+    </i:Interaction.Behaviors>
+
+    <TreeView.Resources>
+
+      <HierarchicalDataTemplate
+        DataType="{x:Type viewModels1:ModelNavigationViewModel}"
+        ItemsSource="{Binding Items}">
+
+        <ContentControl
+          cal:View.Model="{Binding}" />
+
+      </HierarchicalDataTemplate>
+
+      <DataTemplate
+        DataType="{x:Type viewModels1:EntityNavigationViewModel}">
+
+        <ContentControl
+          cal:View.Model="{Binding}" />
+
+      </DataTemplate>
+
+    </TreeView.Resources>
+
+  </TreeView>
+
+
+</UserControl>

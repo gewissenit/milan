@@ -1,0 +1,38 @@
+﻿<UserControl
+  x:Class="Milan.Simulation.UI.Views.TimeBasedNamedProcessEditView"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:controls="clr-namespace:Emporer.Math.Distribution.UI.Controls;assembly=Emporer.Math.Distribution.UI">
+
+  <Grid>
+
+    <Grid.RowDefinitions>
+      <RowDefinition
+        Height="Auto" />
+      <RowDefinition
+        Height="Auto" />
+    </Grid.RowDefinitions>
+
+    <Expander
+      Grid.Row="0"
+      Header="Duration">
+
+      <controls:DistributionSelector
+        DataContext="{Binding Path=Duration}"
+        ValueTemplate="{StaticResource TimeSpanChooser}" />
+
+    </Expander>
+
+    <Expander
+      Grid.Row="1"
+      Header="Occurrence">
+
+      <controls:DistributionSelector
+        DataContext="{Binding Path=Occurrence}"
+        ValueTemplate="{StaticResource TimeSpanChooser}" />
+
+    </Expander>
+
+  </Grid>
+
+</UserControl>

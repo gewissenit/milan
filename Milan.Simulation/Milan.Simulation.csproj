@@ -1,0 +1,316 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <ProjectGuid>{C6378981-67FE-4F73-9BAC-51EDD9AB8287}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Milan.Simulation</RootNamespace>
+    <AssemblyName>Milan.Simulation</AssemblyName>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <OutputPath>..\..\build\emporer\bin</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+    <NoWarn>
+    </NoWarn>
+    <WarningsNotAsErrors>
+    </WarningsNotAsErrors>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>..\..\build\emporer\bin</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+    <NoWarn>
+    </NoWarn>
+    <WarningsNotAsErrors>
+    </WarningsNotAsErrors>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>True</Optimize>
+    <DefineConstants>TRACE</DefineConstants>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\build\x64\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>..\..\build\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Compile Include="Accessories\CategorizedEntity.cs" />
+    <Compile Include="Accessories\ConditionalQueue.cs" />
+    <Compile Include="Accessories\FiniteQueue.cs" />
+    <Compile Include="Accessories\FiniteQueueCluster.cs" />
+    <Compile Include="Accessories\FiniteQueueEventArgs.cs" />
+    <Compile Include="Accessories\IMaster.cs" />
+    <Compile Include="Accessories\IQueueCondition.cs" />
+    <Compile Include="Accessories\ISlave.cs" />
+    <Compile Include="Accessories\MasterSlaveQueue.cs" />
+    <Compile Include="Accessories\Queue.cs" />
+    <Compile Include="AmountBasedNamedProcessConfiguration.cs" />
+    <Compile Include="Connection.cs" />
+    <Compile Include="DeleteRules\ConnectionIsNotReferencedInAnyStationaryElement.cs" />
+    <Compile Include="DeleteRules\EnitityIsNotReferencedInAnyObserver.cs" />
+    <Compile Include="DeleteRules\EntityIsNotReferencedInAnyModel.cs" />
+    <Compile Include="DeleteRules\ObserverIsNotReferencedInAnyModel.cs" />
+    <Compile Include="DeleteRules\ProductTypeIsNotReferencedInAnyConnection.cs" />
+    <Compile Include="DeleteRules\ProductTypeIsNotReferencedInAnyObserver.cs" />
+    <Compile Include="DeleteRules\StationaryElementIsNotReferencedInAnyConnection.cs" />
+    <Compile Include="Experiment.cs" />
+    <Compile Include="DurationRelatedValue.cs" />
+    <Compile Include="Events\Events.cs" />
+    <Compile Include="Events\FinishExperimentEvent.cs" />
+    <Compile Include="Events\IProductsRelatedEvent.cs" />
+    <Compile Include="Events\IRelatedEvent.cs" />
+    <Compile Include="Events\ISimulationEvent.cs" />
+    <Compile Include="Events\ProductsRelatedEndEvent.cs" />
+    <Compile Include="Events\ProductsRelatedEvent.cs" />
+    <Compile Include="Events\RelatedEvent.cs" />
+    <Compile Include="Events\SettlingTimeFinishedEvent.cs" />
+    <Compile Include="Events\SimulationEndEvent.cs" />
+    <Compile Include="Events\SimulationEvent.cs" />
+    <Compile Include="ExperimentConfiguration.cs" />
+    <Compile Include="ExperimentEventArgs.cs" />
+    <Compile Include="Factories\AmountBasedNamedProcessConfigurationFactory.cs" />
+    <Compile Include="Factories\ConnectionFactory.cs" />
+    <Compile Include="Factories\ExperimentFactory.cs" />
+    <Compile Include="Factories\EventLogWriterFactory.cs" />
+    <Compile Include="Factories\EventsReportDataProviderFactory.cs" />
+    <Compile Include="Factories\ExperimentObserverFactory.cs" />
+    <Compile Include="Factories\IConnectionFactory.cs" />
+    <Compile Include="Factories\INamedProcessConfigurationFactory.cs" />
+    <Compile Include="Factories\IProductTypeAmountFactory.cs" />
+    <Compile Include="Factories\IProductTypeDistributionFactory.cs" />
+    <Compile Include="Factories\ISimulationObserverFactory.cs" />
+    <Compile Include="Factories\EntityFactory.cs" />
+    <Compile Include="Factories\IAdditionalEntityDuplicationAction.cs" />
+    <Compile Include="Factories\IEntityFactory.cs" />
+    <Compile Include="Factories\IExperimentFactory.cs" />
+    <Compile Include="Factories\IModelFactory.cs" />
+    <Compile Include="Factories\ITerminationCriteriaFactory.cs" />
+    <Compile Include="Factories\ModelFactory.cs" />
+    <Compile Include="Factories\NamedProcessConfigurationFactory.cs" />
+    <Compile Include="Factories\ProductLifeCycleLogWriterFactory.cs" />
+    <Compile Include="Factories\ThroughputObserverFactory.cs" />
+    <Compile Include="Factories\ProductTerminationCriteriaFactory.cs" />
+    <Compile Include="Factories\ProductTypeAmountFactory.cs" />
+    <Compile Include="Factories\ProductTypeDistributionFactory.cs" />
+    <Compile Include="Factories\ProductTypeFactory.cs" />
+    <Compile Include="Factories\TimeBasedNamedProcessConfigurationFactory.cs" />
+    <Compile Include="Factories\ThroughputsReportDataProviderFactory.cs" />
+    <Compile Include="Factories\TimesReportDataProviderFactory.cs" />
+    <Compile Include="Factories\TimeTerminationCriteriaFactory.cs" />
+    <Compile Include="IConnection.cs" />
+    <Compile Include="INamedProcessConfiguration.cs" />
+    <Compile Include="INode.cs" />
+    <Compile Include="IProductType.cs" />
+    <Compile Include="IProductTypeAmount.cs" />
+    <Compile Include="IProductTypeDistribution.cs" />
+    <Compile Include="IReceiver.cs" />
+    <Compile Include="IStationaryElement.cs" />
+    <Compile Include="LocationChange.cs" />
+    <Compile Include="LocationChangeInfo.cs" />
+    <Compile Include="Logging\ExperimentLogProvider.cs" />
+    <Compile Include="Logging\IExperimentLogWriterProvider.cs" />
+    <Compile Include="Logging\ILogFileWriter.cs" />
+    <Compile Include="Logging\LogFileWriter.cs" />
+    <Compile Include="NamedProcessConfiguration.cs" />
+    <Compile Include="NullProductType.cs" />
+    <Compile Include="Observers\EntityEventObserver.cs" />
+    <Compile Include="Observers\EntityObserver.cs" />
+    <Compile Include="Observers\EntityTypeObserver.cs" />
+    <Compile Include="Observers\EventLogWriter.cs" />
+    <Compile Include="Observers\ExperimentObserver.cs" />
+    <Compile Include="Observers\IEntityEventObserver.cs" />
+    <Compile Include="Observers\IEntityObserver.cs" />
+    <Compile Include="Observers\IEntityTypeObserver.cs" />
+    <Compile Include="Observers\IProcessObserver.cs" />
+    <Compile Include="Observers\IProductRelated.cs" />
+    <Compile Include="Observers\IProductTerminationCriteria.cs" />
+    <Compile Include="Observers\ISimulationObservable.cs" />
+    <Compile Include="Observers\ISimulationObserver.cs" />
+    <Compile Include="Factories\IStatisticalObserverFactory.cs" />
+    <Compile Include="Observers\ITerminationCriteria.cs" />
+    <Compile Include="Observers\ITimeReferenced.cs" />
+    <Compile Include="Observers\ITimeTerminationCriteria.cs" />
+    <Compile Include="Observers\Position.cs" />
+    <Compile Include="Observers\ProductLifeCycleLogWriter.cs" />
+    <Compile Include="Observers\ThroughputObserver.cs" />
+    <Compile Include="Observers\ProductTerminationCriteria.cs" />
+    <Compile Include="Observers\QuantityReference.cs" />
+    <Compile Include="Observers\SchedulerLogWriter.cs" />
+    <Compile Include="Observers\SchedulerObserver.cs" />
+    <Compile Include="Observers\ProcessObserver.cs" />
+    <Compile Include="Observers\TimeReference.cs" />
+    <Compile Include="Observers\TimeTerminationCriteria.cs" />
+    <Compile Include="Product.cs" />
+    <Compile Include="ProductTransmitter.cs" />
+    <Compile Include="ProductType.cs" />
+    <Compile Include="ProductTypeAmount.cs" />
+    <Compile Include="ProductTypeDistribution.cs" />
+    <Compile Include="Reporting\Constants.cs" />
+    <Compile Include="Reporting\Throughputs.cs" />
+    <Compile Include="Reporting\DataField.cs" />
+    <Compile Include="Reporting\Events.cs" />
+    <Compile Include="Factories\IReportDataProviderFactory.cs" />
+    <Compile Include="Reporting\Pivot.cs" />
+    <Compile Include="Reporting\ReportDataEventArgs.cs" />
+    <Compile Include="Reporting\IReportDataProvider.cs" />
+    <Compile Include="Reporting\ReportDataProvider.cs" />
+    <Compile Include="Reporting\ReportDataSet.cs" />
+    <Compile Include="Reporting\Times.cs" />
+    <Compile Include="Reporting\ValuePairs.cs" />
+    <Compile Include="RoutedProductTransmitter.cs" />
+    <Compile Include="Scheduling\AdvancedInterpolatedTimeTable.cs" />
+    <Compile Include="Scheduling\BinaryTimeTable.cs" />
+    <Compile Include="Scheduling\InterpolatedTimeTable.cs" />
+    <Compile Include="Scheduling\IScheduler.cs" />
+    <Compile Include="Scheduling\ITimeTable.cs" />
+    <Compile Include="Scheduling\LinearTimeTable.cs" />
+    <Compile Include="Scheduling\Scheduler.cs" />
+    <Compile Include="Scheduling\SchedulerEventArgs.cs" />
+    <Compile Include="Scheduling\TimeTable.cs" />
+    <Compile Include="SimulationService.cs" />
+    <Compile Include="StationaryElement.cs" />
+    <Compile Include="Statistics\BatchFillLevelStatistic.cs" />
+    <Compile Include="Statistics\BatchProcessStatistic.cs" />
+    <Compile Include="Statistics\DurationTracker.cs" />
+    <Compile Include="Statistics\FillLevelStatistic.cs" />
+    <Compile Include="Statistics\Histogram.cs" />
+    <Compile Include="Statistics\HistoricalValueStore.cs" />
+    <Compile Include="Statistics\IStatisticalCounter.cs" />
+    <Compile Include="Statistics\IValueAccumulator.cs" />
+    <Compile Include="Statistics\IValueStore.cs" />
+    <Compile Include="Statistics\IValueTracker.cs" />
+    <Compile Include="Statistics\NumberOfProductsAtPlace.cs" />
+    <Compile Include="Statistics\ProcessStatistic.cs" />
+    <Compile Include="Statistics\StatisticalCounter.cs" />
+    <Compile Include="Statistics\TimeAwareValueTracker.cs" />
+    <Compile Include="Statistics\TimedValue.cs" />
+    <Compile Include="Statistics\TimeWeightedValueAccumulator.cs" />
+    <Compile Include="Statistics\UnfinishedProcessStatistic.cs" />
+    <Compile Include="Statistics\ValueAccumulator.cs" />
+    <Compile Include="Statistics\ValueTracker.cs" />
+    <Compile Include="Batch.cs" />
+    <Compile Include="BatchEventArgs.cs" />
+    <Compile Include="Clock.cs" />
+    <Compile Include="Entity.cs" />
+    <Compile Include="IBatch.cs" />
+    <Compile Include="IClock.cs" />
+    <Compile Include="IEntity.cs" />
+    <Compile Include="IExperiment.cs" />
+    <Compile Include="IModel.cs" />
+    <Compile Include="ISimulationService.cs" />
+    <Compile Include="ITimeProvider.cs" />
+    <Compile Include="Model.cs" />
+    <Compile Include="ModelConfigurationException.cs" />
+    <Compile Include="RunStatus.cs" />
+    <Compile Include="SimulationException.cs" />
+    <Compile Include="SimulationTimeConversion.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reporting\ExcelExport.cs" />
+    <Compile Include="TimeBasedNamedProcessConfiguration.cs" />
+    <Compile Include="Transmitter.cs" />
+    <Compile Include="Utils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="DotNetZip, Version=1.10.1.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNetZip.1.10.1\lib\net20\DotNetZip.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPPlus, Version=4.1.0.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.4.1.0\lib\net40\EPPlus.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PGK.Extensions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f93e897f802ddcb7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\PGK.Extensions.2011.6\lib\PGK.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Reactive.Core">
+      <HintPath>..\packages\Rx-Core.2.2.5\lib\net45\System.Reactive.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Interfaces">
+      <HintPath>..\packages\Rx-Interfaces.2.2.5\lib\net45\System.Reactive.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core">
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="System.Reactive.Linq">
+      <HintPath>..\packages\Rx-Linq.2.2.5\lib\net45\System.Reactive.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.PlatformServices">
+      <HintPath>..\packages\Rx-PlatformServices.2.2.5\lib\net45\System.Reactive.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Emporer.Math.Distribution\Emporer.Math.Distribution.csproj">
+      <Project>{1E55808E-3DD6-49A6-84D7-2DE9F882D780}</Project>
+      <Name>Emporer.Math.Distribution</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Emporer.Unit\Emporer.Unit.csproj">
+      <Project>{DA6BD1CD-EF23-4B34-8141-D4BE06D3F583}</Project>
+      <Name>Emporer.Unit</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GeWISSEN.Utils\GeWISSEN.Utils.csproj">
+      <Project>{4d287c91-7a4f-48ea-a70a-019f6296d744}</Project>
+      <Name>GeWISSEN.Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Milan.JsonStore\Milan.JsonStore.csproj">
+      <Project>{E2C0ABAF-773E-4265-BD7E-0D45A5876A8A}</Project>
+      <Name>Milan.JsonStore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Milan.VisualModeling\Milan.VisualModeling.csproj">
+      <Project>{648B8990-1538-417B-8777-38977374C59B}</Project>
+      <Name>Milan.VisualModeling</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup />
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+</Project>

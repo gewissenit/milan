@@ -1,0 +1,363 @@
+﻿<UserControl
+  x:Class="EcoFactory.Material.Ecoinvent.UI.Views.EcoinventBrowserView"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:converters="clr-namespace:EcoFactory.Material.Ecoinvent.UI.Converters"
+  xmlns:cal="http://www.caliburnproject.org"
+  xmlns:ecoinvent="clr-namespace:EcoFactory.Material.Ecoinvent;assembly=EcoFactory.Material.Ecoinvent"
+  xmlns:viewModels="clr-namespace:EcoFactory.Material.Ecoinvent.UI.ViewModels"
+  xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+  xmlns:wpf="http://www.gewissen-it.de/milan/wpf"
+  Name="EcoinventBrowser">
+
+  <UserControl.Resources>
+
+    <ResourceDictionary>
+
+      <converters:FlagSourceFromRegion
+        x:Key="FlagSourceFromRegion" />
+
+      <DataTemplate
+        x:Key="EcoinventMaterial"
+        DataType="{x:Type viewModels:EcoinventMaterialViewModel}">
+
+        <Grid
+          Margin="12 6"
+          Width="240">
+
+          <Grid.RowDefinitions>
+            <RowDefinition
+              Height="Auto" />
+            <RowDefinition
+              Height="Auto" />
+            <RowDefinition
+              Height="Auto" />
+            <RowDefinition
+              Height="Auto" />
+          </Grid.RowDefinitions>
+
+          <TextBlock
+            Grid.Row="0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Text="{Binding Element.Name}"
+            Style="{StaticResource Heading}" />
+
+          <TextBlock
+            Margin="0 6 0 0"
+            Grid.Row="1"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Text="{Binding Element.Category}"
+            TextTrimming="CharacterEllipsis"
+            TextWrapping="NoWrap"
+            Style="{StaticResource Small}" />
+
+          <TextBlock
+            Grid.Row="2"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Text="{Binding Element.SubCategory}"
+            TextTrimming="CharacterEllipsis"
+            TextWrapping="NoWrap"
+            Style="{StaticResource Small}" />
+
+          <Rectangle
+            Grid.Row="3"
+            HorizontalAlignment="Left"
+            Width="30"
+            Height="30"
+            Margin="0 12 0 0"
+            VerticalAlignment="Bottom"
+            Fill="{Binding Path=Foreground, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType={x:Type Control}}}">
+            <Rectangle.OpacityMask>
+              <VisualBrush
+                Stretch="Uniform"
+                Visual="{Binding TypeIcon, Converter={StaticResource StringToResource}}" />
+            </Rectangle.OpacityMask>
+          </Rectangle>
+
+          <StackPanel
+            Grid.Row="3"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Bottom"
+            Orientation="Horizontal">
+
+            <TextBlock
+              Margin="0 0 3 0"
+              VerticalAlignment="Bottom"
+              Text="{Binding Region}"
+              Style="{StaticResource Small}" />
+
+            <Image
+              Width="16"
+              Height="11"
+              VerticalAlignment="Center"
+              Source="{Binding Element.Region, Converter={StaticResource FlagSourceFromRegion}, ConverterParameter='pack://application:,,,/EcoFactory.Material.Ecoinvent.UI;component/Resources/Icons/Flags/'}" />
+
+          </StackPanel>
+
+          <Button
+            Grid.Row="0"
+            Grid.RowSpan="4"
+            Margin="-12 -6"
+            ToolTip="{Binding Element.MetaData}"
+            Style="{StaticResource OverlayButton}"
+            cal:Message.Attach="[Event Click] = [Action Import($dataContext)]">
+            
+            <Grid
+              Margin="6">
+              
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition
+                  Width="Auto" />
+              </Grid.ColumnDefinitions>
+
+              <TextBlock
+                Grid.Column="0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                Text="{Binding Element.Name}"
+                Style="{StaticResource Normal}" />
+
+              <Rectangle
+                Grid.Column="1"
+                Width="40"
+                Height="40"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Bottom"
+                Fill="{Binding Path=Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}">
+                <Rectangle.OpacityMask>
+                  <VisualBrush
+                    Stretch="Uniform"
+                    Visual="{DynamicResource appbar_add}" />
+                </Rectangle.OpacityMask>
+              </Rectangle>
+            </Grid>
+            
+          </Button>
+
+          <Border
+            Grid.Row="0"
+            Grid.RowSpan="4"
+            Margin="-12 -6"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            Background="{DynamicResource ControlBackgroundBrush}"
+            Opacity="0.8"
+            Visibility="{Binding AlreadyAdded, Converter={StaticResource BoolToVisibility}}">
+            <TextBlock
+              HorizontalAlignment="Center"
+              VerticalAlignment="Center"
+              Foreground="{DynamicResource GrayBrush2}"
+              Style="{StaticResource Heading}"
+              Text="Added"
+              TextAlignment="Center" />
+          </Border>
+          
+        </Grid>
+
+      </DataTemplate>
+
+    </ResourceDictionary>
+
+  </UserControl.Resources>
+
+  <Grid>
+
+    <Grid.RowDefinitions>
+      <RowDefinition
+        Height="Auto" />
+      <RowDefinition
+        Height="Auto" />
+      <RowDefinition
+        Height="*" />
+    </Grid.RowDefinitions>
+
+    <Grid
+      Margin="0 6 0 0"
+      Grid.Row="0">
+
+      <Grid.RowDefinitions>
+        <RowDefinition
+          Height="Auto" />
+      </Grid.RowDefinitions>
+
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition
+          Width="*" />
+        <ColumnDefinition
+          Width="Auto" />
+        <ColumnDefinition
+          Width="Auto" />
+      </Grid.ColumnDefinitions>
+
+      <GroupBox
+        Grid.Column="0"
+        Margin="0 0 6 0"
+        HorizontalContentAlignment="Stretch"
+        Header="Search">
+        <StackPanel>
+
+          <TextBox
+            Margin="0"
+            controls:TextBoxHelper.Watermark="Name"
+            controls:TextBoxHelper.ClearTextButton="True"
+            Text="{Binding SearchStringName, UpdateSourceTrigger=PropertyChanged, Delay=200}" />
+
+          <TextBox
+            Margin="0 6 0 6"
+            controls:TextBoxHelper.Watermark="Metadata"
+            controls:TextBoxHelper.ClearTextButton="True"
+            Text="{Binding SearchStringMetaData, UpdateSourceTrigger=PropertyChanged, Delay=200}" />
+
+          <controls:ToggleSwitch
+            VerticalAlignment="Bottom"
+            OnLabel="Case sensitive search"
+            OffLabel="Case insensitive search"
+            IsChecked="{Binding IsSearchCaseSensitive}" />
+
+        </StackPanel>
+
+      </GroupBox>
+
+      <GroupBox
+        Grid.Column="1"
+        Margin="0"
+        HorizontalContentAlignment="Stretch"
+        Header="Data Type">
+
+        <StackPanel>
+
+          <RadioButton
+            Content="All"
+            IsChecked="{Binding MaterialTypeFilter, Converter={StaticResource EnumMatchToBoolean}, ConverterParameter={x:Static ecoinvent:MaterialType.NotSpecified}}" />
+
+          <RadioButton
+            Content="Resource (Elementary Flow)"
+            IsChecked="{Binding MaterialTypeFilter, Converter={StaticResource EnumMatchToBoolean}, ConverterParameter={x:Static ecoinvent:MaterialType.Resource}}" />
+
+          <RadioButton
+            Content="Emission (Elementary Flow)"
+            IsChecked="{Binding MaterialTypeFilter, Converter={StaticResource EnumMatchToBoolean}, ConverterParameter={x:Static ecoinvent:MaterialType.Emission}}" />
+
+          <RadioButton
+            Content="Process (Technosphere)"
+            IsChecked="{Binding MaterialTypeFilter, Converter={StaticResource EnumMatchToBoolean}, ConverterParameter={x:Static ecoinvent:MaterialType.Technosphere}}" />
+
+        </StackPanel>
+
+      </GroupBox>
+
+      <GroupBox
+        Grid.Column="2"
+        Margin="6 0 12 0"
+        HorizontalContentAlignment="Stretch"
+        Header="Filters">
+
+        <StackPanel>
+
+          <ComboBox
+            Margin="0 3"
+            controls:TextBoxHelper.ClearTextButton="True"
+            controls:TextBoxHelper.Watermark="Region"
+            IsEditable="True"
+            ItemsSource="{Binding Regions}"
+            SelectedItem="{Binding SearchStringRegion}">
+            <ComboBox.ItemTemplate>
+              <DataTemplate>
+                <StackPanel
+                  HorizontalAlignment="Right"
+                  VerticalAlignment="Bottom"
+                  Orientation="Horizontal">
+                  <TextBlock
+                    Margin="0 0 3 0"
+                    VerticalAlignment="Center"
+                    Text="{Binding}"
+                    Style="{StaticResource Small}" />
+                  <Image
+                    Width="16"
+                    Height="11"
+                    VerticalAlignment="Center"
+                    Source="{Binding Converter={StaticResource FlagSourceFromRegion}, ConverterParameter='pack://application:,,,/EcoFactory.Material.Ecoinvent.UI;component/Resources/Icons/Flags/'}" />
+                </StackPanel>
+              </DataTemplate>
+            </ComboBox.ItemTemplate>
+          </ComboBox>
+
+          <ComboBox
+            Margin="0 3"
+            controls:TextBoxHelper.ClearTextButton="True"
+            controls:TextBoxHelper.Watermark="Category"
+            IsEditable="True"
+            ItemsSource="{Binding Categories}"
+            SelectedItem="{Binding SearchStringCategory}" />
+
+          <ComboBox
+            Margin="0 3"
+            controls:TextBoxHelper.ClearTextButton="True"
+            controls:TextBoxHelper.Watermark="Subcategory"
+            IsEditable="True"
+            ItemsSource="{Binding Subcategories}"
+            SelectedItem="{Binding SearchStringSubcategory}" />
+
+        </StackPanel>
+
+      </GroupBox>
+
+    </Grid>
+
+    <StackPanel
+      Grid.Row="1"
+      Orientation="Horizontal">
+
+      <TextBlock
+        Margin="0 28 0 -2"
+        VerticalAlignment="Bottom"
+        Text="{Binding NumberOfMatchingElements, StringFormat='{}{0}'}"
+        Style="{StaticResource Heading}" />
+
+      <TextBlock
+        Margin="3 0"
+        VerticalAlignment="Bottom"
+        Text="{Binding NumberOfElements, StringFormat=' Ecoinvent© items matching your search'}"
+        Style="{StaticResource Normal}" />
+
+    </StackPanel>
+
+    <ListBox
+      Grid.Row="2"
+      Margin="0 12 0 0"
+      HorizontalContentAlignment="Center"
+      HorizontalAlignment="Center"
+      ItemsSource="{Binding MatchingElements}"
+      ItemTemplate="{StaticResource EcoinventMaterial}"
+      Focusable="False">
+
+      <ListBox.ItemsPanel>
+        <ItemsPanelTemplate>
+          <wpf:VirtualizingWrapPanel
+            HorizontalAlignment="Center"
+            Orientation="Horizontal" />
+        </ItemsPanelTemplate>
+      </ListBox.ItemsPanel>
+
+      <ListBox.ItemContainerStyle>
+        <Style
+          TargetType="ListBoxItem"
+          BasedOn="{StaticResource NotSelectableMetroListBoxItem}">
+          <Setter
+            Property="Padding"
+            Value="0" />
+          <Setter
+            Property="Margin"
+            Value="6" />
+        </Style>
+      </ListBox.ItemContainerStyle>
+
+    </ListBox>
+
+  </Grid>
+
+</UserControl>

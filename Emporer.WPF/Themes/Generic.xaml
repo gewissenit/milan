@@ -1,0 +1,16 @@
+﻿<ResourceDictionary
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+
+  <ResourceDictionary.MergedDictionaries>
+
+    <!--  TODO: create separate files for each control and add them here.  -->
+
+    <ResourceDictionary
+      Source="pack://application:,,,/Emporer.WPF;component/Themes/TimespanChooser.Generic.xaml"/>
+
+    <ResourceDictionary
+      Source="pack://application:,,,/Emporer.WPF;component/Themes/ValidationSummary.Generic.xaml"/>
+
+  </ResourceDictionary.MergedDictionaries>
+
+</ResourceDictionary>

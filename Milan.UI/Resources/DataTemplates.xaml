@@ -1,0 +1,67 @@
+﻿<ResourceDictionary
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:viewModels="clr-namespace:Milan.UI.ViewModels">
+
+  <DataTemplate
+    DataType="{x:Type viewModels:VisualModelingEntityViewModel}">
+
+    <StackPanel
+      IsHitTestVisible="False"
+      Orientation="Horizontal">
+
+      <Border
+        BorderBrush="Transparent"
+        BorderThickness="0">
+        
+      <Rectangle
+        Width="25"
+        Height="25"
+        Fill="{Binding Path=Foreground, RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType=Control}}">
+
+        <Rectangle.OpacityMask>
+
+          <VisualBrush
+            Stretch="Fill">
+
+            <VisualBrush.Visual>
+
+              <MultiBinding
+                Converter="{StaticResource TypeNameToResource}">
+
+                <Binding
+                  Path="Model" />
+
+                <Binding
+                  RelativeSource="{RelativeSource FindAncestor, AncestorType={x:Type Rectangle}}" />
+
+              </MultiBinding>
+
+            </VisualBrush.Visual>
+
+          </VisualBrush>
+
+        </Rectangle.OpacityMask>
+
+      </Rectangle>
+      </Border>
+
+      <Border
+        Background="{DynamicResource WhiteBrush}"
+        BorderThickness="0">
+
+        <TextBlock
+          Margin="4"
+          VerticalAlignment="Center"
+          Text="{Binding DisplayName}"
+          TextTrimming="CharacterEllipsis"
+          IsHitTestVisible="False"
+          Style="{StaticResource Normal}" />
+
+      </Border>
+
+    </StackPanel>
+
+  </DataTemplate>
+
+</ResourceDictionary>

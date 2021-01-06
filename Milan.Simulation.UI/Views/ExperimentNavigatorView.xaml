@@ -1,0 +1,66 @@
+﻿<UserControl
+  x:Class="Milan.Simulation.UI.Views.ExperimentNavigatorView"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:cal="http://www.caliburnproject.org"
+  xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+  xmlns:viewModels="clr-namespace:Milan.Simulation.UI.ViewModels"
+  xmlns:wpf="http://www.gewissen-it.de/milan/wpf">
+
+  <TreeView
+    x:Name="Models"
+    ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+
+    <i:Interaction.Behaviors>
+
+      <wpf:BindableSelectedTreeViewItemBehavior
+        SelectedItem="{Binding SelectedViewModelItem, Mode=OneWayToSource}" />
+
+    </i:Interaction.Behaviors>
+
+    <TreeView.Resources>
+
+      <HierarchicalDataTemplate
+        DataType="{x:Type viewModels:ExperimentNavigationViewModel}"
+        ItemsSource="{Binding Batches}">
+
+        <ContentControl
+          cal:View.Model="{Binding}" />
+
+      </HierarchicalDataTemplate>
+
+      <HierarchicalDataTemplate
+        DataType="{x:Type viewModels:BatchViewModel}"
+        ItemsSource="{Binding Experiments}">
+
+        <ContentControl
+          cal:View.Model="{Binding}" />
+
+      </HierarchicalDataTemplate>
+
+      <DataTemplate
+        DataType="{x:Type viewModels:ExperimentViewModel}">
+
+        <ContentControl
+          cal:View.Model="{Binding}" />
+
+      </DataTemplate>
+
+    </TreeView.Resources>
+
+    <TreeView.ItemContainerStyle>
+      <Style
+        TargetType="TreeViewItem"
+        BasedOn="{StaticResource MetroTreeViewItem}">
+        <Setter
+          Property="HorizontalAlignment"
+          Value="Stretch" />
+        <Setter
+          Property="HorizontalContentAlignment"
+          Value="Stretch" />
+      </Style>
+    </TreeView.ItemContainerStyle>
+
+  </TreeView>
+
+</UserControl>

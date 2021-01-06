@@ -1,0 +1,62 @@
+﻿<UserControl
+  x:Class="EcoFactory.Components.UI.Views.FailureSectionView"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+  xmlns:local="clr-namespace:EcoFactory.Components.UI.Views"
+  xmlns:controls="clr-namespace:Emporer.Math.Distribution.UI.Controls;assembly=Emporer.Math.Distribution.UI"
+  xmlns:wpf="http://www.gewissen-it.de/milan/wpf"
+  xmlns:controls1="http://metro.mahapps.com/winfx/xaml/controls"
+  mc:Ignorable="d"
+  d:DesignHeight="300"
+  d:DesignWidth="300">
+  <Grid>
+
+    <Grid.RowDefinitions>
+      <RowDefinition />
+      <RowDefinition />
+    </Grid.RowDefinitions>
+
+
+    <controls1:ToggleSwitch
+      Grid.Row="0"
+      OnLabel="Can fail"
+      OffLabel="No failure"
+      IsChecked="{Binding CanFail}" />
+
+    <Grid
+      Grid.Row="1"
+      wpf:VisibilityAnimation.AnimationType="Fade"
+      Visibility="{Binding CanFail, Converter={StaticResource BoolToVisibility}}">
+
+      <Grid.RowDefinitions>
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+      </Grid.RowDefinitions>
+
+      <Expander
+        Grid.Row="0"
+        Header="Time to failure">
+
+        <controls:DistributionSelector
+          DataContext="{Binding Path=FailureOccurrence}"
+          ValueTemplate="{StaticResource TimeSpanChooser}" />
+
+      </Expander>
+
+      <Expander
+        Grid.Row="1"
+        Header="Time to repair">
+
+        <controls:DistributionSelector
+          DataContext="{Binding Path=FailureDuration}"
+          ValueTemplate="{StaticResource TimeSpanChooser}" />
+
+      </Expander>
+
+    </Grid>
+  </Grid>
+</UserControl>

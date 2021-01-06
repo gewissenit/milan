@@ -1,0 +1,72 @@
+﻿<ResourceDictionary
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:converter="clr-namespace:Emporer.WPF.Converter"
+  xmlns:converters="http://metro.mahapps.com/winfx/xaml/shared">
+
+  <converter:AbbreviatedDay
+    x:Key="AbbreviatedDay" />
+
+  <converter:BoolToVisibilityReversable
+    x:Key="BoolToVisibilityReversable" />
+
+  <converter:EmptyToVisibleConverter
+    x:Key="EmptyToVisible" />
+
+  <BooleanToVisibilityConverter
+    x:Key="BoolToVisibility" />
+
+  <converter:EnumMatchToBoolean
+    x:Key="EnumMatchToBoolean" />
+
+  <converter:HasItems
+    x:Key="HasItems" />
+
+  <converter:HighlightTextBlock
+    x:Key="HighlightTextBlock" />
+
+  <converter:InvertBool
+    x:Key="InvertBool" />
+
+  <converter:LogicalAnd
+    x:Key="LogicalAnd" />
+
+  <converter:MaxValueToInfinitySymbol
+    x:Key="MaxValueToInfinitySymbol" />
+
+  <converter:NullToCollapsedConverter
+    x:Key="NullToCollapsed" />
+  
+  <converter:NullToVisibleConverter
+    x:Key="NullToVisible" />
+
+  <converter:PossibleNullValueToSecondInputBinding
+    x:Key="PossibleNullValueToSecondInputBinding" />
+
+  <converter:SingleObjectToArray
+    x:Key="SingleObjectToArray" />
+
+  <converter:SpecificStringToVisibility
+    x:Key="SpecificStringToVisibility" />
+
+  <converter:StringNullOrEmptyToVisibility
+    x:Key="StringNullOrEmptyToVisibility" />
+
+  <converter:StringToResource
+    x:Key="StringToResource" />
+
+  <converter:SumOfTimeSpans
+    x:Key="SumOfTimeSpans" />
+
+  <converter:TypeNameToResource
+    x:Key="TypeNameToResource" />
+
+  <converter:PinnedToThicknessConverter
+    x:Key="PinnedToThickness" />
+
+  <converters:ThicknessToDoubleConverter
+    x:Key="ThicknessToDouble" />
+  
+  <converter:PercentToDoubleConverter
+    x:Key="PercentToDouble" />
+</ResourceDictionary>

@@ -1,0 +1,91 @@
+﻿<ResourceDictionary
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:controls1="http://metro.mahapps.com/winfx/xaml/controls">
+
+  <DataTemplate
+    x:Key="ContainedMaterialItem">
+
+    <Grid>
+
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition />
+        <ColumnDefinition
+          Width="Auto" />
+      </Grid.ColumnDefinitions>
+
+      <Expander
+        Grid.Column="0"
+        Header="{Binding Material.Name}">
+
+        <Grid>
+
+          <Grid.RowDefinitions>
+            <RowDefinition
+              Height="Auto" />
+            <RowDefinition
+              Height="Auto" />
+            <RowDefinition
+              Height="Auto" />
+          </Grid.RowDefinitions>
+
+          <Label
+            Grid.Row="0"
+            Content="Amount"
+            Style="{StaticResource PropertyHeader}" />
+
+          <Grid
+            Grid.Row="1">
+
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition />
+              <ColumnDefinition
+                Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <controls1:NumericUpDown
+              Grid.Column="0"
+              Minimum="0"
+              Value="{Binding Path=Amount}" />
+
+            <Label
+              Grid.Column="1"
+              Content="{Binding MaterialDisplayUnit}" />
+
+          </Grid>
+
+          <Label
+            Grid.Row="2"
+            Content="{Binding Conversion}" />
+
+        </Grid>
+
+      </Expander>
+
+      <Button
+        Grid.Column="1"
+        VerticalAlignment="Center"
+        Style="{StaticResource ChromelessButtonStyle}"
+        Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path= DataContext.RemoveCommand}"
+        CommandParameter="{Binding}">
+
+        <Rectangle
+          Width="20"
+          Height="20"
+          Margin="2"
+          HorizontalAlignment="Center"
+          Fill="{Binding Path=Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}">
+          <Rectangle.OpacityMask>
+            <VisualBrush
+              Stretch="Uniform"
+              Visual="{DynamicResource appbar_minus}" />
+          </Rectangle.OpacityMask>
+        </Rectangle>
+
+      </Button>
+
+    </Grid>
+
+  </DataTemplate>
+
+</ResourceDictionary>

@@ -1,0 +1,42 @@
+﻿<UserControl
+  x:Class="Milan.Simulation.UI.Views.StartDateSectionView"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit">
+  <Grid>
+
+    <Grid.RowDefinitions>
+      <RowDefinition />
+      <RowDefinition />
+      <RowDefinition />
+      <RowDefinition />
+    </Grid.RowDefinitions>
+
+    <Label
+      Grid.Row="0"
+      Content="Date"
+      Style="{StaticResource PropertyHeader}" />
+
+    <DatePicker
+      Grid.Row="1"
+      HorizontalContentAlignment="Left"
+      VerticalContentAlignment="Center"
+      SelectedDate="{Binding Path=StartDate, Mode=TwoWay}"
+      SelectedDateFormat="Long"
+      DisplayDateStart="2017-01-01"
+      FirstDayOfWeek="Monday"
+      IsTodayHighlighted="True" />
+
+    <Label
+      Grid.Row="2"
+      Content="Time"
+      Style="{StaticResource PropertyHeader}" />
+
+    <xctk:TimePicker
+      Grid.Row="3"
+      VerticalContentAlignment="Center"
+      Value="{Binding Path=StartDate, Mode=TwoWay}" />
+
+  </Grid>
+
+</UserControl>

@@ -1,0 +1,304 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FB92BA92-D08B-448B-B46F-1C15DD135AC3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EcoFactory.Components</RootNamespace>
+    <AssemblyName>EcoFactory.Components</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\build\emporer\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <NoWarn>
+    </NoWarn>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>..\..\build\emporer\bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <NoWarn>
+    </NoWarn>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup>
+  </PropertyGroup>
+  <PropertyGroup>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\build\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>..\..\build\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FileHelpers, Version=3.1.5.0, Culture=neutral, PublicKeyToken=3e0c08d59cc3d657, processorArchitecture=MSIL">
+      <HintPath>..\packages\FileHelpers.3.1.5\lib\net45\FileHelpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PGK.Extensions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f93e897f802ddcb7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\PGK.Extensions.2011.6\lib\PGK.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyStation.cs" />
+    <Compile Include="CostObserverExtensions.cs" />
+    <Compile Include="DeleteRules\ProductTypeAmountIsNotReferencedInAnyDomainEntity.cs" />
+    <Compile Include="DeleteRules\ProductTypeDistributionIsNotReferencedInAnyDomainEntity.cs" />
+    <Compile Include="DeleteRules\ProductTypeIsNotReferencedInAnyProductTypeAmount.cs" />
+    <Compile Include="DeleteRules\ProductTypeIsNotReferencedInAnyProductTypeDistribution.cs" />
+    <Compile Include="DeleteRules\ResourcePoolIsNotReferencedInAnyResourcePoolResourceTypeAmount.cs" />
+    <Compile Include="DeleteRules\ProductTypeSpecificResourceIsNotReferencedInAnyWorkstation.cs" />
+    <Compile Include="DeleteRules\ResourcePoolResourceTypeAmountIsNotReferencedInAnyWorkstation.cs" />
+    <Compile Include="DeleteRules\ResourceTypeIsNotReferencedInAnyResourcePoolResourceTypeAmount.cs" />
+    <Compile Include="DeleteRules\TransformationRuleIsNotReferencedInAnyAssemblyStation.cs" />
+    <Compile Include="DeleteRules\TransformationRuleOutputIsNotReferencedInAnyTransformationRule.cs" />
+    <Compile Include="Events\ITransformationRelatedEvent.cs" />
+    <Compile Include="Events\TransformationRelatedEndEvent.cs" />
+    <Compile Include="Events\TransformationRelatedEvent.cs" />
+    <Compile Include="Factories\AssemblyStationBlockedCostObserverFactory.cs" />
+    <Compile Include="Factories\AssemblyStationBlockedMaterialObserverFactory.cs" />
+    <Compile Include="Factories\AssemblyStationFactory.cs" />
+    <Compile Include="Factories\AssemblyStationFailureCostObserverFactory.cs" />
+    <Compile Include="Factories\AssemblyStationFailureMaterialObserverFactory.cs" />
+    <Compile Include="Factories\AssemblyStationIdleCostObserverFactory.cs" />
+    <Compile Include="Factories\AssemblyStationIdleMaterialObserverFactory.cs" />
+    <Compile Include="Factories\AssemblyStationObserverFactory.cs" />
+    <Compile Include="Factories\AssemblyStationOffMaterialObserverFactory.cs" />
+    <Compile Include="Factories\AssemblyStationSetupCostObserverFactory.cs" />
+    <Compile Include="Factories\AssemblyStationOffCostObserverFactory.cs" />
+    <Compile Include="Factories\AssemblyStationProcessingCostObserverFactory.cs" />
+    <Compile Include="Factories\AssemblyStationSetupMaterialObserverFactory.cs" />
+    <Compile Include="Factories\AssemblyStationProcessingMaterialObserverFactory.cs" />
+    <Compile Include="Factories\ProbabilityAssemblyStationObserverFactory.cs" />
+    <Compile Include="Factories\EntryPointEnteredMaterialObserverFactory.cs" />
+    <Compile Include="Factories\ExitPointExitedMaterialObserverFactory.cs" />
+    <Compile Include="Factories\InhomogeneousParallelWorkstationObserverFactory.cs" />
+    <Compile Include="Factories\InhomogeneousParallelWorkstationProcessingMaterialObserverFactory.cs" />
+    <Compile Include="Factories\InhomogeneousParallelWorkstationBlockedMaterialObserverFactory.cs" />
+    <Compile Include="Factories\InhomogeneousParallelWorkstationFailureMaterialObserverFactory.cs" />
+    <Compile Include="Factories\InhomogeneousParallelWorkstationIdleMaterialObserverFactory.cs" />
+    <Compile Include="Factories\InhomogeneousParallelWorkstationOffMaterialObserverFactory.cs" />
+    <Compile Include="Factories\InhomogeneousParallelWorkstationSetupMaterialObserverFactory.cs" />
+    <Compile Include="Factories\InhomogeneousWorkstationObserverFactory.cs" />
+    <Compile Include="Factories\ParallelWorkstationObserverFactory.cs" />
+    <Compile Include="Factories\ParallelWorkstationProcessingMaterialObserverFactory.cs" />
+    <Compile Include="Factories\InhomogeneousWorkstationBlockedMaterialObserverFactory.cs" />
+    <Compile Include="Factories\InhomogeneousWorkstationFailureMaterialObserverFactory.cs" />
+    <Compile Include="Factories\InhomogeneousWorkstationIdleMaterialObserverFactory.cs" />
+    <Compile Include="Factories\InhomogeneousWorkstationOffMaterialObserverFactory.cs" />
+    <Compile Include="Factories\InhomogeneousWorkstationSetupMaterialObserverFactory.cs" />
+    <Compile Include="Factories\ParallelWorkstationBlockedCostObserverFactory.cs" />
+    <Compile Include="Factories\ParallelWorkstationBlockedMaterialObserverFactory.cs" />
+    <Compile Include="Factories\ParallelWorkstationFailureCostObserverFactory.cs" />
+    <Compile Include="Factories\ParallelWorkstationFailureMaterialObserverFactory.cs" />
+    <Compile Include="Factories\ParallelWorkstationIdleCostObserverFactory.cs" />
+    <Compile Include="Factories\ParallelWorkstationIdleMaterialObserverFactory.cs" />
+    <Compile Include="Factories\ParallelWorkstationOffCostObserverFactory.cs" />
+    <Compile Include="Factories\ParallelWorkstationOffMaterialObserverFactory.cs" />
+    <Compile Include="Factories\ParallelWorkstationSetupCostObserverFactory.cs" />
+    <Compile Include="Factories\ParallelWorkstationSetupMaterialObserverFactory.cs" />
+    <Compile Include="Factories\ProbabilityAssemblyStationBlockedCostObserverFactory.cs" />
+    <Compile Include="Factories\ProbabilityAssemblyStationBlockedMaterialObserverFactory.cs" />
+    <Compile Include="Factories\ProbabilityAssemblyStationFailureCostObserverFactory.cs" />
+    <Compile Include="Factories\ProbabilityAssemblyStationFailureMaterialObserverFactory.cs" />
+    <Compile Include="Factories\ProbabilityAssemblyStationIdleCostObserverFactory.cs" />
+    <Compile Include="Factories\ProbabilityAssemblyStationIdleMaterialObserverFactory.cs" />
+    <Compile Include="Factories\ProbabilityAssemblyStationOffCostObserverFactory.cs" />
+    <Compile Include="Factories\ProbabilityAssemblyStationOffMaterialObserverFactory.cs" />
+    <Compile Include="Factories\ProbabilityAssemblyStationSetupCostObserverFactory.cs" />
+    <Compile Include="Factories\ProbabilityAssemblyStationSetupMaterialObserverFactory.cs" />
+    <Compile Include="Factories\ProcessesReportDataProviderFactory.cs" />
+    <Compile Include="Factories\StorageFillLevelsReportDataProviderFactory.cs" />
+    <Compile Include="Factories\StorageObserverFactory.cs" />
+    <Compile Include="Factories\StorageStatesReportDataProviderFactory.cs" />
+    <Compile Include="Factories\UnfinishedProcessesReportDataProviderFactory.cs" />
+    <Compile Include="Factories\WorkstationAwaitingResourcesCostObserverFactory.cs" />
+    <Compile Include="Factories\WorkstationAwaitingResourcesMaterialObserverFactory.cs" />
+    <Compile Include="Factories\WorkstationBlockedCostObserverFactory.cs" />
+    <Compile Include="Factories\WorkstationFailureCostObserverFactory.cs" />
+    <Compile Include="Factories\WorkstationIdleCostObserverFactory.cs" />
+    <Compile Include="Factories\WorkstationObserverFactory.cs" />
+    <Compile Include="Factories\WorkstationOffCostObserverFactory.cs" />
+    <Compile Include="Factories\WorkstationProcessingMaterialObserverFactory.cs" />
+    <Compile Include="Factories\ParallelWorkstationProcessingCostObserverFactory.cs" />
+    <Compile Include="Factories\InhomogeneousWorkstationProcessingMaterialObserverFactory.cs" />
+    <Compile Include="Factories\ProbabilityAssemblyStationProcessingMaterialObserverFactory.cs" />
+    <Compile Include="Factories\ProbabilityAssemblyStationProcessingCostObserverFactory.cs" />
+    <Compile Include="Factories\WorkstationProcessingCostObserverFactory.cs" />
+    <Compile Include="Factories\ExitPointExitedCostObserverFactory.cs" />
+    <Compile Include="Factories\EntryPointFactory.cs" />
+    <Compile Include="Factories\EntryPointEnteredCostObserverFactory.cs" />
+    <Compile Include="Factories\ExitPointFactory.cs" />
+    <Compile Include="Factories\InhomogeneousParallelWorkstationBlockedCostObserverFactory.cs" />
+    <Compile Include="Factories\InhomogeneousParallelWorkstationFactory.cs" />
+    <Compile Include="Factories\InhomogeneousParallelWorkstationFailureCostObserverFactory.cs" />
+    <Compile Include="Factories\InhomogeneousParallelWorkstationIdleCostObserverFactory.cs" />
+    <Compile Include="Factories\InhomogeneousParallelWorkstationSetupCostObserverFactory.cs" />
+    <Compile Include="Factories\InhomogeneousParallelWorkstationOffCostObserverFactory.cs" />
+    <Compile Include="Factories\InhomogeneousParallelWorkstationProcessingCostObserverFactory.cs" />
+    <Compile Include="Factories\InhomogeneousWorkstationBlockedCostObserverFactory.cs" />
+    <Compile Include="Factories\InhomogeneousWorkstationFactory.cs" />
+    <Compile Include="Factories\InhomogeneousWorkstationFailureCostObserverFactory.cs" />
+    <Compile Include="Factories\InhomogeneousWorkstationIdleCostObserverFactory.cs" />
+    <Compile Include="Factories\InhomogeneousWorkstationProcessingCostObserverFactory.cs" />
+    <Compile Include="Factories\InhomogeneousWorkstationOffCostObserverFactory.cs" />
+    <Compile Include="Factories\InhomogeneousWorkstationSetupCostObserverFactory.cs" />
+    <Compile Include="Factories\ITransformationRuleFactory.cs" />
+    <Compile Include="Factories\ITransformationRuleOutputFactory.cs" />
+    <Compile Include="Factories\ParallelWorkstationFactory.cs" />
+    <Compile Include="Factories\ProbabilityAssemblyStationFactory.cs" />
+    <Compile Include="Factories\StorageFactory.cs" />
+    <Compile Include="Factories\TransformationRuleFactory.cs" />
+    <Compile Include="Factories\TransformationRuleOutputFactory.cs" />
+    <Compile Include="Factories\WorkstationBlockedMaterialObserverFactory.cs" />
+    <Compile Include="Factories\WorkstationFactory.cs" />
+    <Compile Include="Factories\WorkstationFailureMaterialObserverFactory.cs" />
+    <Compile Include="Factories\WorkstationIdleMaterialObserverFactory.cs" />
+    <Compile Include="Factories\WorkstationOffMaterialObserverFactory.cs" />
+    <Compile Include="Factories\WorkstationSetupCostObserverFactory.cs" />
+    <Compile Include="Factories\WorkstationSetupMaterialObserverFactory.cs" />
+    <Compile Include="IAssemblyStation.cs" />
+    <Compile Include="IEntryPoint.cs" />
+    <Compile Include="IExitPoint.cs" />
+    <Compile Include="IInhomogeneousParallelWorkstation.cs" />
+    <Compile Include="IInhomogeneousWorkstation.cs" />
+    <Compile Include="InhomogeneousParallelWorkstation.cs" />
+    <Compile Include="EntryPoint.cs" />
+    <Compile Include="Events\Events.cs" />
+    <Compile Include="ExitPoint.cs" />
+    <Compile Include="InhomogeneousWorkstation.cs" />
+    <Compile Include="IParallelWorkstation.cs" />
+    <Compile Include="IProbabilityAssemblyStation.cs" />
+    <Compile Include="IStorage.cs" />
+    <Compile Include="ITransformationRule.cs" />
+    <Compile Include="ITransformationRuleOutput.cs" />
+    <Compile Include="IWorkstation.cs" />
+    <Compile Include="IWorkstationBase.cs" />
+    <Compile Include="MaterialObserverExtensions.cs" />
+    <Compile Include="Observers\AssemblyStationObserver.cs" />
+    <Compile Include="Observers\ProbabilityAssemblyStationObserver.cs" />
+    <Compile Include="Observers\InhomogeneousParallelWorkstationObserver.cs" />
+    <Compile Include="Observers\InhomogeneousWorkstationObserver.cs" />
+    <Compile Include="Observers\ParallelWorkstationObserver.cs" />
+    <Compile Include="Observers\StorageObserver.cs" />
+    <Compile Include="Observers\WorkstationObserver.cs" />
+    <Compile Include="ParallelWorkstation.cs" />
+    <Compile Include="ProbabilityAssemblyStation.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportDataProviders\Processes.cs" />
+    <Compile Include="ReportDataProviders\StorageFillLevels.cs" />
+    <Compile Include="ReportDataProviders\StorageStates.cs" />
+    <Compile Include="ReportDataProviders\UnfinishedProcesses.cs" />
+    <Compile Include="ResourceManager.cs" />
+    <Compile Include="States\ArrivalProcess.cs" />
+    <Compile Include="States\Infinite.cs" />
+    <Compile Include="States\IState.cs" />
+    <Compile Include="States\ParallelProcess.cs" />
+    <Compile Include="States\ProductRelatedProcess.cs" />
+    <Compile Include="States\RecurringTemporal.cs" />
+    <Compile Include="States\Process.cs" />
+    <Compile Include="Storage.cs" />
+    <Compile Include="TransformationRule.cs" />
+    <Compile Include="TransformationRuleOutput.cs" />
+    <Compile Include="Utils.cs" />
+    <Compile Include="Workstation.cs" />
+    <Compile Include="WorkstationBase.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Emporer.Math.Distribution\Emporer.Math.Distribution.csproj">
+      <Project>{1E55808E-3DD6-49A6-84D7-2DE9F882D780}</Project>
+      <Name>Emporer.Math.Distribution</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Emporer.Unit\Emporer.Unit.csproj">
+      <Project>{da6bd1cd-ef23-4b34-8141-d4be06d3f583}</Project>
+      <Name>Emporer.Unit</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GeWISSEN.Utils\GeWISSEN.Utils.csproj">
+      <Project>{4d287c91-7a4f-48ea-a70a-019f6296d744}</Project>
+      <Name>GeWISSEN.Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Milan.JsonStore\Milan.JsonStore.csproj">
+      <Project>{E2C0ABAF-773E-4265-BD7E-0D45A5876A8A}</Project>
+      <Name>Milan.JsonStore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Milan.Simulation.CostAccounting\Milan.Simulation.CostAccounting.csproj">
+      <Project>{DDBCDD4B-74B7-421A-A7FF-59A85B8095E3}</Project>
+      <Name>Milan.Simulation.CostAccounting</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Milan.Simulation.MaterialAccounting\Milan.Simulation.MaterialAccounting.csproj">
+      <Project>{6C56E0D5-D61D-4CD4-BF80-63F7E0F0CDE3}</Project>
+      <Name>Milan.Simulation.MaterialAccounting</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Milan.Simulation.Resources\Milan.Simulation.Resources.csproj">
+      <Project>{A59EBCD0-522B-40C2-BE92-E33E1F70C3BB}</Project>
+      <Name>Milan.Simulation.Resources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Milan.Simulation.ShiftSystems\Milan.Simulation.ShiftSystems.csproj">
+      <Project>{01ADD24F-CA69-4734-B7E6-02406BE9BA7F}</Project>
+      <Name>Milan.Simulation.ShiftSystems</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Milan.Simulation\Milan.Simulation.csproj">
+      <Project>{C6378981-67FE-4F73-9BAC-51EDD9AB8287}</Project>
+      <Name>Milan.Simulation</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Observers.cd" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

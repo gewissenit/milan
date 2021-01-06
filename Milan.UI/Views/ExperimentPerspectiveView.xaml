@@ -1,0 +1,89 @@
+﻿<UserControl
+  x:Class="Milan.UI.Views.ExperimentPerspectiveView"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+  <Grid>
+
+    <Grid>
+
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition
+          Width="1*" />
+        <ColumnDefinition
+          Width="3*" />
+      </Grid.ColumnDefinitions>
+
+      <DockPanel
+        Grid.Column="0"
+        Margin="{StaticResource GridThickness}">
+
+        <StackPanel
+          Margin="0 6 0 12"
+          Orientation="Horizontal"
+          DockPanel.Dock="Top">
+
+          <Button
+            Name="OpenBatchDataFolder"
+            Margin="0 0 3 0"
+            Style="{StaticResource ChromelessButtonStyle}">
+
+            <Rectangle
+              Width="20"
+              Height="20"
+              Margin="2"
+              HorizontalAlignment="Center"
+              Fill="{Binding Path=Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}">
+              <Rectangle.OpacityMask>
+                <VisualBrush
+                  Stretch="Uniform"
+                  Visual="{DynamicResource appbar_folder_open}" />
+              </Rectangle.OpacityMask>
+            </Rectangle>
+
+          </Button>
+
+          <Button
+            Name="RemoveSelected"
+            Style="{StaticResource ChromelessButtonStyle}">
+
+            <Rectangle
+              Width="20"
+              Height="20"
+              Margin="2"
+              HorizontalAlignment="Center"
+              Fill="{Binding Path=Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}">
+              <Rectangle.OpacityMask>
+                <VisualBrush
+                  Stretch="Uniform"
+                  Visual="{DynamicResource appbar_delete}" />
+              </Rectangle.OpacityMask>
+            </Rectangle>
+
+          </Button>
+        </StackPanel>
+
+        <ContentControl
+          Name="ExperimentNavigator" />
+
+      </DockPanel>
+
+      <GridSplitter
+        Grid.Column="0"
+        Style="{StaticResource HorizontalGridSplitter}" />
+
+      <ContentControl
+        Name="ExperimentControl"
+        Grid.Column="1"
+        Margin="{StaticResource GridThickness}" />
+
+    </Grid>
+
+    <ContentControl
+      x:Name="Dialogs"
+      HorizontalContentAlignment="Stretch"
+      VerticalContentAlignment="Stretch" />
+
+  </Grid>
+
+</UserControl>

@@ -1,0 +1,16 @@
+﻿<UserControl
+  x:Class="EcoFactory.Components.UI.Views.ShiftsSectionView"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:controls1="http://metro.mahapps.com/winfx/xaml/controls">
+  
+  <Grid>
+
+    <controls1:ToggleSwitch
+      OnLabel="Depends on shift management"
+      OffLabel="Shift management has no influence"
+      IsChecked="{Binding IsWorkingTimeDependent}" />
+
+  </Grid>
+
+</UserControl>

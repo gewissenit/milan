@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DOCUMENT Type="Advanced Installer" CreateVersion="10.3" version="10.5.2" Modules="enterprise" RootPath="..\..\..\..*" Language="en" Id="{360186DB-B251-48BF-BE1D-46902C071F41}">
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
+    <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
+    <ROW Property="AI_FINDEXE_TITLE" Value="Select the installation package for [|ProductName]" ValueLocId="AI.Property.FindExeTitle"/>
+    <ROW Property="AI_MINDOTNETVERSION" MultiBuildValue="DefaultBuild:4.5" ValueLocId="-"/>
+    <ROW Property="AI_ThemeStyle" Value="default" MultiBuildValue="DefaultBuild:style9green" MsiKey="AI_ThemeStyle"/>
+    <ROW Property="ALLUSERS" Value="1"/>
+    <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName]." ValueLocId="*"/>
+    <ROW Property="ARPNOMODIFY" MultiBuildValue="DefaultBuild:1"/>
+    <ROW Property="ARPNOREPAIR" Value="1"/>
+    <ROW Property="ARPPRODUCTICON" Value="EcoFactory.exe" Type="8"/>
+    <ROW Property="CTRLS" Value="2"/>
+    <ROW Property="Manufacturer" Value="HTW Berlin"/>
+    <ROW Property="ProductCode" Value="1033:{938FB564-3DD5-472C-8B62-B7F721F29539} " Type="16"/>
+    <ROW Property="ProductLanguage" Value="1033"/>
+    <ROW Property="ProductName" Value="EcoFactory"/>
+    <ROW Property="ProductVersion" Value="0.1.0.0" Type="32" TargetFile="EcoFactory.exe"/>
+    <ROW Property="RUNAPPLICATION" Value="1" Type="4"/>
+    <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND;AI_SETUPEXEPATH;SETUPEXEDIR"/>
+    <ROW Property="UpgradeCode" Value="{13B339C6-C725-49CE-BD30-E31595AFF03D}"/>
+    <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
+    <ROW Property="WindowsType9XDisplay" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT40" MultiBuildValue="DefaultBuild:Windows NT 4.0" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT40Display" MultiBuildValue="DefaultBuild:Windows NT 4.0" ValueLocId="-"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
+    <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1"/>
+    <ROW Directory="DesktopFolder" Directory_Parent="TARGETDIR" DefaultDir="Deskto~1|DesktopFolder" IsPseudoRoot="1"/>
+    <ROW Directory="SHORTCUTDIR" Directory_Parent="TARGETDIR" DefaultDir="SHORTC~1|SHORTCUTDIR" IsPseudoRoot="1"/>
+    <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
+    <ROW Component="AI_ExePath" ComponentId="{D6360778-D6F6-4B59-B128-FC1E847AE58B}" Directory_="APPDIR" Attributes="4" KeyPath="AI_ExePath"/>
+    <ROW Component="Caliburn.Micro.Logging.dll" ComponentId="{35993D64-3D89-4DA0-80CF-01C1AEDC2013}" Directory_="APPDIR" Attributes="0" KeyPath="Caliburn.Micro.Logging.dll"/>
+    <ROW Component="Caliburn.Micro.Platform.dll" ComponentId="{E80B4BCD-27F5-4866-994F-866AA8287C02}" Directory_="APPDIR" Attributes="0" KeyPath="Caliburn.Micro.Platform.dll"/>
+    <ROW Component="Caliburn.Micro.dll" ComponentId="{DDDE8024-96D3-4B41-9F2D-064B2AAB4CB8}" Directory_="APPDIR" Attributes="0" KeyPath="Caliburn.Micro.dll"/>
+    <ROW Component="Caliburn.Micro.xml" ComponentId="{C0F92A01-13D0-489C-BA08-78DD88D16A68}" Directory_="APPDIR" Attributes="0" KeyPath="Caliburn.Micro.xml" Type="0"/>
+    <ROW Component="EPPlus.dll" ComponentId="{5C7A6A9E-87C0-4EB1-A667-5F51AB16C6A3}" Directory_="APPDIR" Attributes="0" KeyPath="EPPlus.dll"/>
+    <ROW Component="EcoFactory.Components.UI.dll" ComponentId="{F5121E47-F9A7-464E-B676-118FE8C74360}" Directory_="APPDIR" Attributes="0" KeyPath="EcoFactory.Components.UI.dll"/>
+    <ROW Component="EcoFactory.Components.dll" ComponentId="{ED7073EE-F30E-4E8E-B241-57F217DB30AB}" Directory_="APPDIR" Attributes="0" KeyPath="EcoFactory.Components.dll"/>
+    <ROW Component="EcoFactory.Material.Ecoinvent.UI.dll" ComponentId="{6B7D7BA1-1E80-44A2-99E7-7649B98F35E4}" Directory_="APPDIR" Attributes="0" KeyPath="EcoFactory.Material.Ecoinvent.UI.dll"/>
+    <ROW Component="EcoFactory.Material.Ecoinvent.dll" ComponentId="{29B74477-CE02-46A7-BF6C-3F1BC2083A0C}" Directory_="APPDIR" Attributes="0" KeyPath="EcoFactory.Material.Ecoinvent.dll"/>
+    <ROW Component="EcoFactory.exe" ComponentId="{821F87DB-3EE2-41E1-9AD3-14B7C6C2987C}" Directory_="APPDIR" Attributes="0" KeyPath="EcoFactory.exe"/>
+    <ROW Component="EcoFactory.vshost.exe" ComponentId="{21602FD4-E1C4-438E-9B93-94FCEC17F940}" Directory_="APPDIR" Attributes="0"/>
+    <ROW Component="Emporer.Material.UI.dll" ComponentId="{9708F9E6-D1CF-4CDF-8419-C919E509BD8D}" Directory_="APPDIR" Attributes="0" KeyPath="Emporer.Material.UI.dll"/>
+    <ROW Component="Emporer.Material.dll" ComponentId="{79AC33CA-1356-4191-9EB7-BF6937B2EAE2}" Directory_="APPDIR" Attributes="0" KeyPath="Emporer.Material.dll"/>
+    <ROW Component="Emporer.Math.Distribution.UI.dll" ComponentId="{5133E851-CDFB-48B5-AB1B-527BDDBD0D9D}" Directory_="APPDIR" Attributes="0" KeyPath="Emporer.Math.Distribution.UI.dll"/>
+    <ROW Component="Emporer.Math.Distribution.dll" ComponentId="{4FD631FC-0341-4A73-BA0F-B65FCC4E6A51}" Directory_="APPDIR" Attributes="0" KeyPath="Emporer.Math.Distribution.dll"/>
+    <ROW Component="Emporer.Unit.UI.dll" ComponentId="{4A0BD8DF-16F5-415F-ADF8-739C8C1C8B26}" Directory_="APPDIR" Attributes="0" KeyPath="Emporer.Unit.UI.dll"/>
+    <ROW Component="Emporer.Unit.dll" ComponentId="{3B11499D-B86C-4154-86C7-525FBACAF3F7}" Directory_="APPDIR" Attributes="0" KeyPath="Emporer.Unit.dll"/>
+    <ROW Component="Emporer.WPF.dll" ComponentId="{0E1C6F03-685E-45E8-8EA7-541255A7BDD5}" Directory_="APPDIR" Attributes="0" KeyPath="Emporer.WPF.dll"/>
+    <ROW Component="FileHelpers.dll" ComponentId="{F0C1CFB4-0DB3-4AA8-AB55-A9EBC3735153}" Directory_="APPDIR" Attributes="0" KeyPath="FileHelpers.dll"/>
+    <ROW Component="Ionic.Zip.dll" ComponentId="{A9B95048-A57A-4869-8A27-B8B8D39426ED}" Directory_="APPDIR" Attributes="0" KeyPath="Ionic.Zip.dll"/>
+    <ROW Component="LumenWorks.Framework.IO.dll" ComponentId="{8F88E144-D820-4807-929E-3158E02BF7E0}" Directory_="APPDIR" Attributes="0" KeyPath="LumenWorks.Framework.IO.dll"/>
+    <ROW Component="MahApps.Metro.dll" ComponentId="{17D2C0E5-806E-46A2-82B5-0123562630BA}" Directory_="APPDIR" Attributes="0" KeyPath="MahApps.Metro.dll"/>
+    <ROW Component="Milan.JsonStore.dll" ComponentId="{7E008BFB-47AA-4CE0-86CE-268E7D351FD5}" Directory_="APPDIR" Attributes="0" KeyPath="Milan.JsonStore.dll"/>
+    <ROW Component="Milan.Simulation.CostAccounting.UI.dll" ComponentId="{BC6A6151-6FD2-4682-8ADE-E2738F60AC19}" Directory_="APPDIR" Attributes="0" KeyPath="Milan.Simulation.CostAccounting.UI.dll"/>
+    <ROW Component="Milan.Simulation.CostAccounting.dll" ComponentId="{CA9EE924-32C3-4AB6-97B3-1BF2F7B88222}" Directory_="APPDIR" Attributes="0" KeyPath="Milan.Simulation.CostAccounting.dll"/>
+    <ROW Component="Milan.Simulation.MaterialAccounting.UI.d" ComponentId="{A3F8D2B2-57A4-4377-A58C-4DA4F9DA7F52}" Directory_="APPDIR" Attributes="0" KeyPath="Milan.Simulation.MaterialAccounting.UI.dll"/>
+    <ROW Component="Milan.Simulation.MaterialAccounting.dll" ComponentId="{E79F8BB0-8BC5-4E94-8B63-4928242C5C54}" Directory_="APPDIR" Attributes="0" KeyPath="Milan.Simulation.MaterialAccounting.dll"/>
+    <ROW Component="Milan.Simulation.Resources.UI.dll" ComponentId="{6487A734-CC3F-4CF7-B86B-B9948CE365D7}" Directory_="APPDIR" Attributes="0" KeyPath="Milan.Simulation.Resources.UI.dll"/>
+    <ROW Component="Milan.Simulation.Resources.dll" ComponentId="{532426FE-24E8-4303-A85F-439AC127B794}" Directory_="APPDIR" Attributes="0" KeyPath="Milan.Simulation.Resources.dll"/>
+    <ROW Component="Milan.Simulation.ShiftSystems.UI.dll" ComponentId="{10C8E653-5F6E-4602-881F-CE3E14FCA967}" Directory_="APPDIR" Attributes="0" KeyPath="Milan.Simulation.ShiftSystems.UI.dll"/>
+    <ROW Component="Milan.Simulation.ShiftSystems.dll" ComponentId="{420378FC-10A4-4C54-BA8C-CF50A71047E9}" Directory_="APPDIR" Attributes="0" KeyPath="Milan.Simulation.ShiftSystems.dll"/>
+    <ROW Component="Milan.Simulation.UI.dll" ComponentId="{215DA60D-2A14-4A55-8D17-74743B0C3F57}" Directory_="APPDIR" Attributes="0" KeyPath="Milan.Simulation.UI.dll"/>
+    <ROW Component="Milan.Simulation.dll" ComponentId="{330E8EC3-69DC-44F0-8B79-4247E7AC4ECF}" Directory_="APPDIR" Attributes="0" KeyPath="Milan.Simulation.dll"/>
+    <ROW Component="Milan.UI.dll" ComponentId="{50115338-22B5-4A39-B2B5-763746DE154B}" Directory_="APPDIR" Attributes="0" KeyPath="Milan.UI.dll"/>
+    <ROW Component="Milan.VisualModeling.dll" ComponentId="{3169B23F-125C-4801-BF8B-7EBEFFB5A183}" Directory_="APPDIR" Attributes="0" KeyPath="Milan.VisualModeling.dll"/>
+    <ROW Component="Moq.dll" ComponentId="{1042E952-C7A6-44C4-BA53-A3CDEFC0EDD7}" Directory_="APPDIR" Attributes="0" KeyPath="Moq.dll"/>
+    <ROW Component="Newtonsoft.Json.dll" ComponentId="{5047A26D-887F-4BC9-B737-AB707B825C07}" Directory_="APPDIR" Attributes="0" KeyPath="Newtonsoft.Json.dll"/>
+    <ROW Component="Ork.Framework.dll" ComponentId="{210BEA4A-0019-4EAF-B013-BD4B984E2EF7}" Directory_="APPDIR" Attributes="0" KeyPath="Ork.Framework.dll"/>
+    <ROW Component="PGK.Extensions.dll" ComponentId="{54023B16-BB5A-438F-B58D-7F0EE048AAC3}" Directory_="APPDIR" Attributes="0" KeyPath="PGK.Extensions.dll"/>
+    <ROW Component="ProductInformation" ComponentId="{23FCCB80-B51F-4FA5-A398-ADA826A0FE9A}" Directory_="APPDIR" Attributes="4" KeyPath="Version"/>
+    <ROW Component="ReactiveUI.dll" ComponentId="{6CEB5F60-CA2D-4B34-80CA-8C45A3C6E564}" Directory_="APPDIR" Attributes="0" KeyPath="ReactiveUI.dll"/>
+    <ROW Component="Rhino.Mocks.dll" ComponentId="{27B51721-3181-4E2C-AE09-56E876F4EB1D}" Directory_="APPDIR" Attributes="0" KeyPath="Rhino.Mocks.dll"/>
+    <ROW Component="SHORTCUTDIR" ComponentId="{DD3FF647-F5FF-4A57-9A65-F7F85AAC72EE}" Directory_="SHORTCUTDIR" Attributes="0"/>
+    <ROW Component="Splat.dll" ComponentId="{F3953290-B70A-432A-B226-5A2FB337D0CA}" Directory_="APPDIR" Attributes="0" KeyPath="Splat.dll"/>
+    <ROW Component="System.Reactive.Core.dll" ComponentId="{5098C557-F38E-4E37-9870-445E8A9F6A3A}" Directory_="APPDIR" Attributes="0" KeyPath="System.Reactive.Core.dll"/>
+    <ROW Component="System.Reactive.Interfaces.dll" ComponentId="{20CE66B2-D0DD-48B5-BB4D-572506CBA8FC}" Directory_="APPDIR" Attributes="0" KeyPath="System.Reactive.Interfaces.dll"/>
+    <ROW Component="System.Reactive.Linq.dll" ComponentId="{C477B5C2-0B93-4FD1-A051-7E5B759BB72D}" Directory_="APPDIR" Attributes="0" KeyPath="System.Reactive.Linq.dll"/>
+    <ROW Component="System.Reactive.PlatformServices.dll" ComponentId="{2E8492C1-6207-49EC-89B9-9C4E3F1E13DB}" Directory_="APPDIR" Attributes="0" KeyPath="System.Reactive.PlatformServices.dll"/>
+    <ROW Component="System.Reactive.Windows.Threading.dll" ComponentId="{107FCFF8-49BA-4EA1-8D64-92C6A9F99D99}" Directory_="APPDIR" Attributes="0" KeyPath="System.Reactive.Windows.Threading.dll"/>
+    <ROW Component="System.Windows.Interactivity.dll" ComponentId="{336C17A3-CC17-4928-9F10-40A04AB07F2D}" Directory_="APPDIR" Attributes="0" KeyPath="System.Windows.Interactivity.dll"/>
+    <ROW Component="Xceed.Wpf.Toolkit.dll" ComponentId="{731E8C97-D0E7-42D5-AE94-D189CDD3E8C2}" Directory_="APPDIR" Attributes="0" KeyPath="Xceed.Wpf.Toolkit.dll"/>
+    <ROW Component="nunit.framework.dll" ComponentId="{7E1836BD-A15B-435D-A706-862178B23F84}" Directory_="APPDIR" Attributes="0" KeyPath="nunit.framework.dll"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
+    <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0" Components="AI_ExePath Caliburn.Micro.Logging.dll Caliburn.Micro.Platform.dll Caliburn.Micro.dll Caliburn.Micro.xml EPPlus.dll EcoFactory.Components.UI.dll EcoFactory.Components.dll EcoFactory.Material.Ecoinvent.UI.dll EcoFactory.Material.Ecoinvent.dll EcoFactory.exe EcoFactory.vshost.exe Emporer.Material.UI.dll Emporer.Material.dll Emporer.Math.Distribution.UI.dll Emporer.Math.Distribution.dll Emporer.Unit.UI.dll Emporer.Unit.dll Emporer.WPF.dll FileHelpers.dll Ionic.Zip.dll LumenWorks.Framework.IO.dll MahApps.Metro.dll Milan.JsonStore.dll Milan.Simulation.CostAccounting.UI.dll Milan.Simulation.CostAccounting.dll Milan.Simulation.MaterialAccounting.UI.d Milan.Simulation.MaterialAccounting.dll Milan.Simulation.Resources.UI.dll Milan.Simulation.Resources.dll Milan.Simulation.ShiftSystems.UI.dll Milan.Simulation.ShiftSystems.dll Milan.Simulation.UI.dll Milan.Simulation.dll Milan.UI.dll Milan.VisualModeling.dll Moq.dll Newtonsoft.Json.dll Ork.Framework.dll PGK.Extensions.dll ProductInformation ReactiveUI.dll Rhino.Mocks.dll SHORTCUTDIR Splat.dll System.Reactive.Core.dll System.Reactive.Interfaces.dll System.Reactive.Linq.dll System.Reactive.PlatformServices.dll System.Reactive.Windows.Threading.dll System.Windows.Interactivity.dll Xceed.Wpf.Toolkit.dll nunit.framework.dll"/>
+    <ATTRIBUTE name="CurrentFeature" value="MainFeature"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
+    <ROW File="Caliburn.Micro.Logging.dll" Component_="Caliburn.Micro.Logging.dll" FileName="Calibu~2.dll|Caliburn.Micro.Logging.dll" Attributes="0" SourcePath="trunk\build\emporer\bin\Caliburn.Micro.Logging.dll" SelfReg="false" NextFile="Caliburn.Micro.Platform.dll"/>
+    <ROW File="Caliburn.Micro.Platform.dll" Component_="Caliburn.Micro.Platform.dll" FileName="Calibu~3.dll|Caliburn.Micro.Platform.dll" Attributes="0" SourcePath="trunk\build\emporer\bin\Caliburn.Micro.Platform.dll" SelfReg="false" NextFile="Caliburn.Micro.Platform.xml"/>
+    <ROW File="Caliburn.Micro.Platform.xml" Component_="Caliburn.Micro.xml" FileName="Calibu~2.xml|Caliburn.Micro.Platform.xml" Attributes="0" SourcePath="trunk\build\emporer\bin\Caliburn.Micro.Platform.xml" SelfReg="false" NextFile="EcoFactory.Components.dll.config"/>
+    <ROW File="Caliburn.Micro.dll" Component_="Caliburn.Micro.dll" FileName="Calibu~1.dll|Caliburn.Micro.dll" Attributes="0" SourcePath="trunk\build\emporer\bin\Caliburn.Micro.dll" SelfReg="false" NextFile="Emporer.Unit.dll"/>
+    <ROW File="Caliburn.Micro.xml" Component_="Caliburn.Micro.xml" FileName="Calibu~1.xml|Caliburn.Micro.xml" Attributes="0" SourcePath="trunk\build\emporer\bin\Caliburn.Micro.xml" SelfReg="false" NextFile="EcoFactory.exe"/>
+    <ROW File="EPPlus.dll" Component_="EPPlus.dll" FileName="EPPlus.dll" Attributes="0" SourcePath="trunk\build\emporer\bin\EPPlus.dll" SelfReg="false" NextFile="LumenWorks.Framework.IO.dll"/>
+    <ROW File="EPPlus.xml" Component_="Caliburn.Micro.xml" FileName="EPPlus.xml" Attributes="0" SourcePath="trunk\build\emporer\bin\EPPlus.xml" SelfReg="false" NextFile="LumenWorks.Framework.IO.xml"/>
+    <ROW File="EcoFactory.Components.UI.dll" Component_="EcoFactory.Components.UI.dll" FileName="EcoFac~3.dll|EcoFactory.Components.UI.dll" Attributes="0" SourcePath="trunk\build\emporer\bin\EcoFactory.Components.UI.dll" SelfReg="false" NextFile="Emporer.Material.dll"/>
+    <ROW File="EcoFactory.Components.UI.dll.config" Component_="Caliburn.Micro.xml" FileName="EcoFac~4.con|EcoFactory.Components.UI.dll.config" Attributes="0" SourcePath="trunk\build\emporer\bin\EcoFactory.Components.UI.dll.config" SelfReg="false" NextFile="EcoFactory.Material.Ecoinvent.dll.config"/>
+    <ROW File="EcoFactory.Components.dll" Component_="EcoFactory.Components.dll" FileName="EcoFac~1.dll|EcoFactory.Components.dll" Attributes="0" SourcePath="trunk\build\emporer\bin\EcoFactory.Components.dll" SelfReg="false" NextFile="Emporer.Material.UI.dll"/>
+    <ROW File="EcoFactory.Components.dll.config" Component_="Caliburn.Micro.xml" FileName="EcoFac~2.con|EcoFactory.Components.dll.config" Attributes="0" SourcePath="trunk\build\emporer\bin\EcoFactory.Components.dll.config" SelfReg="false" NextFile="EcoFactory.Components.UI.dll.config"/>
+    <ROW File="EcoFactory.Material.Ecoinvent.UI.dll" Component_="EcoFactory.Material.Ecoinvent.UI.dll" FileName="EcoFac~5.dll|EcoFactory.Material.Ecoinvent.UI.dll" Attributes="0" SourcePath="trunk\build\emporer\bin\EcoFactory.Material.Ecoinvent.UI.dll" SelfReg="false" NextFile="EPPlus.dll"/>
+    <ROW File="EcoFactory.Material.Ecoinvent.UI.dll.config" Component_="Caliburn.Micro.xml" FileName="EcoFac~6.con|EcoFactory.Material.Ecoinvent.UI.dll.config" Attributes="0" SourcePath="trunk\build\emporer\bin\EcoFactory.Material.Ecoinvent.UI.dll.config" SelfReg="false" NextFile="Emporer.Material.UI.dll.config"/>
+    <ROW File="EcoFactory.Material.Ecoinvent.dll" Component_="EcoFactory.Material.Ecoinvent.dll" FileName="EcoFac~4.dll|EcoFactory.Material.Ecoinvent.dll" Attributes="0" SourcePath="trunk\build\emporer\bin\EcoFactory.Material.Ecoinvent.dll" SelfReg="false" NextFile="EcoFactory.exe.config"/>
+    <ROW File="EcoFactory.Material.Ecoinvent.dll.config" Component_="Caliburn.Micro.xml" FileName="EcoFac~5.con|EcoFactory.Material.Ecoinvent.dll.config" Attributes="0" SourcePath="trunk\build\emporer\bin\EcoFactory.Material.Ecoinvent.dll.config" SelfReg="false" NextFile="EcoFactory.Material.Ecoinvent.UI.dll.config"/>
+    <ROW File="EcoFactory.exe" Component_="EcoFactory.exe" FileName="EcoFac~1.exe|EcoFactory.exe" Attributes="0" SourcePath="trunk\build\emporer\bin\EcoFactory.exe" SelfReg="false" NextFile="EcoFactory.Material.Ecoinvent.dll" DigSign="true"/>
+    <ROW File="EcoFactory.exe.config" Component_="Caliburn.Micro.xml" FileName="EcoFac~1.con|EcoFactory.exe.config" Attributes="0" SourcePath="trunk\build\emporer\bin\EcoFactory.exe.config" SelfReg="false" NextFile="EcoFactory.Material.Ecoinvent.UI.dll"/>
+    <ROW File="Emporer.Material.UI.dll" Component_="Emporer.Material.UI.dll" FileName="Empore~3.dll|Emporer.Material.UI.dll" Attributes="0" SourcePath="trunk\build\emporer\bin\Emporer.Material.UI.dll" SelfReg="false" NextFile="Emporer.Material.dll.config"/>
+    <ROW File="Emporer.Material.UI.dll.config" Component_="Caliburn.Micro.xml" FileName="Empore~3.con|Emporer.Material.UI.dll.config" Attributes="0" SourcePath="trunk\build\emporer\bin\Emporer.Material.UI.dll.config" SelfReg="false" NextFile="Emporer.Math.Distribution.dll"/>
+    <ROW File="Emporer.Material.dll" Component_="Emporer.Material.dll" FileName="Empore~1.dll|Emporer.Material.dll" Attributes="0" SourcePath="trunk\build\emporer\bin\Emporer.Material.dll" SelfReg="false" NextFile="EcoFactory.Components.dll"/>
+    <ROW File="Emporer.Material.dll.config" Component_="Caliburn.Micro.xml" FileName="Empore~1.con|Emporer.Material.dll.config" Attributes="0" SourcePath="trunk\build\emporer\bin\Emporer.Material.dll.config" SelfReg="false" NextFile="Emporer.WPF.dll"/>
+    <ROW File="Emporer.Math.Distribution.UI.dll" Component_="Emporer.Math.Distribution.UI.dll" FileName="Empini~1.dll|Emporer.Math.Distribution.UI.dll" Attributes="0" SourcePath="trunk\build\emporer\bin\Emporer.Math.Distribution.UI.dll" SelfReg="false" NextFile="Emporer.Unit.UI.dll"/>
+    <ROW File="Emporer.Math.Distribution.UI.dll.config" Component_="Caliburn.Micro.xml" FileName="Empore~5.con|Emporer.Math.Distribution.UI.dll.config" Attributes="0" SourcePath="trunk\build\emporer\bin\Emporer.Math.Distribution.UI.dll.config" SelfReg="false" NextFile="Emporer.Unit.dll.config"/>
+    <ROW File="Emporer.Math.Distribution.dll" Component_="Emporer.Math.Distribution.dll" FileName="Empore~4.dll|Emporer.Math.Distribution.dll" Attributes="0" SourcePath="trunk\build\emporer\bin\Emporer.Math.Distribution.dll" SelfReg="false" NextFile="Emporer.Math.Distribution.dll.config"/>
+    <ROW File="Emporer.Math.Distribution.dll.config" Component_="Caliburn.Micro.xml" FileName="Empore~4.con|Emporer.Math.Distribution.dll.config" Attributes="0" SourcePath="trunk\build\emporer\bin\Emporer.Math.Distribution.dll.config" SelfReg="false" NextFile="Emporer.Math.Distribution.UI.dll.config"/>
+    <ROW File="Emporer.Unit.UI.dll" Component_="Emporer.Unit.UI.dll" FileName="Empor~10.dll|Emporer.Unit.UI.dll" Attributes="0" SourcePath="trunk\build\emporer\bin\Emporer.Unit.UI.dll" SelfReg="false" NextFile="EcoFactory.Components.UI.dll"/>
+    <ROW File="Emporer.Unit.UI.dll.config" Component_="Caliburn.Micro.xml" FileName="Empore~8.con|Emporer.Unit.UI.dll.config" Attributes="0" SourcePath="trunk\build\emporer\bin\Emporer.Unit.UI.dll.config" SelfReg="false" NextFile="MahApps.Metro.dll"/>
+    <ROW File="Emporer.Unit.dll" Component_="Emporer.Unit.dll" FileName="Empore~8.dll|Emporer.Unit.dll" Attributes="0" SourcePath="trunk\build\emporer\bin\Emporer.Unit.dll" SelfReg="false" NextFile="FileHelpers.xml"/>
+    <ROW File="Emporer.Unit.dll.config" Component_="Caliburn.Micro.xml" FileName="Empore~6.con|Emporer.Unit.dll.config" Attributes="0" SourcePath="trunk\build\emporer\bin\Emporer.Unit.dll.config" SelfReg="false" NextFile="Emporer.Unit.UI.dll.config"/>
+    <ROW File="Emporer.WPF.dll" Component_="Emporer.WPF.dll" FileName="Empor~11.dll|Emporer.WPF.dll" Attributes="0" SourcePath="trunk\build\emporer\bin\Emporer.WPF.dll" SelfReg="false" NextFile="FileHelpers.dll"/>
+    <ROW File="FileHelpers.dll" Component_="FileHelpers.dll" FileName="FileHe~1.dll|FileHelpers.dll" Attributes="0" SourcePath="trunk\build\emporer\bin\FileHelpers.dll" SelfReg="false" NextFile="Ionic.Zip.dll"/>
+    <ROW File="FileHelpers.xml" Component_="Caliburn.Micro.xml" FileName="FileHe~1.xml|FileHelpers.xml" Attributes="0" SourcePath="trunk\build\emporer\bin\FileHelpers.xml" SelfReg="false" NextFile="Ionic.Zip.xml"/>
+    <ROW File="Ionic.Zip.dll" Component_="Ionic.Zip.dll" FileName="IonicZ~1.dll|Ionic.Zip.dll" Attributes="0" SourcePath="trunk\build\emporer\bin\Ionic.Zip.dll" SelfReg="false" NextFile="Milan.JsonStore.dll"/>
+    <ROW File="Ionic.Zip.xml" Component_="Caliburn.Micro.xml" FileName="IonicZ~1.xml|Ionic.Zip.xml" Attributes="0" SourcePath="trunk\build\emporer\bin\Ionic.Zip.xml" SelfReg="false" NextFile="Caliburn.Micro.xml"/>
+    <ROW File="LumenWorks.Framework.IO.dll" Component_="LumenWorks.Framework.IO.dll" FileName="LumenW~1.dll|LumenWorks.Framework.IO.dll" Attributes="0" SourcePath="trunk\build\emporer\bin\LumenWorks.Framework.IO.dll" SelfReg="false" NextFile="EPPlus.xml"/>
+    <ROW File="LumenWorks.Framework.IO.xml" Component_="Caliburn.Micro.xml" FileName="LumenW~1.xml|LumenWorks.Framework.IO.xml" Attributes="0" SourcePath="trunk\build\emporer\bin\LumenWorks.Framework.IO.xml" SelfReg="false" NextFile="Emporer.Math.Distribution.UI.dll"/>
+    <ROW File="MahApps.Metro.dll" Component_="MahApps.Metro.dll" FileName="MahApp~1.dll|MahApps.Metro.dll" Attributes="0" SourcePath="trunk\build\emporer\bin\MahApps.Metro.dll" SelfReg="false" NextFile="MahApps.Metro.xml"/>
+    <ROW File="MahApps.Metro.xml" Component_="Caliburn.Micro.xml" FileName="MahApp~1.xml|MahApps.Metro.xml" Attributes="0" SourcePath="trunk\build\emporer\bin\MahApps.Metro.xml" SelfReg="false" NextFile="Milan.Simulation.CostAccounting.dll.config"/>
+    <ROW File="Milan.JsonStore.dll" Component_="Milan.JsonStore.dll" FileName="MilanJ~1.dll|Milan.JsonStore.dll" Attributes="0" SourcePath="trunk\build\emporer\bin\Milan.JsonStore.dll" SelfReg="false" NextFile="Milan.JsonStore.dll.config"/>
+    <ROW File="Milan.JsonStore.dll.config" Component_="Caliburn.Micro.xml" FileName="MilanJ~1.con|Milan.JsonStore.dll.config" Attributes="0" SourcePath="trunk\build\emporer\bin\Milan.JsonStore.dll.config" SelfReg="false" NextFile="Milan.Simulation.CostAccounting.UI.dll"/>
+    <ROW File="Milan.Simulation.CostAccounting.UI.dll" Component_="Milan.Simulation.CostAccounting.UI.dll" FileName="MilanS~6.dll|Milan.Simulation.CostAccounting.UI.dll" Attributes="0" SourcePath="trunk\build\emporer\bin\Milan.Simulation.CostAccounting.UI.dll" SelfReg="false" NextFile="Milan.Simulation.CostAccounting.dll"/>
+    <ROW File="Milan.Simulation.CostAccounting.UI.dll.config" Component_="Caliburn.Micro.xml" FileName="MilanS~2.con|Milan.Simulation.CostAccounting.UI.dll.config" Attributes="0" SourcePath="trunk\build\emporer\bin\Milan.Simulation.CostAccounting.UI.dll.config" SelfReg="false" NextFile="Milan.Simulation.dll.config"/>
+    <ROW File="Milan.Simulation.CostAccounting.dll" Component_="Milan.Simulation.CostAccounting.dll" FileName="MilanS~4.dll|Milan.Simulation.CostAccounting.dll" Attributes="0" SourcePath="trunk\build\emporer\bin\Milan.Simulation.CostAccounting.dll" SelfReg="false" NextFile="Caliburn.Micro.Logging.dll"/>
+    <ROW File="Milan.Simulation.CostAccounting.dll.config" Component_="Caliburn.Micro.xml" FileName="MilanS~1.con|Milan.Simulation.CostAccounting.dll.config" Attributes="0" SourcePath="trunk\build\emporer\bin\Milan.Simulation.CostAccounting.dll.config" SelfReg="false" NextFile="Milan.Simulation.CostAccounting.UI.dll.config"/>
+    <ROW File="Milan.Simulation.MaterialAccounting.UI.dll" Component_="Milan.Simulation.MaterialAccounting.UI.d" FileName="Milan~13.dll|Milan.Simulation.MaterialAccounting.UI.dll" Attributes="0" SourcePath="trunk\build\emporer\bin\Milan.Simulation.MaterialAccounting.UI.dll" SelfReg="false" NextFile="Milan.Simulation.Resources.dll"/>
+    <ROW File="Milan.Simulation.MaterialAccounting.UI.dll.config" Component_="Caliburn.Micro.xml" FileName="MilanS~6.con|Milan.Simulation.MaterialAccounting.UI.dll.config" Attributes="0" SourcePath="trunk\build\emporer\bin\Milan.Simulation.MaterialAccounting.UI.dll.config" SelfReg="false" NextFile="Milan.Simulation.Resources.dll.config"/>
+    <ROW File="Milan.Simulation.MaterialAccounting.dll" Component_="Milan.Simulation.MaterialAccounting.dll" FileName="Milan~11.dll|Milan.Simulation.MaterialAccounting.dll" Attributes="0" SourcePath="trunk\build\emporer\bin\Milan.Simulation.MaterialAccounting.dll" SelfReg="false" NextFile="Milan.Simulation.MaterialAccounting.UI.dll"/>
+    <ROW File="Milan.Simulation.MaterialAccounting.dll.config" Component_="Caliburn.Micro.xml" FileName="MilanS~4.con|Milan.Simulation.MaterialAccounting.dll.config" Attributes="0" SourcePath="trunk\build\emporer\bin\Milan.Simulation.MaterialAccounting.dll.config" SelfReg="false" NextFile="Milan.Simulation.MaterialAccounting.UI.dll.config"/>
+    <ROW File="Milan.Simulation.Resources.UI.dll" Component_="Milan.Simulation.Resources.UI.dll" FileName="MilanS~1.dll|Milan.Simulation.Resources.UI.dll" Attributes="0" SourcePath="trunk\build\emporer\bin\Milan.Simulation.Resources.UI.dll" SelfReg="false" NextFile="Milan.Simulation.Resources.UI.dll.config"/>
+    <ROW File="Milan.Simulation.Resources.UI.dll.config" Component_="Caliburn.Micro.xml" FileName="MilanS~9.con|Milan.Simulation.Resources.UI.dll.config" Attributes="0" SourcePath="trunk\build\emporer\bin\Milan.Simulation.Resources.UI.dll.config" SelfReg="false" NextFile="Milan.Simulation.ShiftSystems.dll.config"/>
+    <ROW File="Milan.Simulation.Resources.dll" Component_="Milan.Simulation.Resources.dll" FileName="Milan~14.dll|Milan.Simulation.Resources.dll" Attributes="0" SourcePath="trunk\build\emporer\bin\Milan.Simulation.Resources.dll" SelfReg="false" NextFile="Milan.Simulation.ShiftSystems.dll"/>
+    <ROW File="Milan.Simulation.Resources.dll.config" Component_="Caliburn.Micro.xml" FileName="MilanS~7.con|Milan.Simulation.Resources.dll.config" Attributes="0" SourcePath="trunk\build\emporer\bin\Milan.Simulation.Resources.dll.config" SelfReg="false" NextFile="Milan.Simulation.Resources.UI.dll"/>
+    <ROW File="Milan.Simulation.ShiftSystems.UI.dll" Component_="Milan.Simulation.ShiftSystems.UI.dll" FileName="Milan~18.dll|Milan.Simulation.ShiftSystems.UI.dll" Attributes="0" SourcePath="trunk\build\emporer\bin\Milan.Simulation.ShiftSystems.UI.dll" SelfReg="false" NextFile="Milan.Simulation.UI.dll"/>
+    <ROW File="Milan.Simulation.ShiftSystems.UI.dll.config" Component_="Caliburn.Micro.xml" FileName="Milan~12.con|Milan.Simulation.ShiftSystems.UI.dll.config" Attributes="0" SourcePath="trunk\build\emporer\bin\Milan.Simulation.ShiftSystems.UI.dll.config" SelfReg="false" NextFile="Milan.Simulation.UI.dll.config"/>
+    <ROW File="Milan.Simulation.ShiftSystems.dll" Component_="Milan.Simulation.ShiftSystems.dll" FileName="Milan~16.dll|Milan.Simulation.ShiftSystems.dll" Attributes="0" SourcePath="trunk\build\emporer\bin\Milan.Simulation.ShiftSystems.dll" SelfReg="false" NextFile="Milan.Simulation.ShiftSystems.UI.dll"/>
+    <ROW File="Milan.Simulation.ShiftSystems.dll.config" Component_="Caliburn.Micro.xml" FileName="Milan~10.con|Milan.Simulation.ShiftSystems.dll.config" Attributes="0" SourcePath="trunk\build\emporer\bin\Milan.Simulation.ShiftSystems.dll.config" SelfReg="false" NextFile="Milan.Simulation.ShiftSystems.UI.dll.config"/>
+    <ROW File="Milan.Simulation.UI.dll" Component_="Milan.Simulation.UI.dll" FileName="Milan~20.dll|Milan.Simulation.UI.dll" Attributes="0" SourcePath="trunk\build\emporer\bin\Milan.Simulation.UI.dll" SelfReg="false" NextFile="Milan.UI.dll"/>
+    <ROW File="Milan.Simulation.UI.dll.config" Component_="Caliburn.Micro.xml" FileName="Milan~14.con|Milan.Simulation.UI.dll.config" Attributes="0" SourcePath="trunk\build\emporer\bin\Milan.Simulation.UI.dll.config" SelfReg="false" NextFile="Splat.dll"/>
+    <ROW File="Milan.Simulation.dll" Component_="Milan.Simulation.dll" FileName="Milan~10.dll|Milan.Simulation.dll" Attributes="0" SourcePath="trunk\build\emporer\bin\Milan.Simulation.dll" SelfReg="false" NextFile="Milan.Simulation.MaterialAccounting.dll"/>
+    <ROW File="Milan.Simulation.dll.config" Component_="Caliburn.Micro.xml" FileName="MilanS~3.con|Milan.Simulation.dll.config" Attributes="0" SourcePath="trunk\build\emporer\bin\Milan.Simulation.dll.config" SelfReg="false" NextFile="Milan.Simulation.MaterialAccounting.dll.config"/>
+    <ROW File="Milan.UI.dll" Component_="Milan.UI.dll" FileName="MilanU~1.dll|Milan.UI.dll" Attributes="0" SourcePath="trunk\build\emporer\bin\Milan.UI.dll" SelfReg="false" NextFile="Milan.UI.dll.config"/>
+    <ROW File="Milan.UI.dll.config" Component_="Caliburn.Micro.xml" FileName="MilanU~1.con|Milan.UI.dll.config" Attributes="0" SourcePath="trunk\build\emporer\bin\Milan.UI.dll.config" SelfReg="false" NextFile="Milan.VisualModeling.dll"/>
+    <ROW File="Milan.VisualModeling.dll" Component_="Milan.VisualModeling.dll" FileName="MilanV~1.dll|Milan.VisualModeling.dll" Attributes="0" SourcePath="trunk\build\emporer\bin\Milan.VisualModeling.dll" SelfReg="false" NextFile="Milan.VisualModeling.dll.config"/>
+    <ROW File="Milan.VisualModeling.dll.config" Component_="Caliburn.Micro.xml" FileName="MilanV~1.con|Milan.VisualModeling.dll.config" Attributes="0" SourcePath="trunk\build\emporer\bin\Milan.VisualModeling.dll.config" SelfReg="false" NextFile="Moq.dll"/>
+    <ROW File="Moq.dll" Component_="Moq.dll" FileName="Moq.dll" Attributes="0" SourcePath="trunk\build\emporer\bin\Moq.dll" SelfReg="false" NextFile="Moq.xml"/>
+    <ROW File="Moq.xml" Component_="Caliburn.Micro.xml" FileName="Moq.xml" Attributes="0" SourcePath="trunk\build\emporer\bin\Moq.xml" SelfReg="false" NextFile="Newtonsoft.Json.dll"/>
+    <ROW File="Newtonsoft.Json.dll" Component_="Newtonsoft.Json.dll" FileName="Newton~1.dll|Newtonsoft.Json.dll" Attributes="0" SourcePath="trunk\build\emporer\bin\Newtonsoft.Json.dll" SelfReg="false" NextFile="Newtonsoft.Json.xml"/>
+    <ROW File="Newtonsoft.Json.xml" Component_="Caliburn.Micro.xml" FileName="Newton~1.xml|Newtonsoft.Json.xml" Attributes="0" SourcePath="trunk\build\emporer\bin\Newtonsoft.Json.xml" SelfReg="false" NextFile="nunit.framework.dll"/>
+    <ROW File="Ork.Framework.dll" Component_="Ork.Framework.dll" FileName="OrkFra~1.dll|Ork.Framework.dll" Attributes="0" SourcePath="trunk\build\emporer\bin\Ork.Framework.dll" SelfReg="false" NextFile="Ork.Framework.dll.config"/>
+    <ROW File="Ork.Framework.dll.config" Component_="Caliburn.Micro.xml" FileName="OrkFra~1.con|Ork.Framework.dll.config" Attributes="0" SourcePath="trunk\build\emporer\bin\Ork.Framework.dll.config" SelfReg="false" NextFile="PGK.Extensions.dll"/>
+    <ROW File="PGK.Extensions.dll" Component_="PGK.Extensions.dll" FileName="PGKExt~1.dll|PGK.Extensions.dll" Attributes="0" SourcePath="trunk\build\emporer\bin\PGK.Extensions.dll" SelfReg="false" NextFile="PGK.Extensions.xml"/>
+    <ROW File="PGK.Extensions.xml" Component_="Caliburn.Micro.xml" FileName="PGKExt~1.xml|PGK.Extensions.xml" Attributes="0" SourcePath="trunk\build\emporer\bin\PGK.Extensions.xml" SelfReg="false" NextFile="ReactiveUI.dll"/>
+    <ROW File="ReactiveUI.dll" Component_="ReactiveUI.dll" FileName="Reacti~1.dll|ReactiveUI.dll" Attributes="0" SourcePath="trunk\build\emporer\bin\ReactiveUI.dll" SelfReg="false" NextFile="ReactiveUI.xml"/>
+    <ROW File="ReactiveUI.xml" Component_="Caliburn.Micro.xml" FileName="Reacti~1.xml|ReactiveUI.xml" Attributes="0" SourcePath="trunk\build\emporer\bin\ReactiveUI.xml" SelfReg="false" NextFile="Rhino.Mocks.dll"/>
+    <ROW File="Rhino.Mocks.dll" Component_="Rhino.Mocks.dll" FileName="RhinoM~1.dll|Rhino.Mocks.dll" Attributes="0" SourcePath="trunk\build\emporer\bin\Rhino.Mocks.dll" SelfReg="false" NextFile="Rhino.Mocks.xml"/>
+    <ROW File="Rhino.Mocks.xml" Component_="Caliburn.Micro.xml" FileName="RhinoM~1.xml|Rhino.Mocks.xml" Attributes="0" SourcePath="trunk\build\emporer\bin\Rhino.Mocks.xml" SelfReg="false" NextFile="System.Reactive.Core.dll"/>
+    <ROW File="Splat.dll" Component_="Splat.dll" FileName="Splat.dll" Attributes="0" SourcePath="trunk\build\emporer\bin\Splat.dll" SelfReg="false"/>
+    <ROW File="System.Reactive.Core.dll" Component_="System.Reactive.Core.dll" FileName="System~1.dll|System.Reactive.Core.dll" Attributes="0" SourcePath="trunk\build\emporer\bin\System.Reactive.Core.dll" SelfReg="false" NextFile="System.Reactive.Core.xml"/>
+    <ROW File="System.Reactive.Core.xml" Component_="Caliburn.Micro.xml" FileName="System~1.xml|System.Reactive.Core.xml" Attributes="0" SourcePath="trunk\build\emporer\bin\System.Reactive.Core.xml" SelfReg="false" NextFile="System.Reactive.Interfaces.dll"/>
+    <ROW File="System.Reactive.Interfaces.dll" Component_="System.Reactive.Interfaces.dll" FileName="System~2.dll|System.Reactive.Interfaces.dll" Attributes="0" SourcePath="trunk\build\emporer\bin\System.Reactive.Interfaces.dll" SelfReg="false" NextFile="System.Reactive.Interfaces.xml"/>
+    <ROW File="System.Reactive.Interfaces.xml" Component_="Caliburn.Micro.xml" FileName="System~2.xml|System.Reactive.Interfaces.xml" Attributes="0" SourcePath="trunk\build\emporer\bin\System.Reactive.Interfaces.xml" SelfReg="false" NextFile="System.Reactive.Linq.dll"/>
+    <ROW File="System.Reactive.Linq.dll" Component_="System.Reactive.Linq.dll" FileName="System~3.dll|System.Reactive.Linq.dll" Attributes="0" SourcePath="trunk\build\emporer\bin\System.Reactive.Linq.dll" SelfReg="false" NextFile="System.Reactive.Linq.xml"/>
+    <ROW File="System.Reactive.Linq.xml" Component_="Caliburn.Micro.xml" FileName="System~3.xml|System.Reactive.Linq.xml" Attributes="0" SourcePath="trunk\build\emporer\bin\System.Reactive.Linq.xml" SelfReg="false" NextFile="System.Reactive.PlatformServices.dll"/>
+    <ROW File="System.Reactive.PlatformServices.dll" Component_="System.Reactive.PlatformServices.dll" FileName="System~4.dll|System.Reactive.PlatformServices.dll" Attributes="0" SourcePath="trunk\build\emporer\bin\System.Reactive.PlatformServices.dll" SelfReg="false" NextFile="System.Reactive.PlatformServices.xml"/>
+    <ROW File="System.Reactive.PlatformServices.xml" Component_="Caliburn.Micro.xml" FileName="System~4.xml|System.Reactive.PlatformServices.xml" Attributes="0" SourcePath="trunk\build\emporer\bin\System.Reactive.PlatformServices.xml" SelfReg="false" NextFile="System.Reactive.Windows.Threading.dll"/>
+    <ROW File="System.Reactive.Windows.Threading.dll" Component_="System.Reactive.Windows.Threading.dll" FileName="System~5.dll|System.Reactive.Windows.Threading.dll" Attributes="0" SourcePath="trunk\build\emporer\bin\System.Reactive.Windows.Threading.dll" SelfReg="false" NextFile="System.Reactive.Windows.Threading.xml"/>
+    <ROW File="System.Reactive.Windows.Threading.xml" Component_="Caliburn.Micro.xml" FileName="System~5.xml|System.Reactive.Windows.Threading.xml" Attributes="0" SourcePath="trunk\build\emporer\bin\System.Reactive.Windows.Threading.xml" SelfReg="false" NextFile="System.Windows.Interactivity.dll"/>
+    <ROW File="System.Windows.Interactivity.dll" Component_="System.Windows.Interactivity.dll" FileName="System~7.dll|System.Windows.Interactivity.dll" Attributes="0" SourcePath="trunk\build\emporer\bin\System.Windows.Interactivity.dll" SelfReg="false" NextFile="System.Windows.Interactivity.xml"/>
+    <ROW File="System.Windows.Interactivity.xml" Component_="Caliburn.Micro.xml" FileName="System~6.xml|System.Windows.Interactivity.xml" Attributes="0" SourcePath="trunk\build\emporer\bin\System.Windows.Interactivity.xml" SelfReg="false" NextFile="Xceed.Wpf.Toolkit.dll"/>
+    <ROW File="Xceed.Wpf.Toolkit.dll" Component_="Xceed.Wpf.Toolkit.dll" FileName="XceedW~1.dll|Xceed.Wpf.Toolkit.dll" Attributes="0" SourcePath="trunk\build\emporer\bin\Xceed.Wpf.Toolkit.dll" SelfReg="false" NextFile="Caliburn.Micro.dll"/>
+    <ROW File="nunit.framework.dll" Component_="nunit.framework.dll" FileName="nunitf~1.dll|nunit.framework.dll" Attributes="0" SourcePath="trunk\build\emporer\bin\nunit.framework.dll" SelfReg="false" NextFile="nunit.framework.xml"/>
+    <ROW File="nunit.framework.xml" Component_="Caliburn.Micro.xml" FileName="nunitf~1.xml|nunit.framework.xml" Attributes="0" SourcePath="trunk\build\emporer\bin\nunit.framework.xml" SelfReg="false" NextFile="Ork.Framework.dll"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
+    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="1" PackageFolder="trunk\src\EcoFactory\Installer\Setup Files" PackageFileName="EcoFactorySetup" Languages="en" InstallationType="4" CabsLocation="1" PackageType="1" FilesInsideExe="true" ExeIconPath="trunk\build\emporer\bin\EcoFactory.exe" ExtractionFolder="[AppDataFolder][|Manufacturer]\[|ProductName] [|ProductVersion]\install" UseLargeSchema="true" ExeName="EcoFactorySetup"/>
+    <ATTRIBUTE name="CurrentBuild" value="DefaultBuild"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.DictionaryComponent">
+    <ROW Path="&lt;AI_DICTS&gt;ui.ail"/>
+    <ROW Path="&lt;AI_DICTS&gt;ui_en.ail"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.FragmentComponent">
+    <ROW Fragment="CommonUI.aip" Path="&lt;AI_FRAGS&gt;CommonUI.aip"/>
+    <ROW Fragment="FolderDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\FolderDlg.aip"/>
+    <ROW Fragment="MaintenanceTypeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\MaintenanceTypeDlg.aip"/>
+    <ROW Fragment="MaintenanceWelcomeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\MaintenanceWelcomeDlg.aip"/>
+    <ROW Fragment="SequenceDialogs.aip" Path="&lt;AI_THEMES&gt;classic\fragments\SequenceDialogs.aip"/>
+    <ROW Fragment="Sequences.aip" Path="&lt;AI_FRAGS&gt;Sequences.aip"/>
+    <ROW Fragment="StaticUIStrings.aip" Path="&lt;AI_FRAGS&gt;StaticUIStrings.aip"/>
+    <ROW Fragment="UI.aip" Path="&lt;AI_THEMES&gt;classic\fragments\UI.aip"/>
+    <ROW Fragment="Validation.aip" Path="&lt;AI_FRAGS&gt;Validation.aip"/>
+    <ROW Fragment="VerifyRemoveDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\VerifyRemoveDlg.aip"/>
+    <ROW Fragment="VerifyRepairDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\VerifyRepairDlg.aip"/>
+    <ROW Fragment="WelcomeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\WelcomeDlg.aip"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiActionTextComponent">
+    <ROW Action="AI_DeleteLzma" Description="Deleting files extracted from archive" DescriptionLocId="ActionText.Description.AI_DeleteLzma" TemplateLocId="-"/>
+    <ROW Action="AI_DeleteRLzma" Description="Deleting files extracted from archive" DescriptionLocId="ActionText.Description.AI_DeleteLzma" TemplateLocId="-"/>
+    <ROW Action="AI_ExtractFiles" Description="Extracting files from archive" DescriptionLocId="ActionText.Description.AI_ExtractLzma" TemplateLocId="-"/>
+    <ROW Action="AI_ExtractLzma" Description="Extracting files from archive" DescriptionLocId="ActionText.Description.AI_ExtractLzma" TemplateLocId="-"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiAppSearchComponent">
+    <ROW Property="AI_DOTNET45_SEARCH" Signature_="AI_DotNet45SearchSgn" Builds="DefaultBuild"/>
+    <ROW Property="AI_SETUPEXEPATH" Signature_="AI_EXE_PATH_CU" Builds="DefaultBuild"/>
+    <ROW Property="AI_SETUPEXEPATH" Signature_="AI_EXE_PATH_LM" Builds="DefaultBuild"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiBinaryComponent">
+    <ROW Name="Prereq.dll" SourcePath="&lt;AI_CUSTACTS&gt;Prereq.dll"/>
+    <ROW Name="aicustact.dll" SourcePath="&lt;AI_CUSTACTS&gt;aicustact.dll"/>
+    <ROW Name="lzmaextractor.dll" SourcePath="&lt;AI_CUSTACTS&gt;lzmaextractor.dll"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiControlEventComponent">
+    <ROW Dialog_="WelcomeDlg" Control_="Next" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="FolderDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_INSTALL" Ordering="201"/>
+    <ROW Dialog_="FolderDlg" Control_="Back" Event="NewDialog" Argument="WelcomeDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="MaintenanceWelcomeDlg" Control_="Next" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT" Ordering="99"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_MAINT" Ordering="198"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="CustomizeDlg" Condition="AI_MAINT" Ordering="202"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_INSTALL" Ordering="197"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="201"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_MAINT" Ordering="101"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="ChangeButton" Event="NewDialog" Argument="CustomizeDlg" Condition="AI_MAINT" Ordering="501"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceWelcomeDlg" Condition="AI_MAINT" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RemoveButton" Event="NewDialog" Argument="VerifyRemoveDlg" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="601"/>
+    <ROW Dialog_="VerifyRemoveDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RepairButton" Event="NewDialog" Argument="VerifyRepairDlg" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="601"/>
+    <ROW Dialog_="VerifyRepairDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="1"/>
+    <ROW Dialog_="VerifyRepairDlg" Control_="Repair" Event="EndDialog" Argument="Return" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="399" Options="1"/>
+    <ROW Dialog_="VerifyRemoveDlg" Control_="Remove" Event="EndDialog" Argument="Return" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="299" Options="1"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_PATCH" Ordering="201"/>
+    <ROW Dialog_="ResumeDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_RESUME" Ordering="299"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_PATCH" Ordering="199"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="PatchWelcomeDlg" Condition="AI_PATCH" Ordering="203"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCreateFolderComponent">
+    <ROW Directory_="SHORTCUTDIR" Component_="SHORTCUTDIR"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
+    <ROW Action="AI_AppSearchEx" Type="1" Source="Prereq.dll" Target="DoAppSearchEx"/>
+    <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Type="51" Source="AI_SETUPEXEPATH_ORIGINAL" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_DATA_SETTER" Type="51" Source="AI_ExtractFiles" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_DOWNGRADE" Type="19" Target="4010"/>
+    <ROW Action="AI_DeleteCadLzma" Type="51" Source="AI_DeleteLzma" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_DeleteLzma" Type="1025" Source="lzmaextractor.dll" Target="DeleteLZMAFiles"/>
+    <ROW Action="AI_DeleteRCadLzma" Type="51" Source="AI_DeleteRLzma" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_DeleteRLzma" Type="1281" Source="lzmaextractor.dll" Target="DeleteLZMAFiles"/>
+    <ROW Action="AI_DpiContentScale" Type="1" Source="aicustact.dll" Target="DpiContentScale"/>
+    <ROW Action="AI_EstimateExtractFiles" Type="1" Source="Prereq.dll" Target="EstimateExtractFiles"/>
+    <ROW Action="AI_ExtractCadLzma" Type="51" Source="AI_ExtractLzma" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_ExtractFiles" Type="1025" Source="Prereq.dll" Target="ExtractSourceFiles" AdditionalSeq="AI_DATA_SETTER"/>
+    <ROW Action="AI_ExtractLzma" Type="1025" Source="lzmaextractor.dll" Target="ExtractLZMAFiles"/>
+    <ROW Action="AI_FindExeLzma" Type="1" Source="lzmaextractor.dll" Target="FindEXE"/>
+    <ROW Action="AI_InstallModeCheck" Type="1" Source="aicustact.dll" Target="UpdateInstallMode" WithoutSeq="true"/>
+    <ROW Action="AI_LaunchApp" Type="1" Source="aicustact.dll" Target="[#EcoFactory.exe]"/>
+    <ROW Action="AI_PREPARE_UPGRADE" Type="65" Source="aicustact.dll" Target="PrepareUpgrade"/>
+    <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Type="51" Source="AI_SETUPEXEPATH" Target="[AI_SETUPEXEPATH_ORIGINAL]"/>
+    <ROW Action="AI_RESTORE_LOCATION" Type="65" Source="aicustact.dll" Target="RestoreLocation"/>
+    <ROW Action="AI_ResolveKnownFolders" Type="1" Source="aicustact.dll" Target="AI_ResolveKnownFolders"/>
+    <ROW Action="AI_ResolveLocalizedCredentials" Type="1" Source="aicustact.dll" Target="GetLocalizedCredentials"/>
+    <ROW Action="AI_SHOW_LOG" Type="65" Source="aicustact.dll" Target="LaunchLogFile" WithoutSeq="true"/>
+    <ROW Action="AI_STORE_LOCATION" Type="51" Source="ARPINSTALLLOCATION" Target="[APPDIR]"/>
+    <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]"/>
+    <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]"/>
+    <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiExtComponent">
+    <ROW Extension="buis" Component_="EcoFactory.exe" ProgId_="[|Manufacturer].[|ProductName]" Feature_="MainFeature" Options="32"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
+    <ROW Name="EcoFactory.exe" SourcePath="trunk\build\emporer\bin\EcoFactory.exe" Index="0"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstExSeqComponent">
+    <ROW Action="AI_DOWNGRADE" Condition="AI_NEWERPRODUCTFOUND AND (UILevel &lt;&gt; 5)" Sequence="210"/>
+    <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="748"/>
+    <ROW Action="AI_STORE_LOCATION" Condition="(Not Installed) OR REINSTALL" Sequence="1501"/>
+    <ROW Action="AI_PREPARE_UPGRADE" Condition="AI_UPGRADE=&quot;No&quot; AND (Not Installed)" Sequence="1399"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="52"/>
+    <ROW Action="AI_ResolveLocalizedCredentials" Sequence="51"/>
+    <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Sequence="99" Builds="DefaultBuild"/>
+    <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Condition="AI_SETUPEXEPATH_ORIGINAL" Sequence="102" Builds="DefaultBuild"/>
+    <ROW Action="AI_DeleteCadLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="199" Builds="DefaultBuild"/>
+    <ROW Action="AI_DeleteRCadLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="198" Builds="DefaultBuild"/>
+    <ROW Action="AI_ExtractCadLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="197" Builds="DefaultBuild"/>
+    <ROW Action="AI_FindExeLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="196" Builds="DefaultBuild"/>
+    <ROW Action="AI_ExtractLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="1549" Builds="DefaultBuild"/>
+    <ROW Action="AI_DeleteRLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="1548" Builds="DefaultBuild"/>
+    <ROW Action="AI_DeleteLzma" Condition="SETUPEXEDIR=&quot;&quot; AND Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;) AND (NOT PATCH)" Sequence="6599" Builds="DefaultBuild"/>
+    <ROW Action="AI_ExtractFiles" Sequence="3998" Builds="DefaultBuild"/>
+    <ROW Action="AI_DATA_SETTER" Sequence="3997"/>
+    <ROW Action="AI_EstimateExtractFiles" Sequence="3999" Builds="DefaultBuild"/>
+    <ROW Action="AI_AppSearchEx" Sequence="101"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstallUISequenceComponent">
+    <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="748"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="53"/>
+    <ROW Action="AI_ResolveLocalizedCredentials" Sequence="52"/>
+    <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Sequence="99"/>
+    <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Condition="AI_SETUPEXEPATH_ORIGINAL" Sequence="102"/>
+    <ROW Action="AI_AppSearchEx" Sequence="101"/>
+    <ROW Action="AI_DpiContentScale" Sequence="51"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiLaunchConditionsComponent">
+    <ROW Condition="(AI_DOTNET45_SEARCH &gt;= &quot;4.5&quot;)" Description="[ProductName] cannot be installed on systems with .NET Framework version lower than [AI_MINDOTNETVERSION]" DescriptionLocId="AI.LaunchCondition.DotNET" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="(VersionNT &lt;&gt; 400)" Description="[ProductName] cannot be installed on the following Windows versions: [WindowsTypeNT40Display]" DescriptionLocId="AI.LaunchCondition.NoNT40" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="VersionNT" Description="[ProductName] cannot be installed on [WindowsType9XDisplay]" DescriptionLocId="AI.LaunchCondition.No9X" IsPredefined="true" Builds="DefaultBuild"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiProgIdComponent">
+    <ROW ProgId="[|Manufacturer].[|ProductName]" Description="EcoFactory project file" Icon_="EcoFactory.exe" MacDefaultDocType="true"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiRegLocatorComponent">
+    <ROW Signature_="AI_DotNet45SearchSgn" Root="2" Key="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full" Name="Version" Type="2"/>
+    <ROW Signature_="AI_EXE_PATH_CU" Root="1" Key="Software\Caphyon\Advanced Installer\LZMA\[ProductCode]\[ProductVersion]" Name="AI_ExePath" Type="2"/>
+    <ROW Signature_="AI_EXE_PATH_LM" Root="2" Key="Software\Caphyon\Advanced Installer\LZMA\[ProductCode]\[ProductVersion]" Name="AI_ExePath" Type="2"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiRegsComponent">
+    <ROW Registry="AI_ExePath" Root="-1" Key="Software\Caphyon\Advanced Installer\LZMA\[ProductCode]\[ProductVersion]" Name="AI_ExePath" Value="[AI_SETUPEXEPATH]" Component_="AI_ExePath"/>
+    <ROW Registry="Path" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Path" Value="[APPDIR]" Component_="ProductInformation"/>
+    <ROW Registry="Version" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Version" Value="[ProductVersion]" Component_="ProductInformation"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
+    <ROW Shortcut="EcoFactory.exe" Directory_="SHORTCUTDIR" Name="EcoFac~1.exe|EcoFactory.exe" Component_="EcoFactory.exe" Target="[#EcoFactory.exe]" Description="EcoFactory.exe" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
+    <ROW Shortcut="EcoFactory.exe_1" Directory_="DesktopFolder" Name="EcoFac~1.exe|EcoFactory.exe" Component_="EcoFactory.exe" Target="[#EcoFactory.exe]" Description="EcoFactory.exe" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiThemeComponent">
+    <ATTRIBUTE name="UsedTheme" value="classic"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiUpgradeComponent">
+    <ROW UpgradeCode="[|UpgradeCode]" VersionMax="[|ProductVersion]" Attributes="1025" ActionProperty="OLDPRODUCTS"/>
+    <ROW UpgradeCode="[|UpgradeCode]" VersionMin="[|ProductVersion]" Attributes="2" ActionProperty="AI_NEWERPRODUCTFOUND"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiVerbComponent">
+    <ROW Extension_="buis" Component_="EcoFactory.exe" Verb="open" Sequence="0" Command="&amp;Open" Argument="&quot;%1&quot;"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.PreReqComponent">
+    <ROW PrereqKey="E9BFB0D602DD498F96473C9BBCDDEC89" DisplayName=".NET Framework 4.5" VersionMin="4.5" SetupFileUrl="http://download.microsoft.com/download/B/A/4/BA4A7E71-2906-4B2D-A0E1-80CF16844F5F/dotNetFx45_Full_setup.exe" Location="1" ExactSize="0" Win9xVersions="Windows 9x/ME" WinNTVersions="Windows NT 4.0, Windows NT 4.0 Service Pack 1, Windows NT 4.0 Service Pack 2, Windows NT 4.0 Service Pack 3, Windows NT 4.0 Service Pack 4, Windows NT 4.0 Service Pack 5, Windows NT 4.0 Service Pack 6, Windows 2000, Windows 2000 Service Pack 1, Windows 2000 Service Pack 2, Windows 2000 Service Pack 3, Windows 2000 Service Pack 4, Windows XP x86, Windows XP x86 Service Pack 1, Windows XP x86 Service Pack 2, Windows XP x86 Service Pack 3, Windows Server 2003 x86, Windows Server 2003 x86 Service Pack 1, Windows Server 2003 x86 Service Pack 2, Windows Vista x86, Windows Vista x86 Service Pack 1, Windows Server 2008 x86" WinNT64Versions="Windows XP x64, Windows XP x64 Service Pack 1, Windows XP x64 Service Pack 2, Windows Server 2003 x64, Windows Server 2003 x64 Service Pack 1, Windows Server 2003 x64 Service Pack 2, Windows Vista x64, Windows Vista x64 Service Pack 1, Windows Server 2008 x64" Operator="1"/>
+    <ATTRIBUTE name="PrereqsOrder" value="E9BFB0D602DD498F96473C9BBCDDEC89"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.PreReqSearchComponent">
+    <ROW SearchKey="E9BFB0D602DD498F96473C9BBCDDEC89_NET_45_SEARCH" Prereq="E9BFB0D602DD498F96473C9BBCDDEC89" SearchType="2" SearchString="HKLM\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full\Version" VerMin="4.5" Order="1" Property="AI_NET_45_ORIGINAL_PREREQSEARCH_PROP"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.SynchronizedFolderComponent">
+    <ROW Directory_="APPDIR" SourcePath="trunk\build\emporer\bin" Feature="MainFeature" ExcludePattern="*~|#*#|%*%|._|CVS|.cvsignore|SCCS|vssver.scc|mssccprj.scc|vssver2.scc|.svn|.DS_Store|/*.vshost.*|/*.Tests.*|/*.pdb" ExcludeFlags="6"/>
+  </COMPONENT>
+</DOCUMENT>

@@ -1,0 +1,25 @@
+﻿<UserControl
+  x:Class="EcoFactory.Components.UI.Views.GeneralSectionView"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+  xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+  xmlns:wpf="http://www.gewissen-it.de/milan/wpf">
+  
+  <Grid>
+    
+    <TextBox
+      controls:TextBoxHelper.Watermark="Description"
+      HorizontalAlignment="Stretch"
+      Text="{Binding Path=Description}"
+      TextWrapping="Wrap">
+      
+      <i:Interaction.Behaviors>
+        <wpf:CommitOnEnter />
+      </i:Interaction.Behaviors>
+      
+    </TextBox>
+    
+  </Grid>
+  
+</UserControl>

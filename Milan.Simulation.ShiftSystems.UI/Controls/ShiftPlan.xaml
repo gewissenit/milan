@@ -1,0 +1,169 @@
+﻿<UserControl
+  x:Class="Milan.Simulation.ShiftSystems.UI.Controls.ShiftPlan"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:viewModels="clr-namespace:Milan.Simulation.ShiftSystems.UI.ViewModels"
+  xmlns:controls="clr-namespace:Milan.Simulation.ShiftSystems.UI.Controls"
+  xmlns:wpf="http://www.gewissen-it.de/milan/wpf">
+
+  <UserControl.Resources>
+
+    <ResourceDictionary>
+
+      <ResourceDictionary.MergedDictionaries>
+
+       <ResourceDictionary
+          Source="pack://application:,,,/Milan.Simulation.ShiftSystems.UI;component/Controls/ShiftPlanStyles.xaml" />
+
+      </ResourceDictionary.MergedDictionaries>
+
+      <DataTemplate
+        DataType="{x:Type viewModels:ShiftViewModel}">
+
+        <Grid>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition
+              Width="Auto" />
+            <ColumnDefinition
+              Width="*" />
+            <ColumnDefinition
+              Width="Auto" />
+          </Grid.ColumnDefinitions>
+
+          <Border
+            Grid.Column="0"
+            Grid.Row="0"
+            Width="15"
+            Height="8"
+            Margin="0,1,1,1"
+            Style="{StaticResource BeginsBeforeIndicatorStyle}" />
+
+          <Grid
+            Grid.Column="1"
+            Grid.Row="0"
+            Height="10">
+
+            <Canvas>
+
+              <wpf:PushBindingManager.PushBindings>
+                <wpf:PushBinding
+                  TargetProperty="ActualWidth"
+                  Path="CurrentWidth" />
+              </wpf:PushBindingManager.PushBindings>
+
+              <Button
+                Canvas.Left="{Binding StartOffset}"
+                Canvas.Top="1"
+                Width="{Binding DurationOffset}"
+                Height="8"
+                VerticalAlignment="Center"
+                Click="SelectShift"
+                Style="{StaticResource ShiftBarButtonStyle}" />
+
+            </Canvas>
+
+          </Grid>
+
+          <Border
+            Grid.Column="2"
+            Grid.Row="0"
+            Width="15"
+            Height="8"
+            Margin="1,1,0,1"
+            Style="{StaticResource EndsAfterIndicatorStyle}" />
+
+        </Grid>
+
+      </DataTemplate>
+
+      <DataTemplate
+        x:Key="DayPanel">
+
+        <Grid
+          
+          MouseLeftButtonUp="UnselectShift">
+
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition
+              Width="30" />
+            <ColumnDefinition
+              Width="*" />
+          </Grid.ColumnDefinitions>
+
+          <Grid.RowDefinitions>
+            <RowDefinition
+              Height="Auto" />
+          </Grid.RowDefinitions>
+
+          <Border
+            Grid.Column="0"
+            Grid.Row="0"
+            BorderBrush="{DynamicResource GrayBrush1}"
+            BorderThickness="0,0,0,1">
+
+            <TextBlock
+              Text="{Binding Key, Converter={StaticResource AbbreviatedDay}}"
+              Style="{StaticResource DayHeaderText}" />
+
+          </Border>
+
+          <Border
+            Grid.Column="1"
+            Grid.Row="0"
+            BorderBrush="{DynamicResource GrayBrush2}"
+            BorderThickness="0,0,0,1">
+
+            <Grid>
+
+              <controls:TimeAxisDay
+                ShowDayChangeIndicators="False"
+                ShowDayNumbers="False" />
+
+              <ItemsControl
+                x:Name="ShiftPanels"
+                Margin="0"
+                HorizontalAlignment="Stretch"
+                HorizontalContentAlignment="Stretch"
+                ItemsSource="{Binding Value}"
+                MouseLeftButtonUp="UnselectShift" />
+
+            </Grid>
+
+          </Border>
+
+        </Grid>
+
+      </DataTemplate>
+
+    </ResourceDictionary>
+
+  </UserControl.Resources>
+
+  <Grid
+    HorizontalAlignment="Stretch"
+    VerticalAlignment="Stretch"
+    MouseLeftButtonUp="UnselectShift">
+
+    <Grid.RowDefinitions>
+      <RowDefinition
+        Height="Auto" />
+      <RowDefinition
+        Height="*" />
+    </Grid.RowDefinitions>
+
+    <controls:TimeAxisDay
+      Grid.Row="0"
+      Margin="30,0,0,0"
+      HorizontalAlignment="Stretch" />
+
+    <ItemsControl
+      Grid.Row="1"
+      Margin="0"
+      HorizontalAlignment="Stretch"
+      HorizontalContentAlignment="Stretch"
+      ItemsSource="{Binding ShiftsByDay}"
+      ItemTemplate="{StaticResource DayPanel}" />
+
+  </Grid>
+
+</UserControl>

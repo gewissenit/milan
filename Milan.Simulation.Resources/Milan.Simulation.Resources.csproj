@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <ProjectGuid>{A59EBCD0-522B-40C2-BE92-E33E1F70C3BB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Milan.Simulation.Resources</RootNamespace>
+    <AssemblyName>Milan.Simulation.Resources</AssemblyName>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <OutputPath>..\..\build\emporer\bin</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+    <NoWarn>
+    </NoWarn>
+    <WarningsNotAsErrors>
+    </WarningsNotAsErrors>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>..\..\build\emporer\bin</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+    <NoWarn>
+    </NoWarn>
+    <WarningsNotAsErrors>
+    </WarningsNotAsErrors>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>True</Optimize>
+    <DefineConstants>TRACE</DefineConstants>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\build\x64\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>..\..\build\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Compile Include="DeleteRules\ResourceTypeIsNotReferencedInAnyResourcePool.cs" />
+    <Compile Include="Events\Events.cs" />
+    <Compile Include="Factories\IInfluenceFactory.cs" />
+    <Compile Include="Factories\InfluenceFactory.cs" />
+    <Compile Include="Factories\IProductTypeSpecificResourceFactory.cs" />
+    <Compile Include="Factories\ProductTypeSpecificResourceFactory.cs" />
+    <Compile Include="Factories\ResourceMaintenanceObserverFactory.cs" />
+    <Compile Include="Factories\IResourcePoolResourceTypeAmountFactory.cs" />
+    <Compile Include="Factories\IResourceTypeAmountFactory.cs" />
+    <Compile Include="Factories\ResourcePoolFactory.cs" />
+    <Compile Include="Factories\ResourcePoolResourceTypeAmountFactory.cs" />
+    <Compile Include="Factories\ResourceTimesReportDataProviderFactory.cs" />
+    <Compile Include="Factories\ResourceTypeAmountFactory.cs" />
+    <Compile Include="Factories\ResourceTypeFactory.cs" />
+    <Compile Include="Factories\ResourceRetentionObserverFactory.cs" />
+    <Compile Include="IInfluenceRate.cs" />
+    <Compile Include="IInfluence.cs" />
+    <Compile Include="IInfluenceAware.cs" />
+    <Compile Include="InfluenceRate.cs" />
+    <Compile Include="Influence.cs" />
+    <Compile Include="IProductTypeSpecificResource.cs" />
+    <Compile Include="IReceiver.cs" />
+    <Compile Include="IResourcePool.cs" />
+    <Compile Include="IResourcePoolResourceTypeAmount.cs" />
+    <Compile Include="IResourceType.cs" />
+    <Compile Include="IResourceTypeInfluence.cs" />
+    <Compile Include="IResourceTypeAmount.cs" />
+    <Compile Include="ResourceTypeInfluence.cs" />
+    <Compile Include="Statistics\ResourceInfluence.cs" />
+    <Compile Include="Observers\ResourceMaintenanceObserver.cs" />
+    <Compile Include="Observers\ResourceRetentionObserver.cs" />
+    <Compile Include="Statistics\ResourceInfluenceStatistic.cs" />
+    <Compile Include="Statistics\ResourceTypeInfluence.cs" />
+    <Compile Include="ProductTypeSpecificResource.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportDataProviders\ResourceTimes.cs" />
+    <Compile Include="Resource.cs" />
+    <Compile Include="ResourcePool.cs" />
+    <Compile Include="ResourcePoolResourceTypeAmount.cs" />
+    <Compile Include="ResourceType.cs" />
+    <Compile Include="ResourceTypeAmount.cs" />
+    <Compile Include="Statistics\ResourceRetentionTimes.cs" />
+    <Compile Include="Statistics\ResourceRetentionTimeStatistic.cs" />
+    <Compile Include="Statistics\ResourceTypeRetentionTimes.cs" />
+    <Compile Include="Statistics\ResourceTypeRetentionTimeStatistic.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="FileHelpers, Version=3.1.5.0, Culture=neutral, PublicKeyToken=3e0c08d59cc3d657, processorArchitecture=MSIL">
+      <HintPath>..\packages\FileHelpers.3.1.5\lib\net45\FileHelpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PGK.Extensions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f93e897f802ddcb7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\PGK.Extensions.2011.6\lib\PGK.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Emporer.Math.Distribution.UI\Emporer.Math.Distribution.UI.csproj">
+      <Project>{7144CEE7-C185-4DB7-BFC7-F8D74A662699}</Project>
+      <Name>Emporer.Math.Distribution.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Emporer.Math.Distribution\Emporer.Math.Distribution.csproj">
+      <Project>{1E55808E-3DD6-49A6-84D7-2DE9F882D780}</Project>
+      <Name>Emporer.Math.Distribution</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Emporer.Unit\Emporer.Unit.csproj">
+      <Project>{da6bd1cd-ef23-4b34-8141-d4be06d3f583}</Project>
+      <Name>Emporer.Unit</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Milan.JsonStore\Milan.JsonStore.csproj">
+      <Project>{E2C0ABAF-773E-4265-BD7E-0D45A5876A8A}</Project>
+      <Name>Milan.JsonStore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Milan.Simulation\Milan.Simulation.csproj">
+      <Project>{C6378981-67FE-4F73-9BAC-51EDD9AB8287}</Project>
+      <Name>Milan.Simulation</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+</Project>

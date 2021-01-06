@@ -1,0 +1,38 @@
+﻿<UserControl
+  x:Class="Milan.Simulation.Resources.UI.Views.AvailableResourcesSectionView"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+  xmlns:wpf="http://www.gewissen-it.de/milan/wpf">
+  <Grid>
+
+    <Grid.RowDefinitions>
+      <RowDefinition />
+      <RowDefinition />
+      <RowDefinition />
+    </Grid.RowDefinitions>
+
+    <Label
+      Grid.Row="0"
+      Content="Amounts for specific resource types"
+      Style="{StaticResource PropertyHeader}" />
+
+    <ItemsControl
+      Grid.Row="1"
+      ItemsSource="{Binding ResourceTypeAmounts}"
+      ItemTemplate="{StaticResource ResourceTypeAmountItem}">
+
+      <i:Interaction.Behaviors>
+        <wpf:IgnoreMouseWheelBehavior />
+      </i:Interaction.Behaviors>
+
+    </ItemsControl>
+
+    <Menu
+      Grid.Row="2"
+      ItemsSource="{Binding AddResourceAmountCommand, Converter={StaticResource SingleObjectToArray}}"
+      ItemContainerStyle="{StaticResource ChainedParameterCommand}"
+      Style="{StaticResource ChainedParameterMenuButton}" />
+
+  </Grid>
+</UserControl>

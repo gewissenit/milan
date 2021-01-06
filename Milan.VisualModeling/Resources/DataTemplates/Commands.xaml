@@ -1,0 +1,114 @@
+﻿<ResourceDictionary
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:commands="clr-namespace:Milan.VisualModeling.Commands">
+
+  <DataTemplate
+    DataType="{x:Type commands:AlignTop}">
+
+    <Button
+      Command="{Binding}">
+      <Image
+        Source="{StaticResource AlignTop}" />
+    </Button>
+
+  </DataTemplate>
+
+  <DataTemplate
+    DataType="{x:Type commands:AlignLeft}">
+
+    <Button
+      Command="{Binding}">
+      <Image
+        Source="{StaticResource AlignLeft}" />
+    </Button>
+
+  </DataTemplate>
+
+  <DataTemplate
+    DataType="{x:Type commands:AlignRight}">
+
+    <Button
+      Command="{Binding}">
+      <Image
+        Source="{StaticResource AlignRight}" />
+    </Button>
+
+  </DataTemplate>
+
+  <DataTemplate
+    DataType="{x:Type commands:AlignHorizontallyCentered}">
+
+    <Button
+      Command="{Binding}">
+      <Image
+        Source="{StaticResource AlignHorizontallyCentered}" />
+    </Button>
+
+  </DataTemplate>
+
+  <DataTemplate
+    DataType="{x:Type commands:AlignBottom}">
+
+    <Button
+      Command="{Binding}">
+      <Image
+        Source="{StaticResource AlignBottom}" />
+    </Button>
+
+  </DataTemplate>
+
+  <DataTemplate
+    DataType="{x:Type commands:AlignVerticallyCentered}">
+
+    <Button
+      Command="{Binding}">
+      <Image
+        Source="{StaticResource AlignVerticallyCentered}" />
+    </Button>
+
+  </DataTemplate>
+
+  <DataTemplate
+    DataType="{x:Type commands:DistributeHorizontally}">
+
+    <Button
+      Command="{Binding}">
+      DistH
+    </Button>
+
+  </DataTemplate>
+
+  <DataTemplate
+    DataType="{x:Type commands:DistributeVertically}">
+
+    <Button
+      Command="{Binding}">
+      DistH
+    </Button>
+
+  </DataTemplate>
+
+  <DataTemplate
+    DataType="{x:Type commands:PlaceAt}">
+
+    <StackPanel
+      Orientation="Horizontal">
+
+      <Button
+        Command="{Binding}"
+        Content="Place at:" />
+
+      <TextBox
+        Text="{Binding X}"
+        Width="20" />
+
+      <TextBox
+        Text="{Binding Y}"
+        Width="20" />
+
+    </StackPanel>
+
+  </DataTemplate>
+
+</ResourceDictionary>

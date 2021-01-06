@@ -1,0 +1,56 @@
+﻿<Application
+  x:Class="Milan.App"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:framework="clr-namespace:Ork.Framework;assembly=Ork.Framework">
+
+  <Application.Resources>
+
+    <ResourceDictionary>
+
+      <ResourceDictionary.MergedDictionaries>
+
+        <ResourceDictionary
+          Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml"/>
+        <ResourceDictionary
+          Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml"/>
+        <ResourceDictionary
+          Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml"/>
+        <ResourceDictionary
+          Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Lime.xaml"/>
+        <ResourceDictionary
+          Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseDark.xaml"/>
+        <ResourceDictionary
+          Source="pack://application:,,,/Emporer.WPF;component/Resources/Icons.xaml"/>
+        <ResourceDictionary
+          Source="Resources/Icons/Icons.xaml"/>
+        <ResourceDictionary
+          Source="pack://application:,,,/Emporer.WPF;component/Converter/Converter.xaml"/>
+        <ResourceDictionary
+          Source="Resources/Controls.xaml"/>
+        <ResourceDictionary
+          Source="pack://application:,,,/Emporer.WPF;component/Themes/ChainedParameterMenu.xaml"/>
+        <ResourceDictionary
+          Source="pack://application:,,,/Emporer.Material.UI;component/Controls/Resources.xaml"/>
+        <ResourceDictionary
+          Source="pack://application:,,,/Milan.Simulation.UI;component/Controls/Resources.xaml"/>
+        <ResourceDictionary
+          Source="pack://application:,,,/Milan.Simulation.Resources.UI;component/Controls/Resources.xaml"/>
+        <ResourceDictionary
+          Source="pack://application:,,,/Milan.UI;component/Resources/DataTemplates.xaml"/>
+        <ResourceDictionary>
+
+          <framework:Bootstrapper
+            x:Key="bootstrapper"
+            AllowMulitpleInstances="true"
+            ApplicationName=""/>
+
+        </ResourceDictionary>
+
+      </ResourceDictionary.MergedDictionaries>
+
+    </ResourceDictionary>
+
+  </Application.Resources>
+
+</Application>

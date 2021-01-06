@@ -1,0 +1,49 @@
+﻿ampere;Electric current;ampere;A;;
+squaremetre;Area;square metre;m²;;
+volt;Electric potential;volt;V;;
+centigrade;Temperature;celsius;°C;;
+euro;Currency;Euro;€;;
+chf;Currency;Swiss Franc;CHF;;
+gram;Mass;Gramm;g;;
+metre;Length;metre;m;;
+joule;Energy;Joule;J;;
+millisecond;Time;millisecond;ms;;
+cubicmetre;Volume;cubic metre;m³;;
+hectogram;Mass;Hectogramm;hg;gram;10
+kilogram;Mass;Kilogramm;kg;hectogram;100
+tone;Mass;Tone;t;kilogram;1000
+centigram;Mass;Zentigramm;cg;gram;0.01
+milligram;Mass;Milligramm;mg;centigram;0.1
+microgram;Mass;Microgramm;µg;milligram;0.001
+nanogram;Mass;Nanogramm;ng;microgram;0.001
+kilojoule;Energy;Kilojoule;kJ;joule;1000
+megajoule;Energy;Megajoule;MJ;joule;1000000
+kilowatthour;Energy;Kilowatt per hour;kWh;kilojoule;3600
+kilocalorien;Energy;Kilocalorien;kcal;joule;4.1868
+second;Time;second;s;millisecond;1000
+minute;Time;minute;min;second;60
+hour;Time;hour;h;minute;60
+day;Time;day;d;hour;24
+week;Time;week;w;day;7
+cubicdecimetre;Volume;cubic decimetre;dm³;cubicmetre;0.001
+cubiccentimetre;Volume;cubic centimetre;cm³;cubicmetre;0.000001
+cubicmillimetre;Volume;cubic millimetre;mm³;cubicmetre;0.000000001
+cubicdecametre;Volume;cubic decametre;dam³;cubicmetre;1000
+cubichectometre;Volume;cubic hectometre;hm³;cubicmetre;1000000
+cubickilometre;Volume;cubic kilometre;km³;cubicmetre;1000000000
+litre;Volume;litre;l;cubicdecimetre;1
+millilitre;Volume;millilitre;ml;litre;0.001
+decimetre;Length;decimetre;dm;metre;0.1
+centimetre;Length;centimetre;cm;metre;0.01
+millimetre;Length;millimetre;mm;metre;0.001
+kilometre;Length;kilometre;km;metre;1000
+squaredecimetre;Area;square decimetre;dm²;squaremetre;0.01
+squarecentimetre;Area;square centimetre;cm²;squaremetre;0.0001
+squaremillimetre;Area;square millimetre;mm²;squaremetre;0.000001
+ar;Area;ar;a;squaremetre;100
+hectare;Area;hectare;ha;squaremetre;10000
+squarekilometre;Area;square kilometre;km²;squaremetre;1000000
+kiloampere;Electric current;kiloampere;kA;ampere;1000
+milliampere;Electric current;milliampere;mA;ampere;0.001
+kilovolt;Electric potential;kilovolt;kV;volt;1000
+millivolt;Electric potential;millivolt;mV;volt;0.001

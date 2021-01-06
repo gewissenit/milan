@@ -1,0 +1,274 @@
+﻿<UserControl
+  x:Class="Ork.Framework.Views.MessageBoxView"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:converters="clr-namespace:Ork.Framework.Converters"
+  xmlns:controls="clr-namespace:Ork.Framework.Controls"
+  xmlns:cal="http://www.caliburnproject.org"
+  cal:Message.Attach="[Event GotFocus] = [Action SetFocusToPreferredOption()]"
+  FocusManager.IsFocusScope="True"
+  KeyboardNavigation.TabNavigation="Local"
+  FocusManager.FocusedElement="{Binding ElementName=No}">
+
+  <UserControl.Resources>
+
+    <Style
+      x:Key="DocumentStyle"
+      TargetType="FlowDocument">
+
+      <Setter
+        Property="FontFamily"
+        Value="Calibri" />
+
+      <Setter
+        Property="TextAlignment"
+        Value="Left" />
+
+      <Setter
+        Property="Background"
+        Value="{DynamicResource WhiteColorBrush}" />
+
+    </Style>
+
+    <Style
+      x:Key="PageHeader"
+      TargetType="Paragraph">
+
+      <Setter
+        Property="FontSize"
+        Value="42" />
+
+      <Setter
+        Property="FontWeight"
+        Value="Light" />
+
+    </Style>
+
+    <Style
+      x:Key="SubHeader"
+      TargetType="Paragraph">
+
+      <Setter
+        Property="FontSize"
+        Value="20" />
+
+      <Setter
+        Property="FontWeight"
+        Value="Light" />
+
+    </Style>
+
+    <Style
+      x:Key="SubHeaderSecondary"
+      TargetType="Paragraph">
+
+      <Setter
+        Property="FontSize"
+        Value="20" />
+
+      <Setter
+        Property="FontWeight"
+        Value="Light" />
+
+    </Style>
+
+    <Style
+      x:Key="PositiveOptionButton"
+      TargetType="Button"
+      BasedOn="{StaticResource MetroFlatButton}">
+
+      <Style.Triggers>
+
+        <DataTrigger
+          Binding="{Binding SelectedOption}"
+          Value="Ok">
+
+          <Setter
+            Property="Background"
+            Value="CadetBlue" />
+
+        </DataTrigger>
+
+      </Style.Triggers>
+
+    </Style>
+
+    <controls:Markdown
+      x:Key="Markdown"
+      DocumentStyle="{StaticResource DocumentStyle}"
+      Heading1Style="{StaticResource PageHeader}"
+      Heading2Style="{StaticResource SubHeader}"
+      Heading3Style="{StaticResource SubHeaderSecondary}" />
+
+    <converters:TextToFlowDocumentConverter
+      x:Key="TextToFlowDocumentConverter"
+      Markdown="{StaticResource Markdown}" />
+
+    <Style
+      x:Key="MyFocusVisualStyle">
+      <Setter
+        Property="Control.Template">
+        <Setter.Value>
+          <ControlTemplate>
+            <Rectangle
+              Margin="-2"
+              StrokeThickness="2"
+              RadiusX="2"
+              RadiusY="2">
+              <Rectangle.Stroke>
+                <SolidColorBrush
+                  Color="Red"
+                  x:Name="RectangleStroke" />
+              </Rectangle.Stroke>
+              <Rectangle.Triggers>
+                <EventTrigger
+                  RoutedEvent="Rectangle.Loaded">
+                  <BeginStoryboard>
+                    <Storyboard>
+                      <ColorAnimation
+                        From="Red"
+                        To="Orange"
+                        Duration="0:0:0.5"
+                        RepeatBehavior="Forever"
+                        Storyboard.TargetName="RectangleStroke"
+                        Storyboard.TargetProperty="Color" />
+                      <DoubleAnimation
+                        To="3"
+                        Duration="0:0:0.5"
+                        RepeatBehavior="Forever"
+                        Storyboard.TargetProperty="StrokeDashOffset" />
+                    </Storyboard>
+                  </BeginStoryboard>
+                </EventTrigger>
+              </Rectangle.Triggers>
+            </Rectangle>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+
+    <Style
+      x:Key="FocusedMetroFlatButton"
+      TargetType="{x:Type Button}"
+      BasedOn="{StaticResource MetroFlatButton}">
+      <Setter
+        Property="FocusVisualStyle"
+        Value="{StaticResource MyFocusVisualStyle}" />
+    </Style>
+
+  </UserControl.Resources>
+
+  <Grid>
+
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition
+        Width="20*" />
+      <ColumnDefinition
+        Width="60*" />
+      <ColumnDefinition
+        Width="20*" />
+    </Grid.ColumnDefinitions>
+
+    <Grid.RowDefinitions>
+      <RowDefinition />
+      <RowDefinition />
+    </Grid.RowDefinitions>
+
+    <FlowDocumentScrollViewer
+      Grid.Column="1"
+      Grid.Row="0"
+      HorizontalScrollBarVisibility="Disabled"
+      Document="{Binding Message, Converter={StaticResource TextToFlowDocumentConverter}}"
+      Focusable="False" />
+
+    <StackPanel
+      Margin="0 12"
+      Grid.Column="1"
+      Grid.Row="1"
+      HorizontalAlignment="Center"
+      Orientation="Horizontal">
+
+      <StackPanel.Style>
+
+        <Style>
+
+          <Style.Triggers>
+
+            <DataTrigger
+              Binding="{Binding SelectedOption}"
+              Value="Ok">
+
+              <Setter
+                Property="FocusManager.FocusedElement"
+                Value="{Binding ElementName=Ok}" />
+
+            </DataTrigger>
+
+            <DataTrigger
+              Binding="{Binding SelectedOption}"
+              Value="Cancel">
+
+              <Setter
+                Property="FocusManager.FocusedElement"
+                Value="{Binding ElementName=Cancel}" />
+
+            </DataTrigger>
+
+            <DataTrigger
+              Binding="{Binding SelectedOption}"
+              Value="Yes">
+
+              <Setter
+                Property="FocusManager.FocusedElement"
+                Value="{Binding ElementName=Yes}" />
+
+            </DataTrigger>
+
+            <DataTrigger
+              Binding="{Binding SelectedOption}"
+              Value="No">
+
+              <Setter
+                Property="FocusManager.FocusedElement"
+                Value="{Binding ElementName=No}" />
+
+            </DataTrigger>
+
+          </Style.Triggers>
+
+        </Style>
+
+      </StackPanel.Style>
+
+      <Button
+        x:Name="Ok"
+        Style="{StaticResource FocusedMetroFlatButton}"
+        Visibility="{Binding OkVisible, Converter={StaticResource BoolToVisibility}}"
+        Content="Ok" />
+
+      <Button
+        x:Name="Yes"
+        Style="{StaticResource FocusedMetroFlatButton}"
+        Margin="6 0 0 0"
+        Visibility="{Binding YesVisible, Converter={StaticResource BoolToVisibility}}"
+        Content="Yes" />
+
+      <Button
+        x:Name="No"
+        Style="{StaticResource FocusedMetroFlatButton}"
+        Margin="6 0 0 0"
+        Visibility="{Binding NoVisible, Converter={StaticResource BoolToVisibility}}"
+        Content="No" />
+
+      <Button
+        x:Name="Cancel"
+        Style="{StaticResource FocusedMetroFlatButton}"
+        Margin="6 0 0 0"
+        Visibility="{Binding CancelVisible, Converter={StaticResource BoolToVisibility}}"
+        Content="Cancel" />
+
+    </StackPanel>
+
+  </Grid>
+
+</UserControl>

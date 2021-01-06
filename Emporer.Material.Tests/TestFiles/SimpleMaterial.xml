@@ -1,0 +1,46 @@
+﻿<material
+  id="generated.material.no0"
+  name="Material 0"
+  description="I am a new Material constructed by the Generator"
+  materialGroupId=""
+  basicUnit="Unspecified"
+  xmlns="http://www.empinia.org/release/0.3/schemas/Bundle.xsd">
+  <units>
+    <unit
+      id="0001"
+      name="Watt"
+      coefficient="2"
+      description="I am a new unit">
+    </unit>
+  </units>
+  <properties>
+    <property
+      id="001"
+      name="GWP"
+      description="I am a new property"
+      classification="ecological"
+      value="5"
+      unit="">
+    </property>
+  </properties>
+  <synonyms>
+    <synonym
+      name="HARHARHARHAR"
+      language="HAARE">
+    </synonym>
+  </synonyms>
+  <costs
+    costTypeGroupId="002"
+    accountNumber="003"
+    currencyId="004"
+    marketPrice="30"
+    averagePrice="40"
+    valuationPrice="20">
+  </costs>
+  <containedMaterials>
+    <containedMaterial
+      materialId="005"
+      quantity="2">
+    </containedMaterial>
+  </containedMaterials>
+</material>

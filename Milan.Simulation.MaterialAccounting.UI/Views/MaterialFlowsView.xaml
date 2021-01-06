@@ -1,0 +1,336 @@
+﻿<UserControl
+  x:Class="Milan.Simulation.MaterialAccounting.UI.Views.MaterialFlowsView"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:materialAccounting="clr-namespace:Milan.Simulation.MaterialAccounting;assembly=Milan.Simulation.MaterialAccounting"
+  xmlns:cal="http://www.caliburnproject.org"
+  xmlns:controls1="http://metro.mahapps.com/winfx/xaml/controls"
+  xmlns:viewModels11="clr-namespace:Emporer.Material.UI.ViewModels;assembly=Emporer.Material.UI"
+  xmlns:viewModels1="clr-namespace:Milan.Simulation.UI.ViewModels;assembly=Milan.Simulation.UI">
+
+  <UserControl.Resources>
+
+    <ResourceDictionary>
+
+      <DataTemplate
+        DataType="{x:Type viewModels1:ProductTypeViewModel}">
+
+        <Label
+          Content="{Binding Name}" />
+
+      </DataTemplate>
+
+      <DataTemplate
+        DataType="{x:Type materialAccounting:IMaterialObserver}">
+
+        <Label
+          Content="{Binding Name}" />
+
+      </DataTemplate>
+
+      <DataTemplate
+        DataType="{x:Type viewModels11:MaterialViewModel}">
+
+        <Label
+          Content="{Binding Model.Name}" />
+
+      </DataTemplate>
+
+      <Style
+        x:Key="ProductTypeRelated"
+        BasedOn="{StaticResource MetroComboBox}"
+        TargetType="ComboBox">
+
+        <Style.Triggers>
+
+          <DataTrigger
+            Value="True"
+            Binding="{Binding IsProductTypeRelated}">
+
+            <Setter
+              Property="Visibility"
+              Value="Visible" />
+
+          </DataTrigger>
+
+          <DataTrigger
+            Value="False"
+            Binding="{Binding IsProductTypeRelated}">
+
+            <Setter
+              Property="Visibility"
+              Value="Hidden" />
+
+          </DataTrigger>
+
+        </Style.Triggers>
+
+      </Style>
+
+    </ResourceDictionary>
+
+  </UserControl.Resources>
+
+  <Grid>
+
+    <Grid.RowDefinitions>
+      <RowDefinition
+        Height="Auto" />
+      <RowDefinition />
+      <RowDefinition
+        Height="Auto" />
+    </Grid.RowDefinitions>
+
+    <TextBlock
+      Name="DisplayName"
+      Grid.Row="0"
+      Style="{StaticResource Title}" />
+
+    <!--<DataGrid
+      Grid.Row="1"
+      RenderOptions.ClearTypeHint="Enabled"
+      TextOptions.TextFormattingMode="Display"
+      SelectionUnit="FullRow"
+      ItemsSource="{Binding Items.View}"
+      SelectedItem="{Binding SelectedItem}"
+      AutoGenerateColumns="False">
+      <DataGrid.Columns>
+        <DataGridTextColumn
+          IsReadOnly="True"
+          Header="Entity"
+          Binding="{Binding Entity.Model.Name}" />
+        <DataGridComboBoxColumn
+          Header="Process"
+          ItemsSource="{Binding Processes}"
+          SelectedItemBinding="{Binding Process}" />
+        <DataGridComboBoxColumn
+          Header="Material"
+          ItemsSource="{Binding Materials}"
+          SelectedItemBinding="{Binding Material}" />
+        <DataGridTextColumn
+          Header="Amount"
+          Binding="{Binding Amount, StringFormat='{}{0:0.000}'}" />
+        <DataGridComboBoxColumn
+          Header="Unit"
+          ItemsSource="{Binding Units}"
+          SelectedItemBinding="{Binding Unit}" />
+        <DataGridComboBoxColumn
+          Header="Time Reference"
+          ItemsSource="{Binding TimeReferences}"
+          SelectedItemBinding="{Binding TimeReference}" />
+
+        <DataGridComboBoxColumn
+          Header="Product Type"
+          ItemsSource="{Binding ProductTypes}"
+          SelectedItemBinding="{Binding ProductType}" />
+        <DataGridComboBoxColumn
+          Header="Quantity Reference"
+          ItemsSource="{Binding QuantityReferences}"
+          SelectedItemBinding="{Binding QuantityReference}" />
+
+        <DataGridComboBoxColumn
+          Header="Balance Side"
+          ItemsSource="{Binding BalanceSides}"
+          SelectedItemBinding="{Binding BalanceSide}" />
+
+
+      </DataGrid.Columns>
+    </DataGrid>-->
+
+
+    <ListBox
+      Grid.Row="1"
+      Margin="0"
+      HorizontalAlignment="Stretch"
+      ItemsSource="{Binding Items.View}"
+      SelectionMode="Single"
+      Grid.IsSharedSizeScope="True"
+      SelectedItem="{Binding SelectedItem}">
+
+      <ListBox.ItemTemplate>
+
+        <DataTemplate>
+
+          <Grid>
+
+            <Grid.ColumnDefinitions>
+
+              <ColumnDefinition
+                SharedSizeGroup="Entity" />
+
+              <ColumnDefinition
+                SharedSizeGroup="Process" />
+
+              <ColumnDefinition
+                SharedSizeGroup="Material" />
+
+              <ColumnDefinition />
+
+              <ColumnDefinition
+                SharedSizeGroup="Unit" />
+
+              <ColumnDefinition
+                SharedSizeGroup="TimeReference" />
+
+              <ColumnDefinition
+                SharedSizeGroup="ProductTypeReference" />
+
+              <ColumnDefinition
+                SharedSizeGroup="QuantityReference" />
+
+              <ColumnDefinition
+                SharedSizeGroup="LossRatio" />
+              
+              <ColumnDefinition
+                SharedSizeGroup="Category" />
+
+            </Grid.ColumnDefinitions>
+
+            <TextBlock
+              Grid.Column="0"
+              Margin="6,3,6,3"
+              VerticalAlignment="Center"
+              Text="{Binding Entity.Model.Name}" />
+
+            <ComboBox
+              Grid.Column="1"
+              Margin="6,3,6,3"
+              VerticalAlignment="Center"
+              ItemsSource="{Binding Processes}"
+              SelectedItem="{Binding Process}" />
+
+            <ComboBox
+              Grid.Column="2"
+              Margin="6,3,6,3"
+              VerticalAlignment="Center"
+              ItemsSource="{Binding Materials}"
+              SelectedItem="{Binding Material}" />
+
+            <controls1:NumericUpDown
+              Grid.Column="3"
+              Minimum="0"
+              Margin="6,3,6,3"
+              VerticalAlignment="Center"
+              HorizontalContentAlignment="Right"
+              Value="{Binding Amount}" />
+
+            <ComboBox
+              Grid.Column="4"
+              Margin="6,3,6,3"
+              VerticalAlignment="Center"
+              ItemsSource="{Binding Units}"
+              SelectedItem="{Binding Unit}"
+              DisplayMemberPath="Model.Symbol" />
+
+            <ComboBox
+              Grid.Column="5"
+              Margin="6,3,6,3"
+              VerticalAlignment="Center"
+              ItemsSource="{Binding TimeReferences}"
+              SelectedItem="{Binding TimeReference}" />
+
+            <ComboBox
+              Grid.Column="6"
+              Margin="6,3,6,3"
+              VerticalAlignment="Center"
+              ItemsSource="{Binding ProductTypes}"
+              SelectedItem="{Binding ProductType}"
+              Style="{StaticResource ProductTypeRelated}" />
+
+            <ComboBox
+              Grid.Column="7"
+              Margin="6,3,6,3"
+              VerticalAlignment="Center"
+              ItemsSource="{Binding QuantityReferences}"
+              SelectedItem="{Binding QuantityReference}"
+              Style="{StaticResource ProductTypeRelated}" />
+
+            <!--<ComboBox
+              Grid.Column="8"
+              Margin="6,3,6,3"
+              VerticalAlignment="Center"
+              ItemsSource="{Binding BalanceSides}"
+              SelectedItem="{Binding BalanceSide}" />-->
+            
+            <StackPanel
+              Orientation="Horizontal"
+              Grid.Column="8"
+              Margin="6,3,6,3">
+              
+              <controls1:NumericUpDown
+                Minimum="0"
+                Maximum="100"                
+                VerticalAlignment="Center"
+                HorizontalContentAlignment="Right"
+                Value="{Binding LossRatio}" />
+              
+              <Label
+                Content="%"/>
+              
+            </StackPanel>
+
+            <ComboBox
+              Grid.Column="9"
+              Margin="6,3,6,3"
+              VerticalAlignment="Center"
+              ItemsSource="{Binding Categories}"
+              Text="{Binding Category}"
+              IsEditable="True"
+              cal:Message.Attach="[Event LostFocus] = [UpdateCategory]" />
+
+          </Grid>
+
+        </DataTemplate>
+
+      </ListBox.ItemTemplate>
+
+    </ListBox>
+
+    <StackPanel
+      Grid.Row="2"
+      Orientation="Horizontal">
+
+      <Menu
+        ItemsSource="{Binding AddObserverChainedCommand, Converter={StaticResource SingleObjectToArray}}"
+        ItemContainerStyle="{StaticResource ChainedParameterCommand}"
+        Style="{StaticResource ChainedParameterMenuButton}" />
+
+      <Button
+        Margin="0 0 3 0"
+        Style="{StaticResource ChromelessButtonStyle}"
+        Command="{Binding DuplicateSelectedObserverCommand}">
+        <Rectangle
+          Width="20"
+          Height="20"
+          Margin="2"
+          HorizontalAlignment="Center"
+          Fill="{Binding Path=Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}">
+          <Rectangle.OpacityMask>
+            <VisualBrush
+              Stretch="Uniform"
+              Visual="{DynamicResource appbar_page_duplicate}" />
+          </Rectangle.OpacityMask>
+        </Rectangle>
+      </Button>
+
+      <Button
+        Style="{StaticResource ChromelessButtonStyle}"
+        Command="{Binding DeleteSelectedObserverCommand}">
+        <Rectangle
+          Width="20"
+          Height="20"
+          Margin="2"
+          HorizontalAlignment="Center"
+          Fill="{Binding Path=Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}">
+          <Rectangle.OpacityMask>
+            <VisualBrush
+              Stretch="Uniform"
+              Visual="{DynamicResource appbar_minus}" />
+          </Rectangle.OpacityMask>
+        </Rectangle>
+      </Button>
+
+    </StackPanel>
+
+  </Grid>
+</UserControl>

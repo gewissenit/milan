@@ -1,0 +1,211 @@
+﻿<ResourceDictionary
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:eco="clr-namespace:EcoFactory.Components.UI.ViewModels"
+  xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+  xmlns:dst="clr-namespace:Emporer.Math.Distribution.UI.Controls;assembly=Emporer.Math.Distribution.UI"
+  xmlns:mln="http://www.gewissen-it.de/milan/wpf"
+  xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls">
+
+  <DataTemplate
+    DataType="{x:Type eco:TransformationRuleEditorViewModel}">
+
+    <Expander>
+
+      <Grid>
+
+        <Grid.RowDefinitions>
+          <RowDefinition
+            Height="Auto" />
+          <RowDefinition
+            Height="Auto" />
+          <RowDefinition
+            Height="Auto" />
+          <RowDefinition
+            Height="Auto" />
+          <RowDefinition
+            Height="Auto" />
+          <RowDefinition
+            Height="Auto" />
+          <RowDefinition
+            Height="Auto" />
+          <RowDefinition
+            Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Label
+          Grid.Row="0"
+          Content="Inputs"
+          Style="{StaticResource PropertyHeader}" />
+
+        <ItemsControl
+          x:Name="ListBoxInputs"
+          Grid.Row="1"
+          ItemsSource="{Binding Inputs, Mode=OneWay}"
+          ItemTemplate="{StaticResource RemovableItem}">
+
+          <i:Interaction.Behaviors>
+            <mln:IgnoreMouseWheelBehavior />
+          </i:Interaction.Behaviors>
+
+        </ItemsControl>
+
+        <Menu
+          Grid.Row="2"
+          ItemsSource="{Binding AddInputCommand, Converter={StaticResource SingleObjectToArray}}"
+          ItemContainerStyle="{StaticResource ChainedParameterCommandMenu}"
+          Style="{StaticResource ChainedParameterMenuButton}" />
+
+        <Label
+          Grid.Row="3"
+          Content="Output alternatives"
+          Style="{StaticResource PropertyHeader}" />
+
+        <ItemsControl
+          x:Name="ListBoxOutputAlternatives"
+          Grid.Row="4"
+          ItemsSource="{Binding Outputs, Mode=OneWay}"
+          ItemTemplate="{StaticResource RemovableItem}">
+
+          <i:Interaction.Behaviors>
+            <mln:IgnoreMouseWheelBehavior />
+          </i:Interaction.Behaviors>
+
+        </ItemsControl>
+
+        <Button
+          Grid.Row="5"
+          HorizontalAlignment="Right"
+          Style="{StaticResource ChromelessButtonStyle}"
+          Command="{Binding AddOutputAlternativeCommand}">
+
+          <Rectangle
+            Width="20"
+            Height="20"
+            Margin="2"
+            HorizontalAlignment="Center"
+            Fill="{Binding Path=Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}">
+            <Rectangle.OpacityMask>
+              <VisualBrush
+                Stretch="Uniform"
+                Visual="{DynamicResource appbar_add}" />
+            </Rectangle.OpacityMask>
+          </Rectangle>
+
+        </Button>
+
+        <Label
+          Grid.Row="6"
+          Content="Probability"
+          Style="{StaticResource PropertyHeader}" />
+
+        <mah:NumericUpDown
+          Grid.Row="7"
+          Maximum="100"
+          Minimum="1"
+          Value="{Binding Probability}" />
+
+      </Grid>
+
+    </Expander>
+
+  </DataTemplate>
+
+  <DataTemplate
+    DataType="{x:Type eco:TransformationRuleOutputViewModel}">
+    <Expander>
+      <Grid>
+
+        <Grid.RowDefinitions>
+          <RowDefinition
+            Height="Auto" />
+          <RowDefinition
+            Height="Auto" />
+          <RowDefinition
+            Height="Auto" />
+          <RowDefinition
+            Height="Auto" />
+          <RowDefinition
+            Height="Auto" />
+          <RowDefinition
+            Height="Auto" />
+          <RowDefinition
+            Height="Auto" />
+          <RowDefinition
+            Height="Auto" />
+          <RowDefinition
+            Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Label
+          Grid.Row="0"
+          Content="Outputs"
+          Style="{StaticResource PropertyHeader}" />
+
+        <ItemsControl
+          Grid.Row="1"
+          Margin="0"
+          ItemsSource="{Binding Outputs, Mode=OneWay}"
+          ItemTemplate="{StaticResource RemovableItem}">
+
+          <i:Interaction.Behaviors>
+            <mln:IgnoreMouseWheelBehavior />
+          </i:Interaction.Behaviors>
+
+        </ItemsControl>
+
+        <Menu
+          Grid.Row="2"
+          ItemsSource="{Binding AddOutputCommand, Converter={StaticResource SingleObjectToArray}}"
+          ItemContainerStyle="{StaticResource ChainedParameterCommandMenu}"
+          Style="{StaticResource ChainedParameterMenuButton}" />
+
+        <Expander
+          Grid.Row="3"
+          Header="Processing duration">
+
+          <dst:DistributionSelector
+            DataContext="{Binding Path=ProcessingDuration}"
+            ValueTemplate="{StaticResource TimeSpanChooser}" />
+
+        </Expander>
+
+        <Label
+          Grid.Row="4"
+          Content="Probability"
+          Style="{StaticResource PropertyHeader}" />
+
+        <mah:NumericUpDown
+          Grid.Row="5"
+          Minimum="1"
+          Maximum="100"
+          Value="{Binding Probability}" />
+
+
+        <Label
+          Grid.Row="6"
+          Content="Resources"
+          Style="{StaticResource PropertyHeader}" />
+
+        <ItemsControl
+          Grid.Row="7"
+          ItemsSource="{Binding Resources}"
+          ItemTemplate="{StaticResource ResourceTypeAmountItem}">
+
+          <i:Interaction.Behaviors>
+            <mln:IgnoreMouseWheelBehavior />
+          </i:Interaction.Behaviors>
+
+        </ItemsControl>
+
+        <Menu
+          Grid.Row="8"
+          ItemsSource="{Binding AddResourceCommand, Converter={StaticResource SingleObjectToArray}}"
+          ItemContainerStyle="{StaticResource ChainedParameterCommand}"
+          Style="{StaticResource ChainedParameterMenuButton}" />
+
+      </Grid>
+    </Expander>
+  </DataTemplate>
+  
+</ResourceDictionary>

@@ -1,0 +1,260 @@
+﻿<UserControl
+  x:Class="Milan.Simulation.CostAccounting.UI.Views.CostFlowsView"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:cal="http://www.caliburnproject.org"
+  xmlns:controls1="http://metro.mahapps.com/winfx/xaml/controls"
+  xmlns:costAccounting="clr-namespace:Milan.Simulation.CostAccounting;assembly=Milan.Simulation.CostAccounting"
+  xmlns:viewModels="clr-namespace:Milan.Simulation.UI.ViewModels;assembly=Milan.Simulation.UI">
+
+  <UserControl.Resources>
+
+    <ResourceDictionary>
+
+      <DataTemplate
+        DataType="{x:Type viewModels:ProductTypeViewModel}">
+
+        <Label
+          Content="{Binding Name}" />
+
+      </DataTemplate>
+
+      <DataTemplate
+        DataType="{x:Type costAccounting:ICostObserver}">
+
+        <Label
+          Content="{Binding Name}" />
+
+      </DataTemplate>
+
+      <Style
+        x:Key="ProductTypeRelated"
+        BasedOn="{StaticResource MetroComboBox}"
+        TargetType="ComboBox">
+
+        <Style.Triggers>
+
+          <DataTrigger
+            Value="True"
+            Binding="{Binding IsProductTypeRelated}">
+
+            <Setter
+              Property="Visibility"
+              Value="Visible" />
+
+          </DataTrigger>
+
+          <DataTrigger
+            Value="False"
+            Binding="{Binding IsProductTypeRelated}">
+
+            <Setter
+              Property="Visibility"
+              Value="Hidden" />
+
+          </DataTrigger>
+
+        </Style.Triggers>
+
+      </Style>
+
+    </ResourceDictionary>
+
+  </UserControl.Resources>
+
+  <Grid>
+
+    <Grid.RowDefinitions>
+      <RowDefinition
+        Height="Auto" />
+      <RowDefinition />
+      <RowDefinition
+        Height="Auto" />
+    </Grid.RowDefinitions>
+
+    <TextBlock
+      Name="DisplayName"
+      Grid.Row="0"
+      DockPanel.Dock="Top"
+      Style="{StaticResource Title}" />
+
+    <ListBox
+      Grid.Row="1"
+      Margin="0"
+      HorizontalAlignment="Stretch"
+      DockPanel.Dock="Top"
+      ItemsSource="{Binding Items.View}"
+      SelectionMode="Single"
+      Grid.IsSharedSizeScope="True"
+      SelectedItem="{Binding SelectedItem}">
+
+      <ListBox.ItemTemplate>
+
+        <DataTemplate>
+
+          <Grid>
+
+            <Grid.ColumnDefinitions>
+
+              <ColumnDefinition
+                SharedSizeGroup="Entity" />
+
+              <ColumnDefinition
+                SharedSizeGroup="Process" />
+
+              <ColumnDefinition />
+
+              <ColumnDefinition
+                SharedSizeGroup="Currency" />
+
+              <ColumnDefinition
+                SharedSizeGroup="TimeReference" />
+
+              <ColumnDefinition
+                SharedSizeGroup="ProductTypeReference" />
+
+              <ColumnDefinition
+                SharedSizeGroup="QuantityReference" />
+              
+              <ColumnDefinition
+                SharedSizeGroup="LossRatio" />
+
+              <ColumnDefinition
+                SharedSizeGroup="Category" />
+
+            </Grid.ColumnDefinitions>
+
+            <TextBlock
+              Grid.Column="0"
+              Margin="6,3,6,3"
+              VerticalAlignment="Center"
+              Text="{Binding Entity.Model.Name}" />
+
+            <ComboBox
+              Grid.Column="1"
+              Margin="6,3,6,3"
+              VerticalAlignment="Center"
+              ItemsSource="{Binding Processes}"
+              SelectedItem="{Binding Process}" />
+
+            <controls1:NumericUpDown
+              Grid.Column="2"
+              Minimum="0"
+              Margin="6,3,6,3"
+              VerticalAlignment="Center"
+              HorizontalContentAlignment="Right"
+              Value="{Binding Amount}" />
+
+            <ComboBox
+              Grid.Column="3"
+              Margin="6,3,6,3"
+              VerticalAlignment="Center"
+              ItemsSource="{Binding Currencies}"
+              SelectedItem="{Binding Currency}"
+              DisplayMemberPath="Model.Symbol" />
+
+            <ComboBox
+              Grid.Column="4"
+              Margin="6,3,6,3"
+              VerticalAlignment="Center"
+              ItemsSource="{Binding TimeReferences}"
+              SelectedItem="{Binding TimeReference}" />
+
+            <ComboBox
+              Grid.Column="5"
+              Margin="6,3,6,3"
+              VerticalAlignment="Center"
+              ItemsSource="{Binding ProductTypes}"
+              SelectedItem="{Binding ProductType}"
+              Style="{StaticResource ProductTypeRelated}" />
+
+            <ComboBox
+              Grid.Column="6"
+              Margin="6,3,6,3"
+              VerticalAlignment="Center"
+              ItemsSource="{Binding QuantityReferences}"
+              SelectedItem="{Binding QuantityReference}"
+              Style="{StaticResource ProductTypeRelated}" />
+
+            <StackPanel
+              Orientation="Horizontal"
+              Grid.Column="7"
+              Margin="6,3,6,3">
+
+              <controls1:NumericUpDown
+                Minimum="0"
+                Maximum="100"
+                VerticalAlignment="Center"
+                HorizontalContentAlignment="Right"
+                Value="{Binding LossRatio}" />
+
+              <Label
+                Content="%"/>
+
+            </StackPanel>
+
+            <ComboBox
+              Grid.Column="8"
+              Margin="6,3,6,3"
+              VerticalAlignment="Center"
+              ItemsSource="{Binding Categories}"
+              Text="{Binding Category}"
+              IsEditable="True"
+              cal:Message.Attach="[Event LostFocus] = [UpdateCategory]" />
+
+          </Grid>
+
+        </DataTemplate>
+
+      </ListBox.ItemTemplate>
+
+    </ListBox>
+    
+    <StackPanel
+      Grid.Row="2"
+      Orientation="Horizontal">
+
+      <Menu
+        ItemsSource="{Binding AddObserverChainedCommand, Converter={StaticResource SingleObjectToArray}}"
+        ItemContainerStyle="{StaticResource ChainedParameterCommand}"
+        Style="{StaticResource ChainedParameterMenuButton}" />
+
+      <Button
+        Margin="0 0 3 0"
+        Style="{StaticResource ChromelessButtonStyle}"
+        Command="{Binding DuplicateSelectedObserverCommand}">
+        <Rectangle
+          Width="20"
+          Height="20"
+          Margin="2"
+          HorizontalAlignment="Center"
+          Fill="{Binding Path=Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}">
+          <Rectangle.OpacityMask>
+            <VisualBrush
+              Stretch="Uniform"
+              Visual="{DynamicResource appbar_page_duplicate}" />
+          </Rectangle.OpacityMask>
+        </Rectangle>
+      </Button>
+
+      <Button
+        Style="{StaticResource ChromelessButtonStyle}"
+        Command="{Binding DeleteSelectedObserverCommand}">
+        <Rectangle
+          Width="20"
+          Height="20"
+          Margin="2"
+          HorizontalAlignment="Center"
+          Fill="{Binding Path=Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}">
+          <Rectangle.OpacityMask>
+            <VisualBrush
+              Stretch="Uniform"
+              Visual="{DynamicResource appbar_minus}" />
+          </Rectangle.OpacityMask>
+        </Rectangle>
+      </Button>
+
+    </StackPanel>
+  </Grid>
+
+</UserControl>

@@ -1,0 +1,207 @@
+﻿<controls:MetroWindow
+  x:Class="Ork.Framework.Views.ShellView"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+  xmlns:orkControls="clr-namespace:Ork.Framework.Controls"
+  xmlns:cal="http://www.caliburnproject.org"
+  cal:Message.Attach="[Event PreviewKeyDown] = [Action HandleKeyInput($pressedKey)]">
+  
+  <controls:MetroWindow.IconTemplate>
+
+    <DataTemplate>
+
+      <Grid
+        Width="{TemplateBinding Width}"
+        Height="{TemplateBinding Height}"
+        Margin="4"
+        Background="{DynamicResource IdealForegroundColorBrush}"
+        RenderOptions.EdgeMode="Aliased"
+        RenderOptions.BitmapScalingMode="HighQuality">
+        
+        <Grid.OpacityMask>
+          
+          <VisualBrush
+            Stretch="Uniform"
+            Visual="{DynamicResource EcoFactory}" />          
+          
+        </Grid.OpacityMask>
+        
+      </Grid>
+
+    </DataTemplate>
+
+  </controls:MetroWindow.IconTemplate>
+
+  <controls:MetroWindow.LeftWindowCommands>
+
+    <controls:WindowCommands
+      VerticalAlignment="Stretch">
+
+      <orkControls:ReducedListBox
+        Background="Transparent"
+        ItemsSource="{Binding Items}"
+        Focusable="False">
+
+        <orkControls:ReducedListBox.ItemTemplate>
+
+          <DataTemplate>
+
+            <TextBlock
+              Text="{Binding DisplayName}"
+              FontFamily="{DynamicResource HeaderFontFamily}"
+              FontSize="{DynamicResource WindowTitleFontSize}" />
+
+          </DataTemplate>
+
+        </orkControls:ReducedListBox.ItemTemplate>
+
+        <orkControls:ReducedListBox.ItemsPanel>
+
+          <ItemsPanelTemplate>
+
+            <StackPanel
+              Orientation="Horizontal"
+              Focusable="False"/>
+
+          </ItemsPanelTemplate>
+
+        </orkControls:ReducedListBox.ItemsPanel>
+
+        <orkControls:ReducedListBox.ItemContainerStyle>
+
+          <Style
+            TargetType="ListBoxItem">
+
+            <Setter
+              Property="IsEnabled"
+              Value="{Binding IsEnabled}" />
+
+            <Setter
+              Property="Padding"
+              Value="12 0" />
+
+            <Setter
+              Property="Template">
+
+              <Setter.Value>
+
+                <ControlTemplate
+                  TargetType="{x:Type ListBoxItem}">
+                  
+                  <Border
+                    x:Name="Border"
+                    Background="{TemplateBinding Background}"
+                    SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                    Padding="{TemplateBinding Padding}"
+                    cal:Message.Attach="[Event MouseLeftButtonUp] = [ActivateItem($dataContext)]">
+                    
+                    <ContentPresenter
+                      SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                      HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                      Focusable="False"/>
+                    
+                  </Border>
+                  
+                  <ControlTemplate.Triggers>
+                    
+                    <Trigger
+                      Property="IsSelected"
+                      Value="True">
+                      
+                      <Setter
+                        TargetName="Border"
+                        Property="Background"
+                        Value="{DynamicResource HighlightBrush}" />
+                      
+                      <Setter
+                        Property="Foreground"
+                        Value="{DynamicResource AccentSelectedColorBrush}" />
+                      
+                    </Trigger>
+                    
+                    <Trigger
+                      Property="IsMouseOver"
+                      Value="True">
+                      
+                      <Setter
+                        TargetName="Border"
+                        Property="Background"
+                        Value="{DynamicResource AccentColorBrush2}" />
+                      
+                    </Trigger>
+                    
+                    <Trigger
+                      Property="IsEnabled"
+                      Value="False">
+                      
+                      <Setter
+                        Property="Foreground"
+                        Value="{DynamicResource GrayBrush7}" />
+                      
+                    </Trigger>
+                    
+                    <MultiTrigger>
+                      
+                      <MultiTrigger.Conditions>
+                        
+                        <Condition
+                          Property="IsSelected"
+                          Value="True" />
+                        
+                        <Condition
+                          Property="Selector.IsSelectionActive"
+                          Value="True" />
+                        
+                      </MultiTrigger.Conditions>
+                      
+                      <Setter
+                        TargetName="Border"
+                        Property="Background"
+                        Value="{DynamicResource HighlightBrush}" />
+                      
+                      <Setter
+                        Property="Foreground"
+                        Value="{DynamicResource AccentSelectedColorBrush}" />
+                      
+                    </MultiTrigger>
+                    
+                  </ControlTemplate.Triggers>
+                  
+                </ControlTemplate>
+
+              </Setter.Value>
+
+            </Setter>
+
+          </Style>
+
+        </orkControls:ReducedListBox.ItemContainerStyle>
+
+      </orkControls:ReducedListBox>
+
+    </controls:WindowCommands>
+
+  </controls:MetroWindow.LeftWindowCommands>
+
+
+  <Grid
+    x:Name="ActiveContent">
+
+    <controls:TransitioningContentControl
+      x:Name="ActiveItem"
+      Margin="0"
+      Transition="Left"
+      HorizontalAlignment="Stretch"
+      VerticalAlignment="Stretch" />
+
+    <ContentControl
+      VerticalContentAlignment="Stretch"
+      HorizontalContentAlignment="Stretch"
+      x:Name="Dialogs" />
+
+  </Grid>
+
+
+</controls:MetroWindow>

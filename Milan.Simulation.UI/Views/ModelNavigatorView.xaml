@@ -1,0 +1,68 @@
+﻿<UserControl
+  x:Class="Milan.Simulation.UI.Views.ModelNavigatorView"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+  xmlns:cal="http://www.caliburnproject.org"
+  xmlns:wpf="http://www.gewissen-it.de/milan/wpf"
+  xmlns:viewModels="clr-namespace:Milan.Simulation.UI.ViewModels"
+  MinWidth="250"
+  MinHeight="300">
+  
+  <Grid>
+
+    <TreeView
+      x:Name="Models"
+      IsTextSearchEnabled="True">
+
+      <i:Interaction.Behaviors>
+
+        <wpf:BindableSelectedTreeViewItemBehavior
+          SelectedItem="{Binding SelectedViewModelItem, Mode=OneWayToSource}" />
+
+      </i:Interaction.Behaviors>
+
+      <TreeView.Resources>
+
+        <HierarchicalDataTemplate
+          DataType="{x:Type viewModels:ModelNavigationViewModel}"
+          ItemsSource="{Binding Items}">
+
+          <ContentControl
+            cal:View.Model="{Binding}" />
+
+        </HierarchicalDataTemplate>
+
+        <DataTemplate
+          DataType="{x:Type viewModels:EntityNavigationViewModel}">
+
+          <ContentControl
+            cal:View.Model="{Binding}" />
+
+        </DataTemplate>
+
+      </TreeView.Resources>
+
+      <TreeView.ItemContainerStyle>
+
+        <Style
+          BasedOn="{StaticResource MetroTreeViewItem}"
+          TargetType="TreeViewItem">
+
+          <Setter
+            Property="IsSelected"
+            Value="{Binding IsSelected, Mode=TwoWay}" />
+
+          <Setter
+            Property="IsExpanded"
+            Value="{Binding IsExpanded, Mode=TwoWay}" />
+
+        </Style>
+
+      </TreeView.ItemContainerStyle>
+
+    </TreeView>
+    
+  </Grid>
+  
+</UserControl>

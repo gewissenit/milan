@@ -1,0 +1,165 @@
+﻿<UserControl
+  x:Class="Milan.UI.Views.StartPerspectiveView"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:framework="clr-namespace:Ork.Framework;assembly=Ork.Framework"
+  xmlns:viewModels="clr-namespace:Milan.UI.ViewModels"
+  xmlns:globalization="clr-namespace:System.Globalization;assembly=mscorlib">
+
+  <UserControl.Resources>
+
+    <DataTemplate
+      x:Key="ShellCommand"
+      DataType="framework:IShellCommand">
+
+      <Button
+        Margin="10"
+        Style="{StaticResource ChromelessButtonStyle}"
+        Command="{Binding}">
+        <Rectangle
+          Width="100"
+          Height="100"
+          Margin="10"
+          HorizontalAlignment="Center"
+          Fill="{Binding Path=Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}">
+          <Rectangle.OpacityMask>
+            <VisualBrush
+              Stretch="Uniform"
+              Visual="{Binding Image, Converter={StaticResource StringToResource}}" />
+          </Rectangle.OpacityMask>
+        </Rectangle>
+
+      </Button>
+
+    </DataTemplate>
+
+    <DataTemplate
+      x:Key="Language"
+      DataType="globalization:CultureInfo">
+      <TextBlock
+        Text="{Binding NativeName, Mode=OneWay}" />
+    </DataTemplate>
+
+    <DataTemplate
+      x:Key="ColorData"
+      DataType="viewModels:ColorData">
+      <Rectangle
+        Width="16"
+        Height="16"
+        Margin="3"
+        StrokeThickness="1"
+        Stroke="{DynamicResource BlackBrush}"
+        Fill="{Binding ColorBrush, Mode=OneWay}" />
+    </DataTemplate>
+
+  </UserControl.Resources>
+
+  <Grid>
+
+    <Grid
+      HorizontalAlignment="Center"
+      VerticalAlignment="Center">
+
+      <Grid.RowDefinitions>
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition />
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+        <RowDefinition
+          Height="Auto" />
+      </Grid.RowDefinitions>
+
+      <ItemsControl
+        Grid.Row="1"
+        ItemTemplate="{StaticResource ShellCommand}"
+        ItemsSource="{Binding ShellCommands}">
+
+        <ItemsControl.ItemsPanel>
+
+          <ItemsPanelTemplate>
+            <UniformGrid />
+          </ItemsPanelTemplate>
+
+        </ItemsControl.ItemsPanel>
+
+      </ItemsControl>
+
+      <TextBlock
+        Grid.Row="2"
+        Margin="0 20 0 10"
+        Text="Settings"
+        Style="{StaticResource Heading}" />
+
+      <Label
+        Grid.Row="3"
+        Content="Language"
+        Style="{StaticResource PropertyHeader}" />
+
+      <ComboBox
+        x:Name="Languages"
+        Grid.Row="4"
+        HorizontalAlignment="Left"
+        ItemTemplate="{StaticResource Language}"
+        SelectedItem="{Binding SelectedLanguage}" />
+
+      <Label
+        Grid.Row="5"
+        Content="Theme"
+        Style="{StaticResource PropertyHeader}" />
+
+      <ListBox
+        x:Name="Themes"
+        Grid.Row="6"
+        BorderThickness="0"
+        ItemTemplate="{StaticResource ColorData}"
+        SelectedItem="{Binding SelectedTheme}"
+        ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+        <ListBox.ItemsPanel>
+          <ItemsPanelTemplate>
+            <WrapPanel
+              Orientation="Horizontal" />
+          </ItemsPanelTemplate>
+        </ListBox.ItemsPanel>
+      </ListBox>
+
+      <Label
+        Grid.Row="7"
+        Content="Accent Color"
+        Style="{StaticResource PropertyHeader}" />
+
+      <ListBox
+        x:Name="AccentColors"
+        Grid.Row="8"
+        ItemTemplate="{StaticResource ColorData}"
+        SelectedItem="{Binding SelectedAccentColor}"
+        BorderThickness="0"
+        ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+        <ListBox.ItemsPanel>
+          <ItemsPanelTemplate>
+            <UniformGrid
+              Rows="3" />
+          </ItemsPanelTemplate>
+        </ListBox.ItemsPanel>
+      </ListBox>
+
+
+    </Grid>
+
+    <ContentControl
+      x:Name="Dialogs"
+      HorizontalContentAlignment="Stretch"
+      VerticalContentAlignment="Stretch" />
+
+  </Grid>
+</UserControl>

@@ -1,0 +1,74 @@
+﻿<UserControl
+  x:Class="EcoFactory.Components.UI.Views.TransformationsSectionView"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+  xmlns:wpf="http://www.gewissen-it.de/milan/wpf">
+
+  <Grid>
+
+    <Grid.RowDefinitions>
+      <RowDefinition />
+      <RowDefinition />
+      <RowDefinition />
+      <RowDefinition />
+      <RowDefinition />
+    </Grid.RowDefinitions>
+
+    <ItemsControl
+      Grid.Row="0"
+      ItemsSource="{Binding TransformationRules, Mode=OneWay}"
+      ItemTemplate="{StaticResource RemovableItem}">
+
+      <i:Interaction.Behaviors>
+        <wpf:IgnoreMouseWheelBehavior />
+      </i:Interaction.Behaviors>
+
+    </ItemsControl>
+
+    <Button
+      Grid.Row="1"
+      HorizontalAlignment="Right"
+      Style="{StaticResource ChromelessButtonStyle}"
+      Command="{Binding AddRuleCommand}">
+
+      <Rectangle
+        Width="20"
+        Height="20"
+        Margin="2"
+        HorizontalAlignment="Center"
+        Fill="{Binding Path=Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}}">
+
+        <Rectangle.OpacityMask>
+          <VisualBrush
+            Stretch="Uniform"
+            Visual="{DynamicResource appbar_add}" />
+        </Rectangle.OpacityMask>
+      </Rectangle>
+    </Button>
+
+    <Label
+      Grid.Row="2"
+      Content="Resources"
+      Style="{StaticResource PropertyHeader}" />
+
+    <ItemsControl
+      Grid.Row="3"
+      ItemsSource="{Binding ProcessingResources}"
+      ItemTemplate="{StaticResource ResourceTypeAmountItem}">
+
+      <i:Interaction.Behaviors>
+        <wpf:IgnoreMouseWheelBehavior />
+      </i:Interaction.Behaviors>
+
+    </ItemsControl>
+
+    <Menu
+      Grid.Row="4"
+      ItemsSource="{Binding AddProcessingResourceCommand, Converter={StaticResource SingleObjectToArray}}"
+      ItemContainerStyle="{StaticResource ChainedParameterCommand}"
+      Style="{StaticResource ChainedParameterMenuButton}" />
+
+  </Grid>
+
+</UserControl>

@@ -1,0 +1,27 @@
+﻿<UserControl
+  x:Class="Milan.Simulation.UI.Views.ProductTypeEditView"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+  xmlns:wpf="http://www.gewissen-it.de/milan/wpf">
+  
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition
+        Height="Auto" />
+    </Grid.RowDefinitions>
+
+    <TextBox
+      Grid.Row="0"
+      Text="{Binding Path=Description}"
+      Style="{StaticResource DescriptionTextBox}">
+
+      <i:Interaction.Behaviors>
+        <wpf:CommitOnEnter />
+      </i:Interaction.Behaviors>
+
+    </TextBox>
+
+  </Grid>
+  
+</UserControl>

@@ -1,0 +1,68 @@
+﻿<UserControl
+  x:Class="Milan.Simulation.UI.Views.TimeTerminationCriteriaEditView"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+  xmlns:wpf="http://www.gewissen-it.de/milan/wpf">
+
+  <Grid>
+
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+
+    <TextBlock
+      Grid.Row="0"
+      Text="duration"
+      Style="{StaticResource Heading}" />
+    
+    <Label
+      Grid.Row="1"
+      Style="{StaticResource PropertyHeader}"
+      Content="Duration" />
+
+    <wpf:TimeSpanChooser
+      Grid.Row="2"
+      Value="{Binding Duration, Mode=TwoWay}" />
+
+    <TextBlock
+      Grid.Row="3"
+      Text="stop date"
+      Style="{StaticResource Heading}" />
+
+    <Label
+      Grid.Row="4"
+      Style="{StaticResource PropertyHeader}"
+      Content="Day" />
+
+    <DatePicker
+      Grid.Row="5"
+      HorizontalContentAlignment="Right"
+      VerticalContentAlignment="Center"
+      SelectedDate="{Binding StopDate, Mode=TwoWay}"
+      SelectedDateFormat="Long"
+      DisplayDateStart="2010-01-01"
+      FirstDayOfWeek="Monday"
+      IsTodayHighlighted="True" />
+
+    <Label
+      Grid.Row="6"
+      Style="{StaticResource PropertyHeader}"
+      Content="Time" />
+
+    <xctk:TimePicker
+      Grid.Row="7"
+      HorizontalContentAlignment="Right"
+      VerticalContentAlignment="Center"
+      Value="{Binding StopDate, Mode=TwoWay}" />
+
+  </Grid>
+
+</UserControl>
